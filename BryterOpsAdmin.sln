@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BryterOpsAdmin", "BryterOpsAdmin\BryterOpsAdmin.csproj", "{9B616F1E-D3C3-408F-9E3D-927F8D05DEA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B616F1E-D3C3-408F-9E3D-927F8D05DEA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B616F1E-D3C3-408F-9E3D-927F8D05DEA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B616F1E-D3C3-408F-9E3D-927F8D05DEA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B616F1E-D3C3-408F-9E3D-927F8D05DEA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30222957-9C9D-4B64-AE99-7765CFFD7497}
+	EndGlobalSection
+EndGlobal
