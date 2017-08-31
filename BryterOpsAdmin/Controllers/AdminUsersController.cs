@@ -28,5 +28,12 @@ namespace BryterOpsAdmin.Controllers
 
             return JSON.Success(new { adminUsers = adminUsers });
         }
+
+        public IActionResult CreateAdminUser()
+        {
+            _bryterOpsContext.AdminUsers.FromSql("Admin_")
+
+            return JSON.Success();
+        }
     }
 }
