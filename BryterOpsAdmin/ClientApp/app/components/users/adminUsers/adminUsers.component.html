@@ -1,0 +1,30 @@
+﻿<h1>Admin Users</h1>
+
+<p *ngIf="!adminUsers"><em>Loading...</em></p>
+
+<table class='table' *ngIf="adminUsers">
+    <thead>
+        <tr>
+            <th>UserID</th>
+            <th>Username</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>User Type</th>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let adminUser of adminUsers">
+            <td>{{ adminUser.userID }}</td>
+            <td>{{ adminUser.username }}</td>
+            <td>{{ adminUser.firstName }}</td>
+            <td>{{ adminUser.lastName }}</td>
+            <td>{{ adminUser.phone }}</td>
+            <td>{{ adminUser.email }}</td>
+            <td>{{ adminUser.adminUserTypeID }}</td>
+            <td>{{ adminUser.title }}</td>
+        </tr>
+    </tbody>
+</table>

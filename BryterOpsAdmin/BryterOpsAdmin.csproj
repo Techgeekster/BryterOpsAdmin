@@ -25,11 +25,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\app\components\users\users.component.ts" />
+    <None Remove="ClientApp\app\components\users\adminUsers\adminUsers.component.ts" />
+    <None Remove="ClientApp\app\components\users\providers\providers.component.ts" />
+    <None Remove="ClientApp\app\components\users\retailers\retailers.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\app\components\users\users.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\adminUsers.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\bryterUsers.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\providers\providers.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\retailers\retailers.component.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

@@ -9,7 +9,10 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
-import { UsersComponent } from './components/users/users.component';
+import { BryterUsersComponent } from './components/users/bryterUsers/bryterUsers.component';
+import { AdminUsersComponent } from './components/users/adminUsers/adminUsers.component';
+import { RetailersComponent } from './components/users/retailers/retailers.component';
+import { ProvidersComponent } from './components/users/providers/providers.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +20,10 @@ import { UsersComponent } from './components/users/users.component';
         NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
-        UsersComponent,
+        BryterUsersComponent,
+        AdminUsersComponent,
+        RetailersComponent,
+        ProvidersComponent,
         HomeComponent
     ],
     imports: [
@@ -29,7 +35,10 @@ import { UsersComponent } from './components/users/users.component';
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
-            { path: 'users', component: UsersComponent },
+            { path: 'bryterUsers', component: BryterUsersComponent },
+            { path: 'adminUsers', component: AdminUsersComponent },
+            { path: 'retailers', component: RetailersComponent },
+            { path: 'providers', component: ProvidersComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]

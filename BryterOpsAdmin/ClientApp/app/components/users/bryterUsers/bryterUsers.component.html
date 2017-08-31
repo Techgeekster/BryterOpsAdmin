@@ -1,0 +1,66 @@
+﻿<h1>Bryter Users</h1>
+
+<p *ngIf="!bryterUsers"><em>Loading...</em></p>
+
+<table class='table' *ngIf="bryterUsers">
+    <thead>
+        <tr>
+            <th>UserID</th>
+            <th>Username</th>
+            <th>Company Name</th>
+            <th>CompanyID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address1</th>
+            <th>Address2</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zipcode</th>
+            <th>Country</th>
+            <th>Title</th>
+            <th>Experience Level</th>
+            <th>Manager Name</th>
+            <th>Manager Phone</th>
+            <th>Manager Email</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Rating</th>
+            <th>Photo</th>
+            <th>Years With Company</th>
+            <th>Approval Rate</th>
+            <th>Completion Rate</th>
+            <th>Retaining Rate</th>
+            <th>Assigned City Licenses</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bryterUser of bryterUsers">
+            <td>{{ bryterUser.userID }}</td>
+            <td>{{ bryterUser.username }}</td>
+            <td>{{ bryterUser.companyName }}</td>
+            <td>{{ bryterUser.companyID }}</td>
+            <td>{{ bryterUser.cirstName }}</td>
+            <td>{{ bryterUser.lastName }}</td>
+            <td>{{ bryterUser.address1 }}</td>
+            <td>{{ bryterUser.address2 }}</td>
+            <td>{{ bryterUser.city }}</td>
+            <td>{{ bryterUser.state }}</td>
+            <td>{{ bryterUser.zipcode }}</td>
+            <td>{{ bryterUser.country }}</td>
+            <td>{{ bryterUser.title }}</td>
+            <td>{{ bryterUser.experienceLevel }}</td>
+            <td>{{ bryterUser.managerName }}</td>
+            <td>{{ bryterUser.managerPhone }}</td>
+            <td>{{ bryterUser.managerEmail }}</td>
+            <td>{{ bryterUser.phone }}</td>
+            <td>{{ bryterUser.email }}</td>
+            <td>{{ bryterUser.rating }}</td>
+            <td>{{ bryterUser.photo }}</td>
+            <td>{{ bryterUser.yearsWithCompany }}</td>
+            <td>{{ bryterUser.approvalRate }}</td>
+            <td>{{ bryterUser.completionRate }}</td>
+            <td>{{ bryterUser.retainingRate }}</td>
+            <td>{{ bryterUser.assignedCityLicenseIDs }}</td>
+        </tr>
+    </tbody>
+</table>

@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BryterOpsAdmin.Controllers
 {
-    public class UsersController : Controller
+    public class BryterUsersController : Controller
     {
         private readonly BryterOpsContext _bryterOpsContext;
-        public UsersController(BryterOpsContext bryterOpsContext)
+        public BryterUsersController(BryterOpsContext bryterOpsContext)
         {
             _bryterOpsContext = bryterOpsContext;
         }
@@ -20,11 +20,11 @@ namespace BryterOpsAdmin.Controllers
             return View();
         }
 
-        public IActionResult GetAllUsers()
+        public IActionResult GetAllBryterUsers()
         {
-            IList<User> users = _bryterOpsContext.Users.FromSql("Admin_LIST_BryterUsers").ToList();
+            IList<BryterUser> bryterUsers = _bryterOpsContext.BryterUsers.FromSql("Admin_LIST_BryterUsers").ToList();
 
-            return JSON.Success(new { users = users });
+            return JSON.Success(new { bryterUsers = bryterUsers });
         }
     }
 }

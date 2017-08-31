@@ -1,0 +1,48 @@
+﻿<h1>Providers</h1>
+
+<p *ngIf="!providers"><em>Loading...</em></p>
+
+<table class='table' *ngIf="providers">
+    <thead>
+        <tr>
+            <th>ProviderID</th>
+            <th>Provider Name</th>
+            <th>EIN</th>
+            <th>Address1</th>
+            <th>Address2</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zipcode</th>
+            <th>Country</th>
+            <th>Phone</th>
+            <th>Website</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Approval Rate</th>
+            <th>Completion Rate</th>
+            <th>Retaining Rate</th>
+            <th>Assigned City Licenses</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let provider of providers">
+            <td>{{ provider.providerID }}</td>
+            <td>{{ provider.providerName }}</td>
+            <td>{{ provider.eIN }}</td>
+            <td>{{ provider.address1 }}</td>
+            <td>{{ provider.address2 }}</td>
+            <td>{{ provider.city }}</td>
+            <td>{{ provider.state }}</td>
+            <td>{{ provider.zipcode }}</td>
+            <td>{{ provider.country }}</td>
+            <td>{{ provider.phone }}</td>
+            <td>{{ provider.website }}</td>
+            <td>{{ provider.email }}</td>
+            <td>{{ provider.contact }}</td>
+            <td>{{ provider.approvalRate }}</td>
+            <td>{{ provider.completionRate }}</td>
+            <td>{{ provider.retainingRate }}</td>
+            <td>{{ provider.assignedCityLicenseIDs }}</td>
+        </tr>
+    </tbody>
+</table>

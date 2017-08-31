@@ -1,0 +1,50 @@
+﻿<h1>Retailers</h1>
+
+<p *ngIf="!retailers"><em>Loading...</em></p>
+
+<table class='table' *ngIf="retailers">
+    <thead>
+        <tr>
+            <th>RetailerID</th>
+            <th>RetailerName</th>
+            <th>EIN</th>
+            <th>Address1</th>
+            <th>Address2</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zipcode</th>
+            <th>Country</th>
+            <th>Phone</th>
+            <th>Website</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>ApprovalRate</th>
+            <th>CompletionRate</th>
+            <th>RetainingRate</th>
+            <th>AssignedCityLicenseIDs</th>
+            <th>ProviderIDs</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let retailer of retailers">
+            <td>{{ retailer.retailerID }}</td>
+            <td>{{ retailer.retailerName }}</td>
+            <td>{{ retailer.eIN }}</td>
+            <td>{{ retailer.address1 }}</td>
+            <td>{{ retailer.address2 }}</td>
+            <td>{{ retailer.city }}</td>
+            <td>{{ retailer.state }}</td>
+            <td>{{ retailer.zipcode }}</td>
+            <td>{{ retailer.country }}</td>
+            <td>{{ retailer.phone }}</td>
+            <td>{{ retailer.website }}</td>
+            <td>{{ retailer.email }}</td>
+            <td>{{ retailer.contact }}</td>
+            <td>{{ retailer.approvalRate }}</td>
+            <td>{{ retailer.completionRate }}</td>
+            <td>{{ retailer.retainingRate }}</td>
+            <td>{{ retailer.assignedCityLicenseIDs }}</td>
+            <td>{{ retailer.providerIDs }}</td>
+        </tr>
+    </tbody>
+</table>
