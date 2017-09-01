@@ -3,17 +3,11 @@
 <p *ngIf="!adminUsers"><em>Loading...</em></p>
 
 <div *ngIf="adminUsers">
-    <!-- Add an optional button to open the popup -->
     <button (click)="mypopup.show()">Open popup</button>
 
-    <!-- Add content to the popup -->
-    <jqueryPopupOverlay #mypopup> <!--bryterOverlay-->
-
+    <jqueryPopupOverlay #mypopup>
         ...popup content...
-
-        <!-- Add an optional button to close the popup -->
         <button (click)="mypopup.close()">Close</button>
-
     </jqueryPopupOverlay>
 
     <table class='table'>

@@ -15,12 +15,7 @@ export class AdminUsersComponent implements OnInit {
     constructor(private http: Http,
         @Inject('BASE_URL') private baseUrl: string,
         private zone: NgZone,
-        private el: ElementRef
-                /*, @Inject('JqueryService') $: JQueryStatic*/) {
-
-        // Initialize the plugin
-        //($('#my_popup') as any).popup();
-    }
+        private el: ElementRef) { }
 
     ngOnInit() {
         this.http.get(this.baseUrl + 'AdminUser/GetAllAdminUsers')
@@ -32,13 +27,6 @@ export class AdminUsersComponent implements OnInit {
                     console.error(result.json().message);
             }, error => console.error(error));
     }
-
-    //ngAfterViewChecked() {
-    //    this.zone.runOutsideAngular(() => {
-    //        console.log('running outside angular', $('#my_popup'));
-    //        console.log(($("#my_popup", this.el.nativeElement) as any).popup());
-    //    });
-    //}
 }
 
 interface AdminUser {
