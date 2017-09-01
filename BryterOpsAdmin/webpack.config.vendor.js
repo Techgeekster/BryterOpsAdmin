@@ -21,6 +21,7 @@ const nonTreeShakableModules = [
     'es6-shim',
     'event-source-polyfill',
     'jquery',
+    'jquery-popup-overlay'
 ];
 const allModules = treeShakableModules.concat(nonTreeShakableModules);
 

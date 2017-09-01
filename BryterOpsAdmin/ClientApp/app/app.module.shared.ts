@@ -14,6 +14,8 @@ import { AdminUsersComponent } from './components/users/adminUsers/adminUsers.co
 import { RetailersComponent } from './components/users/retailers/retailers.component';
 import { ProvidersComponent } from './components/users/providers/providers.component';
 
+import { JQueryPopupOverlay } from './components/jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -24,7 +26,8 @@ import { ProvidersComponent } from './components/users/providers/providers.compo
         AdminUsersComponent,
         RetailersComponent,
         ProvidersComponent,
-        HomeComponent
+        HomeComponent,
+        JQueryPopupOverlay
     ],
     imports: [
         CommonModule,
