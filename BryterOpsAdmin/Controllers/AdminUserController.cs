@@ -6,15 +6,19 @@ using Microsoft.AspNetCore.Mvc;
 using BryterOpsAdmin.Models;
 using Microsoft.EntityFrameworkCore;
 using BryterOps_Library;
+using BryterOpsAdmin.Services;
 
 namespace BryterOpsAdmin.Controllers
 {
-    public class AdminUsersController : Controller
+    public class AdminUserController : Controller
     {
         private readonly BryterOpsContext _bryterOpsContext;
-        public AdminUsersController(BryterOpsContext bryterOpsContext)
+        private readonly AdminUserService _adminUserService;
+
+        public AdminUserController(BryterOpsContext bryterOpsContext)
         {
             _bryterOpsContext = bryterOpsContext;
+            _adminUserService = new AdminUserService(bryterOpsContext);
         }
 
         public IActionResult Index()
@@ -24,14 +28,14 @@ namespace BryterOpsAdmin.Controllers
 
         public IActionResult GetAllAdminUsers()
         {
-            IList<AdminUser> adminUsers = _bryterOpsContext.AdminUsers.FromSql("Admin_LIST_AdminUsers").ToList();
+            IList<AdminUser> adminUsers = _adminUserService.GetAllAdminUsers();
 
             return JSON.Success(new { adminUsers = adminUsers });
         }
 
-        public IActionResult CreateAdminUser()
+        public IActionResult CreateAdminUser(AdminUser user) 
         {
-            _bryterOpsContext.AdminUsers.FromSql("Admin_")
+            AdminUser adminUser = _adminUserService.CreateAdminUser(user);
 
             return JSON.Success();
         }

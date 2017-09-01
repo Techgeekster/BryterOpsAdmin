@@ -11,7 +11,7 @@ export class AdminUsersComponent {
     public adminUsers: AdminUser[];
 
     constructor(http: Http, @Inject('BASE_URL') baseUrl: string) {
-        http.get(baseUrl + 'AdminUsers/GetAllAdminUsers')
+        http.get(baseUrl + 'AdminUser/GetAllAdminUsers')
             .subscribe(result => {
                 if (result.json().success) {
                     this.adminUsers = result.json().data.adminUsers as AdminUser[];
