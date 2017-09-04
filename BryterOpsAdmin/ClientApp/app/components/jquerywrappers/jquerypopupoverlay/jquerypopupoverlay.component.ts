@@ -2,6 +2,8 @@
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 import * as $ from 'jquery';
+import 'jquery-popup-overlay';
+
 import 'bootstrap/dist/css/bootstrap.css'
 
 @Component({
