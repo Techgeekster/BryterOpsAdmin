@@ -1,4 +1,4 @@
-﻿import { Component, Inject, OnInit, NgZone, ElementRef, AfterViewChecked, ViewChild  } from '@angular/core';
+﻿import { Component, Inject, OnInit, ElementRef, ViewChild  } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { AdminUser } from "./IAdminUser";
 import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component";
@@ -13,26 +13,16 @@ export class AdminUsersComponent implements OnInit {
     public adminUsers: AdminUser[];
     public selectedAdminUser: AdminUser;
     public selectedAdminUserHeader: string;
-    @ViewChild('mypopup') mypopup: JQueryPopupOverlay;
+    @ViewChild('createAdminUserOverlay') createAdminUserOverlay: JQueryPopupOverlay;
 
     constructor(private http: Http,
         @Inject('BASE_URL') private baseUrl: string,
-        private zone: NgZone,
         private el: ElementRef) { }
 
     ngOnInit() {
         this.getAdminUsers();
 
-        this.selectedAdminUser = {
-            userID: 0,
-            username: "",
-            firstName: "",
-            lastName: "",
-            phone: 0,
-            email: "",
-            adminUserTypeID: 0,
-            title: ""
-        }
+        this.selectedAdminUser = this.getEmptyAdminUser();
     }
 
     refresh()
@@ -52,9 +42,9 @@ export class AdminUsersComponent implements OnInit {
             }, error => console.error(error));
     }
 
-    show()
+    getEmptyAdminUser()
     {
-        this.selectedAdminUser = {
+        return {
             userID: 0,
             username: "",
             firstName: "",
@@ -64,19 +54,21 @@ export class AdminUsersComponent implements OnInit {
             adminUserTypeID: 0,
             title: ""
         }
+    }
+
+    show()
+    {
+        this.selectedAdminUser = this.getEmptyAdminUser();
         this.selectedAdminUserHeader = "Create Admin User";
 
-        this.mypopup.show();
+        this.createAdminUserOverlay.show();
     }
 
     edit(adminUser: AdminUser)
     {
         this.selectedAdminUserHeader = "Edit Admin User";
         this.selectedAdminUser = adminUser;
-        this.mypopup.show();
-
-        this.refresh();
-        alert("Edit:\n" + JSON.stringify(adminUser, null, 4));
+        this.createAdminUserOverlay.show();
     }
 
     delete(adminUser: AdminUser)

@@ -2,9 +2,17 @@
 
 <p *ngIf="!retailers"><em>Loading...</em></p>
 
+<img id="createRetailerImg" src="../../../content/images/icons/add-icon.png" (click)="show()" />
+
+<jqueryPopupOverlay #createRetailerOverlay>
+    <retailerForm (closed)="createRetailerOverlay.close()" (refreshed)="refresh()" [retailer]="selectedRetailer" [header]="selectedRetailerHeader"></retailerForm>
+</jqueryPopupOverlay>
+
 <table class='table' *ngIf="retailers">
     <thead>
         <tr>
+            <th></th>
+            <th></th>
             <th>RetailerID</th>
             <th>RetailerName</th>
             <th>EIN</th>
@@ -27,9 +35,11 @@
     </thead>
     <tbody>
         <tr *ngFor="let retailer of retailers">
+            <td><img class="tableIcon" src="../../../content/images/icons/edit-icon.png" (click)="edit(retailer)" /></td>
+            <td><img class="tableIcon" src="../../../content/images/icons/delete-icon.png" (click)="delete(retailer)" /></td>
             <td>{{ retailer.retailerID }}</td>
             <td>{{ retailer.retailerName }}</td>
-            <td>{{ retailer.eIN }}</td>
+            <td>{{ retailer.ein }}</td>
             <td>{{ retailer.address1 }}</td>
             <td>{{ retailer.address2 }}</td>
             <td>{{ retailer.city }}</td>

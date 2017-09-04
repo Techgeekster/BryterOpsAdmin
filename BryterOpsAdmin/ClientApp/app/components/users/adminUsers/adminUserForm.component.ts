@@ -1,4 +1,4 @@
-﻿import { Component, Inject, OnInit, NgZone, ElementRef, AfterViewChecked, ViewChild, Input, Output, EventEmitter } from '@angular/core';
+﻿import { Component, Inject, OnInit, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import { Http, Headers, URLSearchParams } from '@angular/http';
 import { AdminUser } from "./IAdminUser";
 
@@ -22,24 +22,26 @@ export class AdminUserFormComponent implements OnInit {
 
     constructor(private http: Http,
         @Inject('BASE_URL') private baseUrl: string,
-        private zone: NgZone,
         private el: ElementRef) { }
 
     ngOnInit() {
         if (!this.adminUser || this.adminUser.userID == 0)
         {
-            this.adminUser = {
-                userID: 0,
-                username: "",
-                firstName: "",
-                lastName: "",
-                phone: 0,
-                email: "",
-                adminUserTypeID: 0,
-                title: ""
-            }
-
+            this.adminUser = this.getEmptyAdminUser();
             this.header = "Create Admin User";
+        }
+    }
+
+    getEmptyAdminUser() {
+        return {
+            userID: 0,
+            username: "",
+            firstName: "",
+            lastName: "",
+            phone: 0,
+            email: "",
+            adminUserTypeID: 0,
+            title: ""
         }
     }
 
