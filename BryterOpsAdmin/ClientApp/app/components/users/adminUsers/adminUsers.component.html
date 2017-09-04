@@ -3,15 +3,18 @@
 <p *ngIf="!adminUsers"><em>Loading...</em></p>
 
 <div *ngIf="adminUsers">
-    <button id="createAdminUserBtn" class="btn-default" (click)="mypopup.show()">Create Admin User</button>
+    <!--<button id="createAdminUserBtn" class="btn-default" (click)="show()">Create Admin User</button>-->
+    <img id="createAdminUserImg" src="../../../content/images/icons/add-icon.png" (click)="show()"/>
 
     <jqueryPopupOverlay #mypopup>
-        <adminUserForm (closed)="mypopup.close()" (refreshed)="refresh()"></adminUserForm>
+        <adminUserForm (closed)="mypopup.close()" (refreshed)="refresh()" [adminUser]="selectedAdminUser" [header]="selectedAdminUserHeader"></adminUserForm>
     </jqueryPopupOverlay>
 
     <table class='table'>
         <thead>
             <tr>
+                <th></th>
+                <th></th>
                 <th>UserID</th>
                 <th>Username</th>
                 <th>First Name</th>
@@ -24,6 +27,8 @@
         </thead>
         <tbody>
             <tr *ngFor="let adminUser of adminUsers">
+                <td><img class="tableIcon" src="../../../content/images/icons/edit-icon.png" (click)="edit(adminUser)" /></td>
+                <td><img class="tableIcon" src="../../../content/images/icons/delete-icon.png" (click)="delete(adminUser)"/></td>
                 <td>{{ adminUser.userID }}</td>
                 <td>{{ adminUser.username }}</td>
                 <td>{{ adminUser.firstName }}</td>

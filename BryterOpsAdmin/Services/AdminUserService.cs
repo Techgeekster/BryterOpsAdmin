@@ -15,11 +15,6 @@ namespace BryterOpsAdmin.Services
             _bryterOpsContext = bryterOpsContext;
         }
 
-        //SqlParameter param1 = new SqlParameter("@firstName", "Frank");
-        //SqlParameter param2 = new SqlParameter("@lastName", "Borland");
-        //_bryterOpsContext.Database.ExecuteSqlCommand("Admin_INSERT_AdminUser @firstName, @lastName",
-        //      param1, param2);
-
         public IList<AdminUser> GetAllAdminUsers() 
         {
             IList<AdminUser> adminUsers = _bryterOpsContext.AdminUsers.FromSql("Admin_LIST_AdminUsers").ToList();
@@ -31,6 +26,21 @@ namespace BryterOpsAdmin.Services
         {
             AdminUser adminUser = _bryterOpsContext.AdminUsers.FromSql("Admin_INSERT_AdminUser {0}, {1}, {2}, {3}, {4}, {5}, {6}",
                 user.Username, user.FirstName, user.LastName, user.Phone, user.Email, user.AdminUserTypeID, user.Title).FirstOrDefault();
+
+            return adminUser;
+        }
+
+        public AdminUser EditAdminUser(AdminUser user) 
+        {
+            AdminUser adminUser = _bryterOpsContext.AdminUsers.FromSql("Admin_UPDATE_AdminUser {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}",
+                user.UserID, user.Username, user.FirstName, user.LastName, user.Phone, user.Email, user.AdminUserTypeID, user.Title).FirstOrDefault();
+
+            return adminUser;
+        }
+
+        public IList<AdminUser> DeleteAdminUser(int userID) 
+        {
+            IList<AdminUser> adminUser = _bryterOpsContext.AdminUsers.FromSql("Admin_DELETE_AdminUser {0}", userID).ToList();
 
             return adminUser;
         }

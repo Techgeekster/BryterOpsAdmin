@@ -40,5 +40,21 @@ namespace BryterOpsAdmin.Controllers
 
             return JSON.Success(new { adminUser = adminUser });
         }
+
+        [HttpPost]
+        public IActionResult EditAdminUser(AdminUser user) 
+        {
+            AdminUser adminUser = _adminUserService.EditAdminUser(user);
+
+            return JSON.Success(new { adminUser = adminUser });
+        }
+
+        [HttpPost]
+        public IActionResult DeleteAdminUser(int userID) 
+        {
+            IList<AdminUser> adminUsers = _adminUserService.DeleteAdminUser(userID);
+
+            return JSON.Success(new { adminUsers = adminUsers });
+        }
     }
 }
