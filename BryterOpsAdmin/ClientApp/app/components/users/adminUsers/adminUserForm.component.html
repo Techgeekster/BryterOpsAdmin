@@ -1,0 +1,35 @@
+﻿<h1>Create Admin User</h1>
+
+<div class="userField">
+    <label>Username</label>
+    <input type="text" [(ngModel)]="adminUser.username" autofocus/>
+</div>
+<div class="userField">
+    <label>First Name</label>
+    <input type="text" [(ngModel)]="adminUser.firstName" />
+</div>
+<div class="userField">
+    <label>Last Name</label>
+    <input type="text" [(ngModel)]="adminUser.lastName" />
+</div>
+<div class="userField">
+    <label>Phone</label>
+    <input type="text" [(ngModel)]="adminUser.phone" />
+</div>
+<div class="userField">
+    <label>Email</label>
+    <input type="text" [(ngModel)]="adminUser.email" />
+</div>
+<div class="userField">
+    <label>User Type</label>
+    TODO Drop down list
+</div>
+<div class="userField">
+    <label>Title</label>
+    <input type="text" [(ngModel)]="adminUser.title" />
+</div>
+
+<div id="CreateAdminUserBtns">
+    <button class="btn-default" (click)="this.submit()">Submit</button>
+    <button class="btn-default" (click)="close()">Close</button>
+</div>

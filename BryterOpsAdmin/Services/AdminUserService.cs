@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using BryterOpsAdmin.Models;
@@ -28,7 +29,8 @@ namespace BryterOpsAdmin.Services
 
         public AdminUser CreateAdminUser(AdminUser user) 
         {
-            AdminUser adminUser = _bryterOpsContext.AdminUsers.FromSql("Admin_INSERT_AdminUser").FirstOrDefault();
+            AdminUser adminUser = _bryterOpsContext.AdminUsers.FromSql("Admin_INSERT_AdminUser {0}, {1}, {2}, {3}, {4}, {5}, {6}",
+                user.Username, user.FirstName, user.LastName, user.Phone, user.Email, user.AdminUserTypeID, user.Title).FirstOrDefault();
 
             return adminUser;
         }

@@ -1,2 +1,5 @@
-﻿body {
+﻿#createAdminUserBtn {
+    position: absolute;
+    right: 50px;
+    top: 20px;
 }

@@ -96,7 +96,8 @@
     "@types/jquery": {
       "version": "2.0.48",
       "from": "@types/jquery@2.0.48",
-      "resolved": "https://registry.npmjs.org/@types/jquery/-/jquery-2.0.48.tgz"
+      "resolved": "https://registry.npmjs.org/@types/jquery/-/jquery-2.0.48.tgz",
+      "dev": true
     },
     "@types/jsdom": {
       "version": "11.0.2",
@@ -119,7 +120,8 @@
     "@types/webpack-env": {
       "version": "1.13.0",
       "from": "@types/webpack-env@1.13.0",
-      "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.0.tgz"
+      "resolved": "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.0.tgz",
+      "dev": true
     },
     "abab": {
       "version": "1.0.3",
@@ -2347,6 +2349,11 @@
       "from": "mkdirp@>=0.5.1 <0.6.0",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz"
     },
+    "moment": {
+      "version": "2.18.1",
+      "from": "moment@2.18.1",
+      "resolved": "https://registry.npmjs.org/moment/-/moment-2.18.1.tgz"
+    },
     "ms": {
       "version": "2.0.0",
       "from": "ms@2.0.0",
@@ -2367,6 +2374,11 @@
       "from": "negotiator@0.6.1",
       "resolved": "https://registry.npmjs.org/negotiator/-/negotiator-0.6.1.tgz",
       "dev": true
+    },
+    "ng-bootstrap": {
+      "version": "1.6.3",
+      "from": "ng-bootstrap@latest",
+      "resolved": "https://registry.npmjs.org/ng-bootstrap/-/ng-bootstrap-1.6.3.tgz"
     },
     "no-case": {
       "version": "2.3.1",

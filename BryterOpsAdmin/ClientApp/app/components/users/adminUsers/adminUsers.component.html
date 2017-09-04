@@ -3,11 +3,10 @@
 <p *ngIf="!adminUsers"><em>Loading...</em></p>
 
 <div *ngIf="adminUsers">
-    <button (click)="mypopup.show()">Open popup</button>
+    <button id="createAdminUserBtn" class="btn-default" (click)="mypopup.show()">Create Admin User</button>
 
     <jqueryPopupOverlay #mypopup>
-        ...popup content...
-        <button (click)="mypopup.close()">Close</button>
+        <adminUserForm (closed)="mypopup.close()" (refreshed)="refresh()"></adminUserForm>
     </jqueryPopupOverlay>
 
     <table class='table'>

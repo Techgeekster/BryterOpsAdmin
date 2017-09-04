@@ -11,8 +11,11 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { BryterUsersComponent } from './components/users/bryterUsers/bryterUsers.component';
 import { AdminUsersComponent } from './components/users/adminUsers/adminUsers.component';
+import { AdminUserFormComponent } from './components/users/adminUsers/adminUserForm.component';
 import { RetailersComponent } from './components/users/retailers/retailers.component';
 import { ProvidersComponent } from './components/users/providers/providers.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BootstrapModalComponent } from './components/bootstrap/bootstrapmodal/bootstrapmodal.component'
 
 import { JQueryPopupOverlay } from './components/jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component';
 
@@ -24,15 +27,18 @@ import { JQueryPopupOverlay } from './components/jquerywrappers/jquerypopupoverl
         FetchDataComponent,
         BryterUsersComponent,
         AdminUsersComponent,
+        AdminUserFormComponent,
         RetailersComponent,
         ProvidersComponent,
         HomeComponent,
+        BootstrapModalComponent,
         JQueryPopupOverlay
     ],
     imports: [
         CommonModule,
         HttpModule,
         FormsModule,
+        NgbModule.forRoot(),
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },

@@ -33,11 +33,12 @@ namespace BryterOpsAdmin.Controllers
             return JSON.Success(new { adminUsers = adminUsers });
         }
 
+        [HttpPost]
         public IActionResult CreateAdminUser(AdminUser user) 
         {
             AdminUser adminUser = _adminUserService.CreateAdminUser(user);
 
-            return JSON.Success();
+            return JSON.Success(new { adminUser = adminUser });
         }
     }
 }
