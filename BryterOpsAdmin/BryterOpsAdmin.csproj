@@ -25,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\app\components\bootstrap\bootstrapmodal\bootstrapmodal.component.ts" />
     <None Remove="ClientApp\app\components\jquerywrappers\jquerypopupoverlay\jquerypopupoverlay.component.ts" />
     <None Remove="ClientApp\app\components\users\adminUsers\adminUsers.component.ts" />
     <None Remove="ClientApp\app\components\users\adminUsers\IAdminUser.ts" />
@@ -40,7 +39,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\app\components\bootstrap\bootstrapmodal\bootstrapmodal.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\jquerywrappers\jquerypopupoverlay\jquerypopupoverlay.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\adminUsers.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\adminUserForm.component.ts" />

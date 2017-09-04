@@ -20,9 +20,6 @@ import { RetailerFormComponent } from './components/users/retailers/retailerForm
 import { ProvidersComponent } from './components/users/providers/providers.component';
 import { ProviderFormComponent } from './components/users/providers/providerForm.component';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BootstrapModalComponent } from './components/bootstrap/bootstrapmodal/bootstrapmodal.component'
-
 import { JQueryPopupOverlay } from './components/jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component';
 
 @NgModule({
@@ -40,14 +37,12 @@ import { JQueryPopupOverlay } from './components/jquerywrappers/jquerypopupoverl
         ProvidersComponent,
         ProviderFormComponent,
         HomeComponent,
-        BootstrapModalComponent,
         JQueryPopupOverlay
     ],
     imports: [
         CommonModule,
         HttpModule,
         FormsModule,
-        NgbModule.forRoot(),
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
