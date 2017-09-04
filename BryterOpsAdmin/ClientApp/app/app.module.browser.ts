@@ -11,7 +11,7 @@ import { AppComponent } from './components/app/app.component';
     ],
     providers: [
         { provide: 'BASE_URL', useFactory: getBaseUrl }
-    ],
+    ]
 })
 export class AppModule {
 }
