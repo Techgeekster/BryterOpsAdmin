@@ -66,7 +66,8 @@ export class BryterUsersComponent implements OnInit {
             approvalRate: 0,
             completionRate: 0,
             retainingRate: 0,
-            assignedCityLicenseIDs: ""
+            assignedCityLicenseIDs: "",
+            statusID: 0
         };
     }
 

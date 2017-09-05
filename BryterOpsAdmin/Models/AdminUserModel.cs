@@ -21,5 +21,6 @@ namespace BryterOpsAdmin.Models
         public string Email { get; set; }
         public Nullable<int> AdminUserTypeID { get; set; }
         public string Title { get; set; }
+        public Nullable<int> StatusID { get; set; }
     }
 }

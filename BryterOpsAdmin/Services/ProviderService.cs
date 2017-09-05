@@ -22,18 +22,19 @@ namespace BryterOpsAdmin.Services
 
         public Provider CreateProvider(Provider provider) {
             Provider newProvider = _bryterOpsContext.Providers.FromSql("Admin_INSERT_Provider {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, " +
-                "{8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}", provider.ProviderName, provider.EIN, provider.Address1, provider.Address2,
+                "{8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}", provider.ProviderName, provider.EIN, provider.Address1, provider.Address2,
                 provider.City,  provider.State, provider.Zipcode, provider.Country, provider.Phone, provider.Website, provider.Email, provider.Contact,
-                provider.ApprovalRate, provider.CompletionRate, provider.RetainingRate, provider.AssignedCityLicenseIDs).FirstOrDefault();
+                provider.ApprovalRate, provider.CompletionRate, provider.RetainingRate, provider.AssignedCityLicenseIDs, provider.StatusID).FirstOrDefault();
 
             return newProvider;
         }
 
         public Provider EditProvider(Provider provider) {
             Provider newProvider = _bryterOpsContext.Providers.FromSql("Admin_UPDATE_Provider {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, " +
-                "{8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}", provider.ProviderID, provider.ProviderName, provider.EIN, provider.Address1, 
+                "{8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}", provider.ProviderID, provider.ProviderName, provider.EIN, provider.Address1, 
                 provider.Address2, provider.City, provider.State, provider.Zipcode, provider.Country, provider.Phone, provider.Website, provider.Email, 
-                provider.Contact, provider.ApprovalRate, provider.CompletionRate, provider.RetainingRate, provider.AssignedCityLicenseIDs).FirstOrDefault();
+                provider.Contact, provider.ApprovalRate, provider.CompletionRate, provider.RetainingRate, provider.AssignedCityLicenseIDs, provider.StatusID)
+                .FirstOrDefault();
 
             return newProvider;
         }

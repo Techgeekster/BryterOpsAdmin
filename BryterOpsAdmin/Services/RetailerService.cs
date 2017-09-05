@@ -22,18 +22,19 @@ namespace BryterOpsAdmin.Services
 
         public Retailer CreateRetailer(Retailer retailer) {
             Retailer newRetailer = _bryterOpsContext.Retailers.FromSql("Admin_INSERT_Retailer {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, " +
-                "{8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}", retailer.RetailerName, retailer.EIN, retailer.Address1, retailer.Address2,
+                "{8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}", retailer.RetailerName, retailer.EIN, retailer.Address1, retailer.Address2,
                 retailer.City,  retailer.State, retailer.Zipcode, retailer.Country, retailer.Phone, retailer.Website, retailer.Email, retailer.Contact,
-                retailer.ApprovalRate, retailer.CompletionRate, retailer.RetainingRate, retailer.AssignedCityLicenseIDs).FirstOrDefault();
+                retailer.ApprovalRate, retailer.CompletionRate, retailer.RetainingRate, retailer.AssignedCityLicenseIDs, retailer.StatusID).FirstOrDefault();
 
             return newRetailer;
         }
 
         public Retailer EditRetailer(Retailer retailer) {
             Retailer newRetailer = _bryterOpsContext.Retailers.FromSql("Admin_UPDATE_Retailer {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, " +
-                "{8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}", retailer.RetailerID, retailer.RetailerName, retailer.EIN, retailer.Address1, 
+                "{8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}", retailer.RetailerID, retailer.RetailerName, retailer.EIN, retailer.Address1, 
                 retailer.Address2, retailer.City, retailer.State, retailer.Zipcode, retailer.Country, retailer.Phone, retailer.Website, retailer.Email, 
-                retailer.Contact, retailer.ApprovalRate, retailer.CompletionRate, retailer.RetainingRate, retailer.AssignedCityLicenseIDs).FirstOrDefault();
+                retailer.Contact, retailer.ApprovalRate, retailer.CompletionRate, retailer.RetainingRate, retailer.AssignedCityLicenseIDs, retailer.StatusID)
+                .FirstOrDefault();
 
             return newRetailer;
         }

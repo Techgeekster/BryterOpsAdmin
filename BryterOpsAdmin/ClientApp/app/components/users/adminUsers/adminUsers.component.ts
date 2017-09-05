@@ -52,7 +52,8 @@ export class AdminUsersComponent implements OnInit {
             phone: 0,
             email: "",
             adminUserTypeID: 0,
-            title: ""
+            title: "",
+            statusID: 0
         }
     }
 

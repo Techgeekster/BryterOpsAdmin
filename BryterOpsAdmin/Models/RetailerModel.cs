@@ -30,5 +30,6 @@ namespace BryterOpsAdmin.Models
         public Nullable<int> RetainingRate { get; set; }
         public string AssignedCityLicenseIDs { get; set; }
         public string ProviderIDs { get; set; }
+        public Nullable<int> StatusID { get; set; }
     }
 }

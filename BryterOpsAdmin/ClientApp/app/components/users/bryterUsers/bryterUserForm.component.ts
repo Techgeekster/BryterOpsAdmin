@@ -57,7 +57,8 @@ export class BryterUserFormComponent implements OnInit {
             approvalRate: 0,
             completionRate: 0,
             retainingRate: 0,
-            assignedCityLicenseIDs: ""
+            assignedCityLicenseIDs: "",
+            statusID: 0
         };
     }
 
@@ -91,6 +92,7 @@ export class BryterUserFormComponent implements OnInit {
         params.set('CompletionRate', this.bryterUser.completionRate != null ? this.bryterUser.completionRate.toString() : "0");
         params.set('RetainingRate', this.bryterUser.retainingRate != null ? this.bryterUser.retainingRate.toString() : "0");
         params.set('AssignedCityLicenseIDs', this.bryterUser.assignedCityLicenseIDs);
+        params.set('StatusID', this.bryterUser.statusID != null ? this.bryterUser.statusID.toString() : "0");
 
         if (this.bryterUser.userID == 0) {
             this.http.post(this.baseUrl + 'BryterUser/CreateBryterUser', params.toString(), { headers: headers })

@@ -7,4 +7,5 @@
     email: string;
     adminUserTypeID: number;
     title: string;
+    statusID: number;
 }

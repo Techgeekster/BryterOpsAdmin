@@ -50,7 +50,8 @@ export class RetailerFormComponent implements OnInit {
             completionRate: 0,
             retainingRate: 0,
             assignedCityLicenseIDs: "",
-            providerIDs: ""
+            providerIDs: "",
+            statusID: 0
         }
     }
 
@@ -76,6 +77,7 @@ export class RetailerFormComponent implements OnInit {
         params.set('RetainingRate', this.retailer.retainingRate != null ? this.retailer.retainingRate.toString() : "0");
         params.set('AssignedCityLicenseIDs', this.retailer.assignedCityLicenseIDs);
         params.set('ProviderIDs', this.retailer.providerIDs);
+        params.set('StatusID', this.retailer.statusID != null ? this.retailer.statusID.toString() : "0");
 
         if (this.retailer.retailerID == 0) {
             this.http.post(this.baseUrl + 'Retailer/CreateRetailer', params.toString(), { headers: headers })

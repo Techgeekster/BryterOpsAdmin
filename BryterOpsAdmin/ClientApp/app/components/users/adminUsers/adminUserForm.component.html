@@ -28,6 +28,10 @@
     <label>Title</label>
     <input type="text" [(ngModel)]="adminUser.title" />
 </div>
+<div class="userField">
+    <label>Status</label>
+    <input type="text" [(ngModel)]="adminUser.statusID" />
+</div>
 
 <div id="CreateAdminUserBtns">
     <button class="btn-default" (click)="this.submit()">Submit</button>

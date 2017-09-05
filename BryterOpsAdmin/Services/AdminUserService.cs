@@ -24,16 +24,18 @@ namespace BryterOpsAdmin.Services
 
         public AdminUser CreateAdminUser(AdminUser user) 
         {
-            AdminUser adminUser = _bryterOpsContext.AdminUsers.FromSql("Admin_INSERT_AdminUser {0}, {1}, {2}, {3}, {4}, {5}, {6}",
-                user.Username, user.FirstName, user.LastName, user.Phone, user.Email, user.AdminUserTypeID, user.Title).FirstOrDefault();
+            AdminUser adminUser = _bryterOpsContext.AdminUsers.FromSql("Admin_INSERT_AdminUser {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}",
+                user.Username, user.FirstName, user.LastName, user.Phone, user.Email, user.AdminUserTypeID, user.Title, user.StatusID)
+                .FirstOrDefault();
 
             return adminUser;
         }
 
         public AdminUser EditAdminUser(AdminUser user) 
         {
-            AdminUser adminUser = _bryterOpsContext.AdminUsers.FromSql("Admin_UPDATE_AdminUser {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}",
-                user.UserID, user.Username, user.FirstName, user.LastName, user.Phone, user.Email, user.AdminUserTypeID, user.Title).FirstOrDefault();
+            AdminUser adminUser = _bryterOpsContext.AdminUsers.FromSql("Admin_UPDATE_AdminUser {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}",
+                user.UserID, user.Username, user.FirstName, user.LastName, user.Phone, user.Email, user.AdminUserTypeID, user.Title, user.StatusID)
+                .FirstOrDefault();
 
             return adminUser;
         }
