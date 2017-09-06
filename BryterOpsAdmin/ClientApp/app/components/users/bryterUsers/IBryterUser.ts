@@ -26,4 +26,5 @@
     retainingRate: number;
     assignedCityLicenseIDs: string;
     statusID: number;
+    statusName: string;
 }

@@ -26,7 +26,7 @@ namespace BryterOpsAdmin.Controllers
 
         public IActionResult GetAllBryterUsers()
         {
-            IList<BryterUser> bryterUsers = _bryterOpsContext.BryterUsers.FromSql("Admin_LIST_BryterUsers").ToList();
+            IList<BryterUser> bryterUsers = _bryterUserService.GetAllBryterUsers();
 
             return JSON.Success(new { bryterUsers = bryterUsers });
         }

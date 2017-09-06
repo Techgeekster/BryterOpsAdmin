@@ -42,7 +42,8 @@ export class AdminUserFormComponent implements OnInit {
             email: "",
             adminUserTypeID: 0,
             title: "",
-            statusID: 0
+            statusID: 0,
+            statusName: ""
         }
     }
 
@@ -61,6 +62,7 @@ export class AdminUserFormComponent implements OnInit {
         params.set('Title', this.adminUser.title);
         params.set('AdminUserTypeID', this.adminUser.adminUserTypeID != null ? this.adminUser.adminUserTypeID.toString() : "0");
         params.set('StatusID', this.adminUser.statusID != null ? this.adminUser.statusID.toString() : "0");
+        params.set('StatusName', this.adminUser.statusName);
 
         if (this.adminUser.userID == 0)
         {

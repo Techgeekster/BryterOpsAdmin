@@ -59,7 +59,8 @@ export class ProvidersComponent implements OnInit {
             completionRate: 0,
             retainingRate: 0,
             assignedCityLicenseIDs: "",
-            statusID: 0
+            statusID: 0,
+            statusName: ""
         }
     }
 

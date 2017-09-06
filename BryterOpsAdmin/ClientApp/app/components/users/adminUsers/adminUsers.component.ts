@@ -53,7 +53,8 @@ export class AdminUsersComponent implements OnInit {
             email: "",
             adminUserTypeID: 0,
             title: "",
-            statusID: 0
+            statusID: 0,
+            statusName: ""
         }
     }
 

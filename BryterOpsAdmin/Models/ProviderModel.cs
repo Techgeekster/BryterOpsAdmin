@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using BryterOpsAdmin.Classes.Helpers;
+using static BryterOpsAdmin.Classes.Helpers.Enums;
 
 namespace BryterOpsAdmin.Models
 {
-    public partial class Provider
+    public partial class ProviderDB
     {
-        public Provider() { }
+        public ProviderDB() { }
 
         [Required]
         [Key]
@@ -30,5 +32,17 @@ namespace BryterOpsAdmin.Models
         public Nullable<int> RetainingRate { get; set; }
         public string AssignedCityLicenseIDs { get; set; }
         public Nullable<int> StatusID { get; set; }
+    }
+
+    public partial class Provider : ProviderDB {
+        public Provider(ProviderDB provider) {
+            provider.CopyPropertiesTo(this);
+
+            if (provider.StatusID.HasValue) {
+                StatusName = Enum.GetName(typeof(Status), provider.StatusID.Value);
+            }
+        }
+
+        public string StatusName { get; set; }
     }
 }

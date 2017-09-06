@@ -49,7 +49,8 @@ export class ProviderFormComponent implements OnInit {
             completionRate: 0,
             retainingRate: 0,
             assignedCityLicenseIDs: "",
-            statusID: 0
+            statusID: 0,
+            statusName: ""
         }
     }
 
@@ -75,6 +76,7 @@ export class ProviderFormComponent implements OnInit {
         params.set('RetainingRate', this.provider.retainingRate != null ? this.provider.retainingRate.toString() : "0");
         params.set('AssignedCityLicenseIDs', this.provider.assignedCityLicenseIDs);
         params.set('StatusID', this.provider.statusID != null ? this.provider.statusID.toString() : "0");
+        params.set('StatusName', this.provider.statusName);
 
         if (this.provider.providerID == 0) {
             this.http.post(this.baseUrl + 'Provider/CreateProvider', params.toString(), { headers: headers })

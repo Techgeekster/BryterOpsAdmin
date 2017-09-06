@@ -8,4 +8,5 @@
     adminUserTypeID: number;
     title: string;
     statusID: number;
+    statusName: string;
 }

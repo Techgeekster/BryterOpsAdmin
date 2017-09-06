@@ -18,4 +18,5 @@
     assignedCityLicenseIDs: string;
     providerIDs: string;
     statusID: number;
+    statusName: string;
 }

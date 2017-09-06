@@ -14,35 +14,35 @@ namespace BryterOpsAdmin.Services
             _bryterOpsContext = bryterOpsContext;
         }
 
-        public IList<Provider> GetAllProvider() {
-            IList<Provider> providers = _bryterOpsContext.Providers.FromSql("Admin_LIST_Providers").ToList();
+        public IList<Provider> GetAllProviders() {
+            IList<ProviderDB> providers = _bryterOpsContext.Providers.FromSql("Admin_LIST_Providers").ToList();
 
-            return providers;
+            return providers.Select(x => new Provider(x)).ToList();
         }
 
         public Provider CreateProvider(Provider provider) {
-            Provider newProvider = _bryterOpsContext.Providers.FromSql("Admin_INSERT_Provider {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, " +
+            ProviderDB newProvider = _bryterOpsContext.Providers.FromSql("Admin_INSERT_Provider {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, " +
                 "{8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}", provider.ProviderName, provider.EIN, provider.Address1, provider.Address2,
                 provider.City,  provider.State, provider.Zipcode, provider.Country, provider.Phone, provider.Website, provider.Email, provider.Contact,
                 provider.ApprovalRate, provider.CompletionRate, provider.RetainingRate, provider.AssignedCityLicenseIDs, provider.StatusID).FirstOrDefault();
 
-            return newProvider;
+            return new Provider(newProvider);
         }
 
         public Provider EditProvider(Provider provider) {
-            Provider newProvider = _bryterOpsContext.Providers.FromSql("Admin_UPDATE_Provider {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, " +
+            ProviderDB newProvider = _bryterOpsContext.Providers.FromSql("Admin_UPDATE_Provider {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, " +
                 "{8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}", provider.ProviderID, provider.ProviderName, provider.EIN, provider.Address1, 
                 provider.Address2, provider.City, provider.State, provider.Zipcode, provider.Country, provider.Phone, provider.Website, provider.Email, 
                 provider.Contact, provider.ApprovalRate, provider.CompletionRate, provider.RetainingRate, provider.AssignedCityLicenseIDs, provider.StatusID)
                 .FirstOrDefault();
 
-            return newProvider;
+            return new Provider(newProvider);
         }
 
         public IList<Provider> DeleteProvider(int providerID) {
-            IList<Provider> provider = _bryterOpsContext.Providers.FromSql("Admin_DELETE_Provider {0}", providerID).ToList();
+            IList<ProviderDB> providers = _bryterOpsContext.Providers.FromSql("Admin_DELETE_Provider {0}", providerID).ToList();
 
-            return provider;
+            return providers.Select(x => new Provider(x)).ToList();
         }
     }
 }

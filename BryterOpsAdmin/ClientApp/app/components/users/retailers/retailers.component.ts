@@ -59,7 +59,8 @@ export class RetailersComponent implements OnInit {
             retainingRate: 0,
             assignedCityLicenseIDs: "",
             providerIDs: "",
-            statusID: 0
+            statusID: 0,
+            statusName: ""
         }
     }
 

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using BryterOpsAdmin.Classes.Helpers;
+using static BryterOpsAdmin.Classes.Helpers.Enums;
 
 namespace BryterOpsAdmin.Models
 {
-    public partial class AdminUser
+    public partial class AdminUserDB
     {
-        public AdminUser() { }
+        public AdminUserDB() { }
 
         [Required]
         [Key]
@@ -22,5 +24,20 @@ namespace BryterOpsAdmin.Models
         public Nullable<int> AdminUserTypeID { get; set; }
         public string Title { get; set; }
         public Nullable<int> StatusID { get; set; }
+    }
+
+    public partial class AdminUser : AdminUserDB 
+    {
+        public AdminUser(AdminUserDB adminUser) 
+        {
+            adminUser.CopyPropertiesTo(this);
+
+            if (adminUser.StatusID.HasValue) 
+            {
+                StatusName = Enum.GetName(typeof(Status), adminUser.StatusID.Value);
+            }
+        }
+
+        public string StatusName { get; set; }
     }
 }

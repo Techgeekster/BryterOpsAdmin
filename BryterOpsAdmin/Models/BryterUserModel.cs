@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using BryterOpsAdmin.Classes.Helpers;
+using static BryterOpsAdmin.Classes.Helpers.Enums;
 
 namespace BryterOpsAdmin.Models
 {
-    public partial class BryterUser
+    public partial class BryterUserDB
     {
-        public BryterUser() { }
+        public BryterUserDB() { }
 
         [Required]
         [Key]
@@ -40,5 +42,17 @@ namespace BryterOpsAdmin.Models
         public Nullable<int> RetainingRate { get; set; }
         public string AssignedCityLicenseIDs { get; set; }
         public Nullable<int> StatusID { get; set; }
+    }
+
+    public partial class BryterUser : BryterUserDB {
+        public BryterUser(BryterUserDB bryterUser) {
+            bryterUser.CopyPropertiesTo(this);
+
+            if (bryterUser.StatusID.HasValue) {
+                StatusName = Enum.GetName(typeof(Status), bryterUser.StatusID.Value);
+            }
+        }
+
+        public string StatusName { get; set; }
     }
 }

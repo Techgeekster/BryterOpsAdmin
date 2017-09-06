@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using BryterOpsAdmin.Classes.Helpers;
+using static BryterOpsAdmin.Classes.Helpers.Enums;
 
 namespace BryterOpsAdmin.Models
 {
-    public partial class Retailer
+    public partial class RetailerDB
     {
-        public Retailer() { }
+        public RetailerDB() { }
 
         [Required]
         [Key]
@@ -31,5 +33,17 @@ namespace BryterOpsAdmin.Models
         public string AssignedCityLicenseIDs { get; set; }
         public string ProviderIDs { get; set; }
         public Nullable<int> StatusID { get; set; }
+    }
+
+    public partial class Retailer : RetailerDB {
+        public Retailer(RetailerDB retailer) {
+            retailer.CopyPropertiesTo(this);
+
+            if (retailer.StatusID.HasValue) {
+                StatusName = Enum.GetName(typeof(Status), retailer.StatusID.Value);
+            }
+        }
+
+        public string StatusName { get; set; }
     }
 }

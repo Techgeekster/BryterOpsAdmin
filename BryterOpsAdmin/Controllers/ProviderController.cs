@@ -28,7 +28,7 @@ namespace BryterOpsAdmin.Controllers
 
         public IActionResult GetAllProviders()
         {
-            IList<Provider> providers = _bryterOpsContext.Providers.FromSql("Admin_LIST_Providers").ToList();
+            IList<Provider> providers = _providerService.GetAllProviders();
 
             return JSON.Success(new { providers = providers });
         }

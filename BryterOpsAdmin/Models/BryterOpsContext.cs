@@ -8,28 +8,28 @@ namespace BryterOpsAdmin.Models
 {
     public partial class BryterOpsContext : DbContext
     {
-        public virtual DbSet<BryterUser> BryterUsers { get; set; }
-        public virtual DbSet<AdminUser> AdminUsers { get; set; }
-        public virtual DbSet<Retailer> Retailers { get; set; }
-        public virtual DbSet<Provider> Providers { get; set; }
+        public virtual DbSet<BryterUserDB> BryterUsers { get; set; }
+        public virtual DbSet<AdminUserDB> AdminUsers { get; set; }
+        public virtual DbSet<RetailerDB> Retailers { get; set; }
+        public virtual DbSet<ProviderDB> Providers { get; set; }
 
         public BryterOpsContext(DbContextOptions<BryterOpsContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<BryterUser>(entity =>
+            modelBuilder.Entity<BryterUserDB>(entity =>
             {
                 entity.Property(e => e.UserID).IsRequired();
             });
-            modelBuilder.Entity<AdminUser>(entity =>
+            modelBuilder.Entity<AdminUserDB>(entity =>
             {
                 entity.Property(e => e.UserID).IsRequired();
             });
-            modelBuilder.Entity<Retailer>(entity =>
+            modelBuilder.Entity<RetailerDB>(entity =>
             {
                 entity.Property(e => e.RetailerID).IsRequired();
             });
-            modelBuilder.Entity<Provider>(entity =>
+            modelBuilder.Entity<ProviderDB>(entity =>
             {
                 entity.Property(e => e.ProviderID).IsRequired();
             });

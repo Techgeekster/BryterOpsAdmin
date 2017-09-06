@@ -28,7 +28,7 @@ namespace BryterOpsAdmin.Controllers
 
         public IActionResult GetAllRetailers()
         {
-            IList<Retailer> retailers = _bryterOpsContext.Retailers.FromSql("Admin_LIST_Retailers").ToList();
+            IList<Retailer> retailers = _retailerService.GetAllRetailers();
 
             return JSON.Success(new { retailers = retailers });
         }
