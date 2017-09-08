@@ -3,9 +3,6 @@ import { Http, Headers } from '@angular/http';
 import { Provider } from "./IProvider";
 import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component";
 
-import * as $ from 'jquery';
-import 'jquery-popup-overlay';
-
 @Component({
     selector: 'providerDetail',
     templateUrl: './providerDetail.component.html',

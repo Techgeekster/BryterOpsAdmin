@@ -1,7 +1,6 @@
 ﻿import { Component, ElementRef, NgZone, AfterViewChecked, PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
-import * as $ from 'jquery';
 import 'jquery-popup-overlay';
 
 import 'bootstrap/dist/css/bootstrap.css'

@@ -3,9 +3,6 @@ import { Http, Headers } from '@angular/http';
 import { AdminUser } from "./IAdminUser";
 import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component";
 
-import * as $ from 'jquery';
-import 'jquery-popup-overlay';
-
 @Component({
     selector: 'adminUserDetail',
     templateUrl: './adminUserDetail.component.html',

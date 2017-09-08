@@ -1,5 +1,4 @@
 ﻿//import * as $ from 'jquery';
-//import 'jquery-popup-overlay';
 
 //import { Directive, ElementRef, Input } from '@angular/core';
 
