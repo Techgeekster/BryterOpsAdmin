@@ -1,7 +1,7 @@
-﻿import { Component, Inject, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+﻿import { Component, Inject, OnInit, ElementRef, Input, ViewChild } from '@angular/core';
+import { Http } from '@angular/http';
 import { Retailer } from "./IRetailer";
-import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component";
+import { RetailerDetailComponent } from './retailerDetail.component';
 
 @Component({
     selector: 'retailers',
@@ -10,33 +10,16 @@ import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jque
 })
 
 export class RetailersComponent implements OnInit {
-    public retailers: Retailer[];
     public selectedRetailer: Retailer;
-    public selectedRetailerHeader: string;
-    @ViewChild('createRetailerOverlay') createRetailerOverlay: JQueryPopupOverlay;
+
+    @ViewChild('retailerDetail') retailerDetail: RetailerDetailComponent;
 
     constructor(private http: Http,
         @Inject('BASE_URL') private baseUrl: string,
         private el: ElementRef) { }
 
     ngOnInit() {
-        this.getRetailers();
         this.selectedRetailer = this.getEmptyRetailer();
-    }
-
-    refresh() {
-        this.getRetailers();
-    }
-
-    getRetailers() {
-        this.http.get(this.baseUrl + 'Retailer/GetAllRetailers')
-            .subscribe(result => {
-                if (result.json().success) {
-                    this.retailers = result.json().data.retailers as Retailer[];
-                }
-                else
-                    console.error(result.json().message);
-            }, error => console.error(error));
     }
 
     getEmptyRetailer() {
@@ -64,41 +47,7 @@ export class RetailersComponent implements OnInit {
         }
     }
 
-    show() {
-        this.selectedRetailer = this.getEmptyRetailer();
-        this.selectedRetailerHeader = "Create Retailer";
-
-        this.createRetailerOverlay.show();
-    }
-
-    edit(retailer: Retailer) {
-        this.selectedRetailerHeader = "Edit Retailer";
-        this.selectedRetailer = retailer;
-        this.createRetailerOverlay.show();
-
-        this.refresh();
-    }
-
-    delete(retailer: Retailer) {
-        var confirmDelete = confirm("Are you sure you want to delete " + retailer.retailerName + "?");
-
-        if (confirmDelete) {
-            let body = JSON.stringify(retailer);
-            let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
-
-            var params = new URLSearchParams();
-            params.set('RetailerID', retailer.retailerID.toString());
-
-            this.http.post(this.baseUrl + 'Retailer/DeleteRetailer', params.toString(), { headers: headers })
-                .subscribe(result => {
-                    if (result.json().success) {
-                        this.retailers = result.json().data.retailers as Retailer[];
-                    }
-                    else
-                        console.error(result.json().message);
-                }, error => console.error(error));
-
-            this.refresh();
-        }
+    showDetails() {
+        this.retailerDetail.show(this.selectedRetailer);
     }
 }

@@ -28,6 +28,8 @@ namespace BryterOpsAdmin.Models
 
     public partial class AdminUser : AdminUserDB 
     {
+        public AdminUser() { }
+
         public AdminUser(AdminUserDB adminUser) 
         {
             adminUser.CopyPropertiesTo(this);

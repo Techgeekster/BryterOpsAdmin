@@ -1,44 +1,6 @@
 ﻿<h1>Admin Users</h1>
 
-<p *ngIf="!adminUsers"><em>Loading...</em></p>
-
-<div *ngIf="adminUsers">
-    <img id="createAdminUserImg" src="../../../content/images/icons/add-icon.png" (click)="show()"/>
-
-    <jqueryPopupOverlay #createAdminUserOverlay>
-        <adminUserForm (closed)="createAdminUserOverlay.close()" (refreshed)="refresh()" [adminUser]="selectedAdminUser" [header]="selectedAdminUserHeader"></adminUserForm>
-    </jqueryPopupOverlay>
-
-    <table class='table'>
-        <thead>
-            <tr>
-                <th></th>
-                <th></th>
-                <th>UserID</th>
-                <th>Username</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>User Type</th>
-                <th>Title</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let adminUser of adminUsers">
-                <td><img class="tableIcon" src="../../../content/images/icons/edit-icon.png" (click)="edit(adminUser)" /></td>
-                <td><img class="tableIcon" src="../../../content/images/icons/delete-icon.png" (click)="delete(adminUser)"/></td>
-                <td>{{ adminUser.userID }}</td>
-                <td>{{ adminUser.username }}</td>
-                <td>{{ adminUser.firstName }}</td>
-                <td>{{ adminUser.lastName }}</td>
-                <td>{{ adminUser.phone }}</td>
-                <td>{{ adminUser.email }}</td>
-                <td>{{ adminUser.adminUserTypeID }}</td>
-                <td>{{ adminUser.title }}</td>
-                <td>{{ adminUser.statusName }}</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="row">
+    <adminUsersBasic class="col-lg-6" (showDetails)="showDetails()" [(selectedAdminUser)]="selectedAdminUser" (selectedAdminUserChange)="selectedAdminUser"></adminUsersBasic>
+    <adminUserDetail class="col-lg-6" (adminUser)="selectedAdminUser" #adminUserDetail></adminUserDetail>
 </div>

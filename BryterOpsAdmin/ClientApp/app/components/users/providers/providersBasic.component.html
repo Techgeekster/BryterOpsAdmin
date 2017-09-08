@@ -1,0 +1,32 @@
+﻿<p *ngIf="!providers"><em>Loading...</em></p>
+
+<img id="createProviderImg" src="../../../content/images/icons/add-icon.png" (click)="show()" />
+
+<jqueryPopupOverlay #createProviderOverlay>
+    <providerForm (closed)="createProviderOverlay.close()" (refreshed)="refresh()" [provider]="selectedProvider" [header]="selectedProviderHeader"></providerForm>
+</jqueryPopupOverlay>
+
+<table id="ProvidersTbl" class='table' *ngIf="providers">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>Provider</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Contact</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let provider of providers" (click)="providerClick(provider)">
+            <td><img class="tableIcon" src="../../../content/images/icons/edit-icon.png" (click)="edit(provider)" /></td>
+            <td><img class="tableIcon" src="../../../content/images/icons/delete-icon.png" (click)="delete(provider)" /></td>
+            <td>{{ provider.providerName }} [{{provider.providerID}}]</td>
+            <td>{{ provider.city }}</td>
+            <td>{{ provider.state }}</td>
+            <td>{{ provider.contact }}</td>
+            <td>{{ provider.statusName }}</td>
+        </tr>
+    </tbody>
+</table>

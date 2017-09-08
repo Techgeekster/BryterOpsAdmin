@@ -1,25 +1,29 @@
-﻿import { Component, Inject, OnInit, ElementRef, Input, ViewChild } from '@angular/core';
-import { Http } from '@angular/http';
+﻿import { Component, Inject, OnInit, ElementRef, ViewChild, Input } from '@angular/core';
+import { Http, Headers } from '@angular/http';
 import { BryterUser } from "./IBryterUser";
-import { BryterUserDetailComponent } from './bryterUserDetail.component';
+import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component";
+
+import * as $ from 'jquery';
+import 'jquery-popup-overlay';
 
 @Component({
-    selector: 'bryterUsers',
-    templateUrl: './bryterUsers.component.html',
-    styleUrls: ['../../../content/styles/bootstrap.css', '../../../content/styles/site.css', './bryterUsers.component.css']
+    selector: 'bryterUserDetail',
+    templateUrl: './bryterUserDetail.component.html',
+    styleUrls: ['../../../content/styles/bootstrap.css', '../../../content/styles/site.css', './bryterUserDetail.component.css']
 })
 
-export class BryterUsersComponent implements OnInit {
-    public selectedBryterUser: BryterUser;
-
-    @ViewChild('bryterUserDetail') bryterUserDetail: BryterUserDetailComponent;
+export class BryterUserDetailComponent implements OnInit {
+    @Input()
+    bryterUser: BryterUser;
 
     constructor(private http: Http,
         @Inject('BASE_URL') private baseUrl: string,
         private el: ElementRef) { }
 
     ngOnInit() {
-        this.selectedBryterUser = this.getEmptyBryterUser();
+        if (!this.bryterUser || this.bryterUser.userID == 0) {
+            this.bryterUser = this.getEmptyBryterUser();
+        }
     }
 
     getEmptyBryterUser() {
@@ -55,7 +59,8 @@ export class BryterUsersComponent implements OnInit {
         };
     }
 
-    showDetails() {
-        this.bryterUserDetail.show(this.selectedBryterUser);
+    show(bryterUser: BryterUser) {
+        this.bryterUser = bryterUser;
+        $(this.el.nativeElement).show();
     }
 }

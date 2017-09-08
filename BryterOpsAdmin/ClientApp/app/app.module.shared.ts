@@ -12,13 +12,24 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 
 import { AdminUsersComponent } from './components/users/adminUsers/adminUsers.component';
+import { AdminUsersBasicComponent } from './components/users/adminUsers/adminUsersBasic.component';
 import { AdminUserFormComponent } from './components/users/adminUsers/adminUserForm.component';
+import { AdminUserDetailComponent } from './components/users/adminUsers/adminUserDetail.component';
+
 import { BryterUsersComponent } from './components/users/bryterUsers/bryterUsers.component';
+import { BryterUsersBasicComponent } from './components/users/bryterUsers/bryterusersBasic.component';
 import { BryterUserFormComponent } from './components/users/bryterUsers/bryterUserForm.component';
+import { BryterUserDetailComponent } from './components/users/bryterUsers/bryterUserDetail.component';
+
 import { RetailersComponent } from './components/users/retailers/retailers.component';
+import { RetailersBasicComponent } from './components/users/retailers/retailersBasic.component';
 import { RetailerFormComponent } from './components/users/retailers/retailerForm.component';
+import { RetailerDetailComponent } from './components/users/retailers/retailerDetail.component';
+
 import { ProvidersComponent } from './components/users/providers/providers.component';
+import { ProvidersBasicComponent } from './components/users/providers/providersBasic.component';
 import { ProviderFormComponent } from './components/users/providers/providerForm.component';
+import { ProviderDetailComponent } from './components/users/providers/providerDetail.component';
 
 import { JQueryPopupOverlay } from './components/jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component';
 
@@ -29,13 +40,21 @@ import { JQueryPopupOverlay } from './components/jquerywrappers/jquerypopupoverl
         CounterComponent,
         FetchDataComponent,
         AdminUsersComponent,
+        AdminUsersBasicComponent,
         AdminUserFormComponent,
+        AdminUserDetailComponent,
         BryterUsersComponent,
+        BryterUsersBasicComponent,
         BryterUserFormComponent,
+        BryterUserDetailComponent,
         RetailersComponent,
+        RetailersBasicComponent,
         RetailerFormComponent,
+        RetailerDetailComponent,
         ProvidersComponent,
+        ProvidersBasicComponent,
         ProviderFormComponent,
+        ProviderDetailComponent,
         HomeComponent,
         JQueryPopupOverlay
     ],

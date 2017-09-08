@@ -26,32 +26,47 @@
 
   <ItemGroup>
     <None Remove="ClientApp\app\components\jquerywrappers\jquerypopupoverlay\jquerypopupoverlay.component.ts" />
+    <None Remove="ClientApp\app\components\users\adminUsers\adminUserDetail.component.ts" />
     <None Remove="ClientApp\app\components\users\adminUsers\adminUsers.component.ts" />
     <None Remove="ClientApp\app\components\users\adminUsers\IAdminUser.ts" />
+    <None Remove="ClientApp\app\components\users\bryterUsers\bryterUserDetail.component.ts" />
     <None Remove="ClientApp\app\components\users\bryterUsers\bryterUserForm.component.ts" />
+    <None Remove="ClientApp\app\components\users\bryterUsers\bryterUsersBasic.component.ts" />
     <None Remove="ClientApp\app\components\users\bryterUsers\IBryterUser.ts" />
     <None Remove="ClientApp\app\components\users\providers\IProvider.ts" />
+    <None Remove="ClientApp\app\components\users\providers\providerDetail.component.ts" />
     <None Remove="ClientApp\app\components\users\providers\providerForm.component.ts" />
     <None Remove="ClientApp\app\components\users\providers\providers.component.ts" />
+    <None Remove="ClientApp\app\components\users\providers\providersBasic.component.ts" />
     <None Remove="ClientApp\app\components\users\retailers\IRetailer.ts" />
+    <None Remove="ClientApp\app\components\users\retailers\retailerDetail.component.ts" />
     <None Remove="ClientApp\app\components\users\retailers\retailerForm.component.ts" />
     <None Remove="ClientApp\app\components\users\retailers\retailers.component.ts" />
+    <None Remove="ClientApp\app\components\users\retailers\retailersBasic.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\components\jquerywrappers\jquerypopupoverlay\jquerypopupoverlay.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\adminUserDetail.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\adminUsers.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\adminUserForm.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\adminUsersBasic.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\IAdminUser.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\bryterUserDetail.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\bryterUserForm.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\bryterUsers.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\bryterUsersBasic.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\IBryterUser.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\providers\IProvider.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\providers\providerDetail.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\providers\providerForm.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\providers\providers.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\providers\providersBasic.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\retailers\IRetailer.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\retailers\retailerDetail.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\retailers\retailerForm.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\retailers\retailers.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\retailers\retailersBasic.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\directives\bryteroverlay.directive.ts" />
   </ItemGroup>
 

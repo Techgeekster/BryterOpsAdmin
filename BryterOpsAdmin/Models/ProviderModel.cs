@@ -35,6 +35,8 @@ namespace BryterOpsAdmin.Models
     }
 
     public partial class Provider : ProviderDB {
+        public Provider() { }
+
         public Provider(ProviderDB provider) {
             provider.CopyPropertiesTo(this);
 

@@ -1,7 +1,7 @@
-﻿import { Component, Inject, OnInit, ElementRef, ViewChild  } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+﻿import { Component, Inject, OnInit, ElementRef, Input, ViewChild  } from '@angular/core';
+import { Http } from '@angular/http';
 import { AdminUser } from "./IAdminUser";
-import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component";
+import { AdminUserDetailComponent } from './adminUserDetail.component';
 
 @Component({
     selector: 'adminUsers',
@@ -10,40 +10,19 @@ import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jque
 })
 
 export class AdminUsersComponent implements OnInit {
-    public adminUsers: AdminUser[];
     public selectedAdminUser: AdminUser;
-    public selectedAdminUserHeader: string;
-    @ViewChild('createAdminUserOverlay') createAdminUserOverlay: JQueryPopupOverlay;
+
+    @ViewChild('adminUserDetail') adminUserDetail: AdminUserDetailComponent;
 
     constructor(private http: Http,
         @Inject('BASE_URL') private baseUrl: string,
         private el: ElementRef) { }
 
     ngOnInit() {
-        this.getAdminUsers();
-
         this.selectedAdminUser = this.getEmptyAdminUser();
     }
 
-    refresh()
-    {
-        this.getAdminUsers();
-    }
-
-    getAdminUsers()
-    {
-        this.http.get(this.baseUrl + 'AdminUser/GetAllAdminUsers')
-            .subscribe(result => {
-                if (result.json().success) {
-                    this.adminUsers = result.json().data.adminUsers as AdminUser[];
-                }
-                else
-                    console.error(result.json().message);
-            }, error => console.error(error));
-    }
-
-    getEmptyAdminUser()
-    {
+    getEmptyAdminUser() {
         return {
             userID: 0,
             username: "",
@@ -58,44 +37,7 @@ export class AdminUsersComponent implements OnInit {
         }
     }
 
-    show()
-    {
-        this.selectedAdminUser = this.getEmptyAdminUser();
-        this.selectedAdminUserHeader = "Create Admin User";
-
-        this.createAdminUserOverlay.show();
-    }
-
-    edit(adminUser: AdminUser)
-    {
-        this.selectedAdminUserHeader = "Edit Admin User";
-        this.selectedAdminUser = adminUser;
-        this.createAdminUserOverlay.show();
-    }
-
-    delete(adminUser: AdminUser)
-    {
-        var confirmDelete = confirm("Are you sure you want to delete " + adminUser.username + "?");
-
-        if (confirmDelete)
-        {
-            let body = JSON.stringify(adminUser);
-            let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
-
-            var params = new URLSearchParams();
-            params.set('UserID', adminUser.userID.toString());
-
-            this.http.post(this.baseUrl + 'AdminUser/DeleteAdminUser', params.toString(), { headers: headers })
-                .subscribe(result => {
-                    if (result.json().success) {
-                        this.adminUsers = result.json().data.adminUsers as AdminUser[];
-                    }
-                    else
-                        console.error(result.json().message);
-                }, error => console.error(error));
-
-            this.refresh();
-        }
+    showDetails() {
+        this.adminUserDetail.show(this.selectedAdminUser);
     }
 }
-

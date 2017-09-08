@@ -1,62 +1,6 @@
 ﻿<h1>Retailers</h1>
 
-<p *ngIf="!retailers"><em>Loading...</em></p>
-
-<img id="createRetailerImg" src="../../../content/images/icons/add-icon.png" (click)="show()" />
-
-<jqueryPopupOverlay #createRetailerOverlay>
-    <retailerForm (closed)="createRetailerOverlay.close()" (refreshed)="refresh()" [retailer]="selectedRetailer" [header]="selectedRetailerHeader"></retailerForm>
-</jqueryPopupOverlay>
-
-<table class='table' *ngIf="retailers">
-    <thead>
-        <tr>
-            <th></th>
-            <th></th>
-            <th>RetailerID</th>
-            <th>RetailerName</th>
-            <th>EIN</th>
-            <th>Address1</th>
-            <th>Address2</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Zipcode</th>
-            <th>Country</th>
-            <th>Phone</th>
-            <th>Website</th>
-            <th>Email</th>
-            <th>Contact</th>
-            <th>ApprovalRate</th>
-            <th>CompletionRate</th>
-            <th>RetainingRate</th>
-            <th>AssignedCityLicenseIDs</th>
-            <th>ProviderIDs</th>
-            <th>Status</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let retailer of retailers">
-            <td><img class="tableIcon" src="../../../content/images/icons/edit-icon.png" (click)="edit(retailer)" /></td>
-            <td><img class="tableIcon" src="../../../content/images/icons/delete-icon.png" (click)="delete(retailer)" /></td>
-            <td>{{ retailer.retailerID }}</td>
-            <td>{{ retailer.retailerName }}</td>
-            <td>{{ retailer.ein }}</td>
-            <td>{{ retailer.address1 }}</td>
-            <td>{{ retailer.address2 }}</td>
-            <td>{{ retailer.city }}</td>
-            <td>{{ retailer.state }}</td>
-            <td>{{ retailer.zipcode }}</td>
-            <td>{{ retailer.country }}</td>
-            <td>{{ retailer.phone }}</td>
-            <td>{{ retailer.website }}</td>
-            <td>{{ retailer.email }}</td>
-            <td>{{ retailer.contact }}</td>
-            <td>{{ retailer.approvalRate }}</td>
-            <td>{{ retailer.completionRate }}</td>
-            <td>{{ retailer.retainingRate }}</td>
-            <td>{{ retailer.assignedCityLicenseIDs }}</td>
-            <td>{{ retailer.providerIDs }}</td>
-            <td>{{ retailer.statusName }}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="row">
+    <retailersBasic class="col-lg-6" (showDetails)="showDetails()" [(selectedRetailer)]="selectedRetailer" (selectedRetailerChange)="selectedRetailer"></retailersBasic>
+    <retailerDetail class="col-lg-6" (retailer)="selectedRetailer" #retailerDetail></retailerDetail>
+</div>

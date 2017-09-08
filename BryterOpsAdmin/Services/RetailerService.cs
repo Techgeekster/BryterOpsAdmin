@@ -16,8 +16,12 @@ namespace BryterOpsAdmin.Services
 
         public IList<Retailer> GetAllRetailers() {
             IList<RetailerDB> retailers = _bryterOpsContext.Retailers.FromSql("Admin_LIST_Retailers").ToList();
-
             return retailers.Select(x => new Retailer(x)).ToList();
+        }
+
+        public IList<RetailerBasic> GetAllRetailersBasic() {
+            IList<RetailerBasicDB> retailers = _bryterOpsContext.RetailersBasic.FromSql("Admin_LIST_RetailersBasic").ToList();
+            return retailers.Select(x => new RetailerBasic(x)).ToList();
         }
 
         public Retailer CreateRetailer(Retailer retailer) {

@@ -1,0 +1,34 @@
+﻿<p *ngIf="!bryterUsers"><em>Loading...</em></p>
+
+<img id="createBryterUserImg" src="../../../content/images/icons/add-icon.png" (click)="show()" />
+
+<jqueryPopupOverlay #createBryterUserOverlay>
+    <bryterUserForm (closed)="createBryterUserOverlay.close()" (refreshed)="refresh()" [bryterUser]="selectedBryterUser" [header]="selectedBryterUserHeader"></bryterUserForm>
+</jqueryPopupOverlay>
+
+<table id="BryterUsersTbl" class='table' *ngIf="bryterUsers">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>User</th>
+            <th>Company</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bryterUser of bryterUsers" (click)="userClick(bryterUser)">
+            <td><img class="tableIcon" src="../../../content/images/icons/edit-icon.png" (click)="edit(bryterUser)" /></td>
+            <td><img class="tableIcon" src="../../../content/images/icons/delete-icon.png" (click)="delete(bryterUser)" /></td>
+            <td>{{ bryterUser.username }} [{{bryterUser.userID}}]</td>
+            <td>{{ bryterUser.companyName }} [{{bryterUser.companyID}}]</td>
+            <td>{{ bryterUser.firstName }} {{bryterUser.lastName}}</td>
+            <td>{{ bryterUser.city }}</td>
+            <td>{{ bryterUser.state }}</td>
+            <td>{{ bryterUser.statusName }}</td>
+        </tr>
+    </tbody>
+</table>

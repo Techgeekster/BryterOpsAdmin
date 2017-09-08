@@ -1,0 +1,32 @@
+﻿<p *ngIf="!retailers"><em>Loading...</em></p>
+
+<img id="createRetailerImg" src="../../../content/images/icons/add-icon.png" (click)="show()" />
+
+<jqueryPopupOverlay #createRetailerOverlay>
+    <retailerForm (closed)="createRetailerOverlay.close()" (refreshed)="refresh()" [retailer]="selectedRetailer" [header]="selectedRetailerHeader"></retailerForm>
+</jqueryPopupOverlay>
+
+<table id="RetailersTbl" class='table' *ngIf="retailers">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>Retailer</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Contact</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let retailer of retailers" (click)="retailerClick(retailer)">
+            <td><img class="tableIcon" src="../../../content/images/icons/edit-icon.png" (click)="edit(retailer)" /></td>
+            <td><img class="tableIcon" src="../../../content/images/icons/delete-icon.png" (click)="delete(retailer)" /></td>
+            <td>{{ retailer.retailerName }} [{{retailer.retailerID}}]</td>
+            <td>{{ retailer.city }}</td>
+            <td>{{ retailer.state }}</td>
+            <td>{{ retailer.contact }}</td>
+            <td>{{ retailer.statusName }}</td>
+        </tr>
+    </tbody>
+</table>

@@ -45,6 +45,8 @@ namespace BryterOpsAdmin.Models
     }
 
     public partial class BryterUser : BryterUserDB {
+        public BryterUser() { }
+
         public BryterUser(BryterUserDB bryterUser) {
             bryterUser.CopyPropertiesTo(this);
 
