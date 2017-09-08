@@ -1,19 +1,22 @@
-﻿Retailer ID: {{retailer.retailerID}}<br />
-Retailer Name: {{retailer.retailerName}}<br />
-EIN: {{retailer.ein}}<br />
-Address 1: {{retailer.address1}}<br />
-Address 2: {{retailer.address2}}<br />
-City: {{retailer.city}}<br />
-State: {{retailer.state}}<br />
-Zipcode: {{retailer.zipcode}}<br />
-Country: {{retailer.country}}<br />
-Phone: {{retailer.phone}}<br />
-Website: {{retailer.website}}<br />
-Email: {{retailer.email}}<br />
-Contact: {{retailer.contact}}<br />
-Approval Rate: {{retailer.approvalRate}}<br />
-Completion Rate: {{retailer.completionRate}}<br />
-Retaining Rate: {{retailer.retainingRate}}<br />
-Assigned City Licenses: {{retailer.assignedCityLicenseIDs}}<br />
-Providers: {{retailer.providerIDs}}<br />
-Status: {{retailer.statusName}}<br />
+﻿<div [hidden]="retailer.retailerID > 0">Please select retailer for detail</div>
+<div [hidden]="retailer.retailerID === 0">
+    Retailer ID: {{retailer.retailerID}}<br />
+    Retailer Name: {{retailer.retailerName}}<br />
+    EIN: {{retailer.ein}}<br />
+    Address 1: {{retailer.address1}}<br />
+    Address 2: {{retailer.address2}}<br />
+    City: {{retailer.city}}<br />
+    State: {{retailer.state}}<br />
+    Zipcode: {{retailer.zipcode}}<br />
+    Country: {{retailer.country}}<br />
+    Phone: {{retailer.phone}}<br />
+    Website: {{retailer.website}}<br />
+    Email: {{retailer.email}}<br />
+    Contact: {{retailer.contact}}<br />
+    Approval Rate: {{retailer.approvalRate}}<br />
+    Completion Rate: {{retailer.completionRate}}<br />
+    Retaining Rate: {{retailer.retainingRate}}<br />
+    Assigned City Licenses: {{retailer.assignedCityLicenseIDs}}<br />
+    Providers: {{retailer.providerIDs}}<br />
+    Status: {{retailer.statusName}}<br />
+</div>

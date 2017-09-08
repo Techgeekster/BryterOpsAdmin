@@ -1,9 +1,12 @@
-﻿User ID: {{adminUser.userID}}<br />
-Username: {{adminUser.username}}<br />
-First Name: {{ adminUser.firstName }}<br />
-Last Name: {{ adminUser.lastName }}<br />
-Phone: {{ adminUser.phone }}<br />
-Email: {{ adminUser.email }}<br />
-User Type: {{ adminUser.adminUserTypeID }}<br />
-Title: {{ adminUser.title }}<br />
-Status: {{ adminUser.statusName }}<br />
+﻿<div [hidden]="adminUser.userID > 0">Please select user for detail</div>
+<div [hidden]="adminUser.userID === 0">
+    User ID: {{adminUser.userID}}<br />
+    Username: {{adminUser.username}}<br />
+    First Name: {{ adminUser.firstName }}<br />
+    Last Name: {{ adminUser.lastName }}<br />
+    Phone: {{ adminUser.phone }}<br />
+    Email: {{ adminUser.email }}<br />
+    User Type: {{ adminUser.adminUserTypeID }}<br />
+    Title: {{ adminUser.title }}<br />
+    Status: {{ adminUser.statusName }}<br />
+</div>

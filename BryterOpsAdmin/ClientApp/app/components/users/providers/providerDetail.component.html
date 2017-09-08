@@ -1,18 +1,21 @@
-﻿Provider ID: {{provider.providerID}}<br />
-Provider Name: {{provider.providerName}}<br />
-EIN: {{provider.ein}}<br />
-Address 1: {{provider.address1}}<br />
-Address 2: {{provider.address2}}<br />
-City: {{provider.city}}<br />
-State: {{provider.state}}<br />
-Zipcode: {{provider.zipcode}}<br />
-Country: {{provider.country}}<br />
-Phone: {{provider.phone}}<br />
-Website: {{provider.website}}<br />
-Email: {{provider.email}}<br />
-Contact: {{provider.contact}}<br />
-Approval Rate: {{provider.approvalRate}}<br />
-Completion Rate: {{provider.completionRate}}<br />
-Retaining Rate: {{provider.retainingRate}}<br />
-Assigned City Licenses: {{provider.assignedCityLicenseIDs}}<br />
-Status: {{provider.statusName}}<br />
+﻿<div [hidden]="provider.providerID > 0">Please select provider for detail</div>
+<div [hidden]="provider.providerID === 0">
+    Provider ID: {{provider.providerID}}<br />
+    Provider Name: {{provider.providerName}}<br />
+    EIN: {{provider.ein}}<br />
+    Address 1: {{provider.address1}}<br />
+    Address 2: {{provider.address2}}<br />
+    City: {{provider.city}}<br />
+    State: {{provider.state}}<br />
+    Zipcode: {{provider.zipcode}}<br />
+    Country: {{provider.country}}<br />
+    Phone: {{provider.phone}}<br />
+    Website: {{provider.website}}<br />
+    Email: {{provider.email}}<br />
+    Contact: {{provider.contact}}<br />
+    Approval Rate: {{provider.approvalRate}}<br />
+    Completion Rate: {{provider.completionRate}}<br />
+    Retaining Rate: {{provider.retainingRate}}<br />
+    Assigned City Licenses: {{provider.assignedCityLicenseIDs}}<br />
+    Status: {{provider.statusName}}<br />
+</div>
