@@ -24,6 +24,12 @@ namespace BryterOpsAdmin.Services
             return retailers.Select(x => new RetailerBasic(x)).ToList();
         }
 
+        public ProfileImage GetRetailerProfileImage(int retailerID) 
+        {
+            ProfileImage profileImage = _bryterOpsContext.ProfileImages.FromSql("Admin_LIST_GetRetailerProfileImage {0}", retailerID).FirstOrDefault();
+            return profileImage;
+        }
+
         public Retailer CreateRetailer(Retailer retailer) {
             RetailerDB newRetailer = _bryterOpsContext.Retailers.FromSql("Admin_INSERT_Retailer {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, " +
                 "{8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}", retailer.RetailerName, retailer.EIN, retailer.Address1, retailer.Address2,
@@ -41,6 +47,12 @@ namespace BryterOpsAdmin.Services
                 .FirstOrDefault();
 
             return new Retailer(newRetailer);
+        }
+
+        public ProfileImage UpdateRetailerProfileImage(int UserID, string ProfileImageURL, string ProfileImageBase64) 
+        {
+            ProfileImage profileImage = _bryterOpsContext.ProfileImages.FromSql("Admin_UPDATE_RetailerProfileImage {0}, {1}, {2}", UserID, ProfileImageURL, ProfileImageBase64).FirstOrDefault();
+            return profileImage;
         }
 
         public IList<Retailer> DeleteRetailer(int retailerID) {

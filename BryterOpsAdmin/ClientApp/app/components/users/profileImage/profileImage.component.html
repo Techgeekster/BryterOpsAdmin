@@ -1,0 +1,15 @@
+﻿<img id="profileImageEdit" src="../../../content/images/icons/edit-icon.png" (click)="show()" />
+<img id="profileImage" [src]="imageResult" />
+<!--<input id="updateProfileImage" class="btn-default" type="button" value="Update" (click)="show()" />-->
+
+<jqueryPopupOverlay #updateProfileImageOverlay>
+    <h3 style="margin-top: 0; text-align: center;">Update Profile Picture</h3>
+    <croppie (imageResult)="getImageResult($event)" (fileLoaded)="fileLoaded()" #croppieElement></croppie>
+    <div style="margin-top: 65px;">
+        <a class="btn-file btn-default">
+            <span>Upload</span>
+            <input class="btn-default" type="file" id="uploadProfileImage" value="Choose a file" accept="image/*" />
+        </a>
+        <input class="btn-default submit" type="button" value="Submit" (click)="saveProfileImage()" />
+    </div>
+</jqueryPopupOverlay>

@@ -1,7 +1,11 @@
-﻿import { Component, Inject, OnInit, ElementRef, ViewChild, Input } from '@angular/core';
+﻿import { Component, Inject, OnInit, ElementRef, ViewChild, Input, ViewEncapsulation } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { AdminUser } from "./IAdminUser";
 import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component";
+import { UserAccessType } from '../IUserAccessTypeEnum';
+import { ProfileImage } from '../profileImage/profileImage.component';
+
+import '../../../content/styles/croppie.css';
 
 @Component({
     selector: 'adminUserDetail',
@@ -10,8 +14,13 @@ import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jque
 })
 
 export class AdminUserDetailComponent implements OnInit {
+    public userAccessTypeID: number = UserAccessType.Admin as number;
+    public userAccessTypeName: string = "Admin";
+
     @Input()
     adminUser: AdminUser;
+
+    @ViewChild('profileImage') profileImage: ProfileImage;
 
     constructor(private http: Http,
         @Inject('BASE_URL') private baseUrl: string,
@@ -40,7 +49,12 @@ export class AdminUserDetailComponent implements OnInit {
 
     show(adminUser: AdminUser)
     {
+        var self = this;
         this.adminUser = adminUser;
         $(this.el.nativeElement).show();
+
+        setTimeout(function () {
+            self.profileImage.getProfileImage();
+        }, 10);
     }
 }

@@ -2,6 +2,10 @@
 import { Http, Headers } from '@angular/http';
 import { BryterUser } from "./IBryterUser";
 import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component";
+import { UserAccessType } from '../IUserAccessTypeEnum';
+import { ProfileImage } from '../profileImage/profileImage.component';
+
+import '../../../content/styles/croppie.css';
 
 @Component({
     selector: 'bryterUserDetail',
@@ -10,8 +14,13 @@ import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jque
 })
 
 export class BryterUserDetailComponent implements OnInit {
+    public userAccessTypeID: number = UserAccessType.Bryter as number;
+    public userAccessTypeName: string = "Bryter";
+
     @Input()
     bryterUser: BryterUser;
+
+    @ViewChild('profileImage') profileImage: ProfileImage;
 
     constructor(private http: Http,
         @Inject('BASE_URL') private baseUrl: string,
@@ -57,7 +66,12 @@ export class BryterUserDetailComponent implements OnInit {
     }
 
     show(bryterUser: BryterUser) {
+        var self = this;
         this.bryterUser = bryterUser;
         $(this.el.nativeElement).show();
+
+        setTimeout(function () {
+            self.profileImage.getProfileImage();
+        }, 10);
     }
 }

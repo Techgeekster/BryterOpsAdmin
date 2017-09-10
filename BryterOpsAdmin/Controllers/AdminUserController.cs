@@ -49,6 +49,12 @@ namespace BryterOpsAdmin.Controllers
             return JSON.Success(new { adminUser = adminUser });
         }
 
+        public IActionResult UpdateAdminUserProfileImage(int userID, string filePath, string base64Image) 
+        {
+            _adminUserService.UpdateAdminUserProfileImage(userID, filePath, base64Image);
+            return JSON.Success();
+        }
+
         [HttpPost]
         public IActionResult DeleteAdminUser(int userID) 
         {

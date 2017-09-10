@@ -1,0 +1,39 @@
+﻿.btn-file {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+}
+
+    .btn-file span {
+        cursor: pointer;
+    }
+
+    .btn-file input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+.submit {
+    float: right;
+    display: none;
+}
+
+#profileImage {
+    width: 150px;
+    display: block;
+}
+
+#updateProfileImage {
+    margin: 10px 0 0 18px;
+}
+
+#profileImageEdit {
+    width: 18px;
+    cursor: pointer;
+    position: absolute;
+}

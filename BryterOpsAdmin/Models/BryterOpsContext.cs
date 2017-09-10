@@ -17,6 +17,9 @@ namespace BryterOpsAdmin.Models
 
         public virtual DbSet<ProviderDB> Providers { get; set; }
 
+        public virtual DbSet<BryterImage> BryterImages { get; set; }
+        public virtual DbSet<ProfileImage> ProfileImages { get; set; }
+
         public BryterOpsContext(DbContextOptions<BryterOpsContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

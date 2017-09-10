@@ -31,7 +31,10 @@ import { ProvidersBasicComponent } from './components/users/providers/providersB
 import { ProviderFormComponent } from './components/users/providers/providerForm.component';
 import { ProviderDetailComponent } from './components/users/providers/providerDetail.component';
 
+import { ProfileImage } from './components/users/profileImage/profileImage.component';
+
 import { JQueryPopupOverlay } from './components/jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component';
+import { Croppie } from './components/jquerywrappers/croppie/croppie.component';
 
 @NgModule({
     declarations: [
@@ -55,8 +58,10 @@ import { JQueryPopupOverlay } from './components/jquerywrappers/jquerypopupoverl
         ProvidersBasicComponent,
         ProviderFormComponent,
         ProviderDetailComponent,
+        ProfileImage,
         HomeComponent,
-        JQueryPopupOverlay
+        JQueryPopupOverlay,
+        Croppie
     ],
     imports: [
         CommonModule,

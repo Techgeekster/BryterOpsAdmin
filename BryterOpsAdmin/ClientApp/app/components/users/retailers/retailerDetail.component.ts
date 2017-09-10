@@ -2,6 +2,10 @@
 import { Http, Headers } from '@angular/http';
 import { Retailer } from "./IRetailer";
 import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component";
+import { UserAccessType } from '../IUserAccessTypeEnum';
+import { ProfileImage } from '../profileImage/profileImage.component';
+
+import '../../../content/styles/croppie.css';
 
 @Component({
     selector: 'retailerDetail',
@@ -10,8 +14,13 @@ import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jque
 })
 
 export class RetailerDetailComponent implements OnInit {
+    public userAccessTypeID: number = UserAccessType.Retailer as number;
+    public userAccessTypeName: string = "Retailer";
+
     @Input()
     retailer: Retailer;
+
+    @ViewChild('profileImage') profileImage: ProfileImage;
 
     constructor(private http: Http,
         @Inject('BASE_URL') private baseUrl: string,
@@ -49,7 +58,12 @@ export class RetailerDetailComponent implements OnInit {
     }
 
     show(retailer: Retailer) {
+        var self = this;
         this.retailer = retailer;
         $(this.el.nativeElement).show();
+
+        setTimeout(function () {
+            self.profileImage.getProfileImage();
+        }, 10);
     }
 }

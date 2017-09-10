@@ -47,6 +47,12 @@ namespace BryterOpsAdmin.Controllers
             return JSON.Success(new { provider = newProvider });
         }
 
+        public IActionResult UpdateProviderProfileImage(int providerID, string filePath, string base64Image) 
+        {
+            _providerService.UpdateProviderProfileImage(providerID, filePath, base64Image);
+            return JSON.Success();
+        }
+
         [HttpPost]
         public IActionResult DeleteProvider(int providerID) {
             IList<Provider> providers = _providerService.DeleteProvider(providerID);

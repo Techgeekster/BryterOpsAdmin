@@ -13,6 +13,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="WindowsAzure.Storage" Version="8.4.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\components\jquerywrappers\croppie\croppie.component.ts" />
     <None Remove="ClientApp\app\components\jquerywrappers\jquerypopupoverlay\jquerypopupoverlay.component.ts" />
     <None Remove="ClientApp\app\components\users\adminUsers\adminUserDetail.component.ts" />
     <None Remove="ClientApp\app\components\users\adminUsers\adminUsers.component.ts" />
@@ -33,6 +35,8 @@
     <None Remove="ClientApp\app\components\users\bryterUsers\bryterUserForm.component.ts" />
     <None Remove="ClientApp\app\components\users\bryterUsers\bryterUsersBasic.component.ts" />
     <None Remove="ClientApp\app\components\users\bryterUsers\IBryterUser.ts" />
+    <None Remove="ClientApp\app\components\users\IUserAccessTypeEnum.ts" />
+    <None Remove="ClientApp\app\components\users\profileImage\profileImage.component.ts" />
     <None Remove="ClientApp\app\components\users\providers\IProvider.ts" />
     <None Remove="ClientApp\app\components\users\providers\providerDetail.component.ts" />
     <None Remove="ClientApp\app\components\users\providers\providerForm.component.ts" />
@@ -46,6 +50,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\jquerywrappers\croppie\croppie.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\jquerywrappers\jquerypopupoverlay\jquerypopupoverlay.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\adminUserDetail.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\adminUsers.component.ts" />
@@ -57,6 +62,8 @@
     <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\bryterUsers.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\bryterUsersBasic.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\IBryterUser.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\IUserAccessTypeEnum.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\profileImage\profileImage.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\providers\IProvider.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\providers\providerDetail.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\providers\providerForm.component.ts" />
@@ -68,6 +75,10 @@
     <TypeScriptCompile Include="ClientApp\app\components\users\retailers\retailers.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\retailers\retailersBasic.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\directives\bryteroverlay.directive.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\app\directives\jquerywrappers\" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

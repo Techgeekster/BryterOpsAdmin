@@ -20,6 +20,12 @@ namespace BryterOpsAdmin.Services
             return providers.Select(x => new Provider(x)).ToList();
         }
 
+        public ProfileImage GetProviderProfileImage(int providerID) 
+        {
+            ProfileImage profileImage = _bryterOpsContext.ProfileImages.FromSql("Admin_LIST_GetProviderProfileImage {0}", providerID).FirstOrDefault();
+            return profileImage;
+        }
+
         public Provider CreateProvider(Provider provider) {
             ProviderDB newProvider = _bryterOpsContext.Providers.FromSql("Admin_INSERT_Provider {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, " +
                 "{8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}", provider.ProviderName, provider.EIN, provider.Address1, provider.Address2,
@@ -37,6 +43,12 @@ namespace BryterOpsAdmin.Services
                 .FirstOrDefault();
 
             return new Provider(newProvider);
+        }
+
+        public ProfileImage UpdateProviderProfileImage(int UserID, string ProfileImageURL, string ProfileImageBase64) 
+        {
+            ProfileImage profileImage = _bryterOpsContext.ProfileImages.FromSql("Admin_UPDATE_ProviderProfileImage {0}, {1}, {2}", UserID, ProfileImageURL, ProfileImageBase64).FirstOrDefault();
+            return profileImage;
         }
 
         public IList<Provider> DeleteProvider(int providerID) {

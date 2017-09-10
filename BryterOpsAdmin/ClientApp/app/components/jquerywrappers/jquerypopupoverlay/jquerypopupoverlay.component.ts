@@ -15,10 +15,11 @@ import 'bootstrap/dist/css/bootstrap.css'
 export class JQueryPopupOverlay implements AfterViewChecked {
     public content: string;
 
-    constructor(private el: ElementRef, private zone: NgZone, @Inject(PLATFORM_ID) private platformId: Object) { }
+    constructor(private el: ElementRef,
+        private zone: NgZone,
+        @Inject(PLATFORM_ID) private platformId: Object) { }
 
     ngAfterViewChecked() {
-        console.log(this.platformId);
         if (isPlatformServer(this.platformId))
             return;
 

@@ -22,6 +22,12 @@ namespace BryterOpsAdmin.Services
             return adminUsers.Select(x => new AdminUser(x)).ToList();
         }
 
+        public ProfileImage GetAdminUserProfileImage(int userID) 
+        {
+            ProfileImage profileImage = _bryterOpsContext.ProfileImages.FromSql("Admin_LIST_GetAdminUserProfileImage {0}", userID).FirstOrDefault();
+            return profileImage;
+        }
+
         public AdminUser CreateAdminUser(AdminUser user) 
         {
             AdminUserDB adminUser = _bryterOpsContext.AdminUsers.FromSql("Admin_INSERT_AdminUser {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}",
@@ -38,6 +44,12 @@ namespace BryterOpsAdmin.Services
                 .FirstOrDefault();
 
             return new AdminUser(adminUser);
+        }
+
+        public ProfileImage UpdateAdminUserProfileImage(int UserID, string ProfileImageURL, string ProfileImageBase64) 
+        {
+            ProfileImage profileImage = _bryterOpsContext.ProfileImages.FromSql("Admin_UPDATE_AdminUserProfileImage {0}, {1}, {2}", UserID, ProfileImageURL, ProfileImageBase64).FirstOrDefault();
+            return profileImage;
         }
 
         public IList<AdminUser> DeleteAdminUser(int userID) 

@@ -5,3 +5,11 @@
     border-radius: 5px;
     box-shadow: 10px 10px 5px #555;
 }
+
+.closeOverlay {
+    width: 40px;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    cursor: pointer;
+}

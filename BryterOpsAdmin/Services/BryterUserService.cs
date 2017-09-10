@@ -20,6 +20,12 @@ namespace BryterOpsAdmin.Services
             return bryterUsers.Select(x => new BryterUser(x)).ToList();
         }
 
+        public ProfileImage GetBryterUserProfileImage(int userID) 
+        {
+            ProfileImage profileImage = _bryterOpsContext.ProfileImages.FromSql("Admin_LIST_GetBryterUserProfileImage {0}", userID).FirstOrDefault();
+            return profileImage;
+        }
+
         public BryterUser CreateBryterUser(BryterUser user) {
             BryterUserDB bryterUser = _bryterOpsContext.BryterUsers.FromSql("Admin_INSERT_BryterUser {0}, {1}, {2}, {3}, {4}, {5}, {6}, " +
                 "{7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}, {22}, {23}, {24}, {25}",
@@ -40,6 +46,12 @@ namespace BryterOpsAdmin.Services
                 user.AssignedCityLicenseIDs, user.StatusID).FirstOrDefault();
 
             return new BryterUser(bryterUser);
+        }
+
+        public ProfileImage UpdateBryterUserProfileImage(int UserID, string ProfileImageURL, string ProfileImageBase64) 
+        {
+            ProfileImage profileImage = _bryterOpsContext.ProfileImages.FromSql("Admin_UPDATE_BryterUserProfileImage {0}, {1}, {2}", UserID, ProfileImageURL, ProfileImageBase64).FirstOrDefault();
+            return profileImage;
         }
 
         public IList<BryterUser> DeleteBryterUser(int userID) {
