@@ -2,7 +2,7 @@
 import { Http, Headers } from '@angular/http';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { JQueryPopupOverlay } from '../../jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component';
-import { Croppie } from '../../jquerywrappers/croppie/croppie.component';
+import { CroppieComponent } from '../../jquerywrappers/croppie/croppie.component';
 import { UserAccessType } from '../IUserAccessTypeEnum';
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -26,7 +26,7 @@ export class ProfileImage implements OnInit {
     profileID: number;
 
     @ViewChild('updateProfileImageOverlay') updateProfileImageOverlay: JQueryPopupOverlay;
-    @ViewChild('croppieElement') croppieElement: Croppie;
+    @ViewChild('croppieElement') croppieElement: CroppieComponent;
 
     constructor(private http: Http,
         @Inject('BASE_URL') private baseUrl: string,
@@ -74,6 +74,13 @@ export class ProfileImage implements OnInit {
         this.updateProfileImageOverlay.close();
     }
 
+    rotate(degree: number)
+    {
+        var width = ($(this.el.nativeElement).find("#profileImage") as any).width();
+        var height = ($(this.el.nativeElement).find("#profileImage") as any).height();
+        this.croppieElement.rotate(degree, width, height);
+    }
+
     readFile(input: any) {
         if (input.files && input) 
             this.croppieElement.readFile(input.files);
@@ -83,7 +90,7 @@ export class ProfileImage implements OnInit {
 
     fileLoaded()
     {
-        $(".submit").show();
+        $(".submit").css("display", "block");
     }
 
     saveProfileImage() {

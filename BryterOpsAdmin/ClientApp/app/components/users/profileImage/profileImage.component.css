@@ -2,6 +2,8 @@
     display: inline-block;
     cursor: pointer;
     position: relative;
+    margin: 10px 0 0 -7px;
+    padding: 5px;
 }
 
     .btn-file span {
@@ -19,8 +21,11 @@
     }
 
 .submit {
-    float: right;
     display: none;
+    cursor: pointer;
+    width: 60px;
+    padding: 5px;
+    margin: 5px 0 0 -7px;
 }
 
 #profileImage {
@@ -36,4 +41,23 @@
     width: 18px;
     cursor: pointer;
     position: absolute;
+}
+
+.rotate {
+    width: 60px;
+    cursor: pointer;
+    padding: 5px;
+    display: block;
+    margin: 10px 0 0 -7px;
+}
+
+.upload {
+    width: 48px;
+    cursor: pointer;
+    padding: 5px;
+    display: block;
+}
+
+.profileImageContent {
+    margin-bottom: 20px;
 }

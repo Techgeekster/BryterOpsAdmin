@@ -3,6 +3,7 @@ import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { Http, Headers } from '@angular/http';
 
 import 'jquery';
+//http://www.bestjquery.com/?VAAZCOTI
 import 'croppie';
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -14,8 +15,9 @@ import 'bootstrap/dist/css/bootstrap.css'
     encapsulation: ViewEncapsulation.None
 })
 
-export class Croppie implements OnInit {
+export class CroppieComponent implements OnInit {
     public content: string;
+    public croppedImageUrl: string;
 
     @Input()
     croppedImage: any;
@@ -34,9 +36,10 @@ export class Croppie implements OnInit {
     ngOnInit() {
         this.croppedImage = ($(this.el.nativeElement).find("#croppieImg") as any).croppie({
             enableExif: true,
+            enableOrientation: true,
             viewport: {
-                width: 300,
-                height: 300,
+                width: 200,
+                height: 200,
                 type: 'circle'
             },
             boundary: {
@@ -47,13 +50,17 @@ export class Croppie implements OnInit {
     }
 
     update() {
-        ($(this.el.nativeElement).find("#croppieImg") as any).croppie('bind');
+        this.croppedImage.croppie('bind');
     }
 
     bind(imageUrl: string) {
         this.croppedImage.croppie('bind', {
             url: imageUrl
-        });
+        })
+    }
+
+    rotate(degree: number, width: number, height: number) {
+        this.croppedImage.croppie('rotate', degree);
     }
 
     readFile(files: any) {

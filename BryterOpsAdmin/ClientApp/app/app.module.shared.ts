@@ -34,7 +34,7 @@ import { ProviderDetailComponent } from './components/users/providers/providerDe
 import { ProfileImage } from './components/users/profileImage/profileImage.component';
 
 import { JQueryPopupOverlay } from './components/jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component';
-import { Croppie } from './components/jquerywrappers/croppie/croppie.component';
+import { CroppieComponent } from './components/jquerywrappers/croppie/croppie.component';
 
 @NgModule({
     declarations: [
@@ -61,7 +61,7 @@ import { Croppie } from './components/jquerywrappers/croppie/croppie.component';
         ProfileImage,
         HomeComponent,
         JQueryPopupOverlay,
-        Croppie
+        CroppieComponent
     ],
     imports: [
         CommonModule,
