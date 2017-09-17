@@ -22,8 +22,12 @@ namespace BryterOpsAdmin.Services
 
         public ProfileImage GetBryterUserProfileImage(int userID) 
         {
-            ProfileImage profileImage = _bryterOpsContext.ProfileImages.FromSql("Admin_LIST_GetBryterUserProfileImage {0}", userID).FirstOrDefault();
-            return profileImage;
+            ProfileImageDB profileImage = _bryterOpsContext.ProfileImages.FromSql("Admin_LIST_GetBryterUserProfileImage {0}", userID).FirstOrDefault();
+
+            if (profileImage != null)
+                return new ProfileImage(profileImage);
+
+            return new ProfileImage();
         }
 
         public BryterUser CreateBryterUser(BryterUser user) {
@@ -50,8 +54,8 @@ namespace BryterOpsAdmin.Services
 
         public ProfileImage UpdateBryterUserProfileImage(int UserID, string ProfileImageURL, string ProfileImageBase64) 
         {
-            ProfileImage profileImage = _bryterOpsContext.ProfileImages.FromSql("Admin_UPDATE_BryterUserProfileImage {0}, {1}, {2}", UserID, ProfileImageURL, ProfileImageBase64).FirstOrDefault();
-            return profileImage;
+            ProfileImageDB profileImage = _bryterOpsContext.ProfileImages.FromSql("Admin_UPDATE_BryterUserProfileImage {0}, {1}, {2}", UserID, ProfileImageURL, ProfileImageBase64).FirstOrDefault();
+            return new ProfileImage(profileImage);
         }
 
         public IList<BryterUser> DeleteBryterUser(int userID) {

@@ -24,6 +24,7 @@ namespace BryterOpsAdmin.Models
         public Nullable<int> AdminUserTypeID { get; set; }
         public string Title { get; set; }
         public Nullable<int> StatusID { get; set; }
+        public DateTime CreatedOn { get; set; }
     }
 
     public partial class AdminUser : AdminUserDB 
@@ -34,6 +35,8 @@ namespace BryterOpsAdmin.Models
         {
             adminUser.CopyPropertiesTo(this);
 
+            CreatedOnStr = adminUser.CreatedOn.ToShortDateString() + " " + adminUser.CreatedOn.ToShortTimeString();
+
             if (adminUser.StatusID.HasValue) 
             {
                 StatusName = Enum.GetName(typeof(Status), adminUser.StatusID.Value);
@@ -41,5 +44,6 @@ namespace BryterOpsAdmin.Models
         }
 
         public string StatusName { get; set; }
+        public string CreatedOnStr { get; set; }
     }
 }

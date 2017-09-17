@@ -51,7 +51,9 @@ export class BryterUsersComponent implements OnInit {
             retainingRate: 0,
             assignedCityLicenseIDs: "",
             statusID: 0,
-            statusName: ""
+            statusName: "",
+            createdOn: new Date(),
+            createdOnStr: ""
         };
     }
 

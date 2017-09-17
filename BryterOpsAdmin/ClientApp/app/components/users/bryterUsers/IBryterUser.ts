@@ -27,4 +27,6 @@
     assignedCityLicenseIDs: string;
     statusID: number;
     statusName: string;
+    createdOn: Date;
+    createdOnStr: string;
 }

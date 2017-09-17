@@ -15,9 +15,9 @@ namespace BryterOpsAdmin.Services
         }
 
         public BryterImage GetDefaultProfileImage() {
-            BryterImage defaultProfileImage = _bryterOpsContext.BryterImages.FromSql("Admin_LIST_BryterImage {0}", "DefaultProfileImage").FirstOrDefault();
+            BryterImageDB defaultProfileImage = _bryterOpsContext.BryterImages.FromSql("Admin_LIST_BryterImage {0}", "DefaultProfileImage").FirstOrDefault();
 
-            return defaultProfileImage;
+            return new BryterImage(defaultProfileImage);
         }
     }
 }

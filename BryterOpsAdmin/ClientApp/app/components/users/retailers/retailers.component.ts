@@ -43,7 +43,9 @@ export class RetailersComponent implements OnInit {
             assignedCityLicenseIDs: "",
             providerIDs: "",
             statusID: 0,
-            statusName: ""
+            statusName: "",
+            createdOn: new Date(),
+            createdOnStr: ""
         }
     }
 

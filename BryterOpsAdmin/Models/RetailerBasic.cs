@@ -23,6 +23,7 @@ namespace BryterOpsAdmin.Models
         public string Email { get; set; }
         public string Contact { get; set; }
         public Nullable<int> StatusID { get; set; }
+        public DateTime CreatedOn { get; set; }
     }
 
     public partial class RetailerBasic : RetailerBasicDB {
@@ -31,11 +32,14 @@ namespace BryterOpsAdmin.Models
         public RetailerBasic(RetailerBasicDB retailer) {
             retailer.CopyPropertiesTo(this);
 
+            CreatedOnStr = retailer.CreatedOn.ToShortDateString() + " " + retailer.CreatedOn.ToShortTimeString();
+
             if (retailer.StatusID.HasValue) {
                 StatusName = Enum.GetName(typeof(Status), retailer.StatusID.Value);
             }
         }
 
         public string StatusName { get; set; }
+        public string CreatedOnStr { get; set; }
     }
 }

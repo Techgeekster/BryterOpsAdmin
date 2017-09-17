@@ -32,6 +32,7 @@ namespace BryterOpsAdmin.Models
         public Nullable<int> RetainingRate { get; set; }
         public string AssignedCityLicenseIDs { get; set; }
         public Nullable<int> StatusID { get; set; }
+        public DateTime CreatedOn { get; set; }
     }
 
     public partial class Provider : ProviderDB {
@@ -40,11 +41,14 @@ namespace BryterOpsAdmin.Models
         public Provider(ProviderDB provider) {
             provider.CopyPropertiesTo(this);
 
+            CreatedOnStr = provider.CreatedOn.ToShortDateString() + " " + provider.CreatedOn.ToShortTimeString();
+
             if (provider.StatusID.HasValue) {
                 StatusName = Enum.GetName(typeof(Status), provider.StatusID.Value);
             }
         }
 
         public string StatusName { get; set; }
+        public string CreatedOnStr { get; set; }
     }
 }

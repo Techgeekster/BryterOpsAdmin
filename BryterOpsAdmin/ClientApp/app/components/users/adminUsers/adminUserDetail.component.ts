@@ -43,7 +43,9 @@ export class AdminUserDetailComponent implements OnInit {
             adminUserTypeID: 0,
             title: "",
             statusID: 0,
-            statusName: ""
+            statusName: "",
+            createdOn: new Date(),
+            createdOnStr: ""
         }
     }
 
