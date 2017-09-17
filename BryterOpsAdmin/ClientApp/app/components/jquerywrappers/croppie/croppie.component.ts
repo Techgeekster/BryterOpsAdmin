@@ -99,6 +99,7 @@ export class CroppieComponent implements OnInit {
                 .subscribe(result => {
                     if (result.json().success) {
                         self.imageResult.emit(result.json().data.filePath);
+                        self.bind(resp);
                     }
                     else
                         console.error(result.json().message);

@@ -1,7 +1,7 @@
 ﻿<img id="profileImageEdit" src="../../../content/images/icons/edit-icon.png" (click)="show()" />
 <img id="profileImage" [src]="imageResult" />
 
-<jqueryPopupOverlay #updateProfileImageOverlay>
+<jqueryPopupOverlay (closed)="closed()"  #updateProfileImageOverlay>
     <div class="row profileImageContent">
         <div class="col-lg-10">
             <h3 style="margin-top: 0; text-align: center;">Update Profile Picture</h3>

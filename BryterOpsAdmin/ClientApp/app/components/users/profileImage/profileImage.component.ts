@@ -71,7 +71,12 @@ export class ProfileImage implements OnInit {
     }
 
     close() {
+        $(".submit").css("display", "none");
         this.updateProfileImageOverlay.close();
+    }
+
+    closed() {
+        $(".submit").css("display", "none");
     }
 
     rotate(degree: number)

@@ -1,4 +1,4 @@
-﻿import { Component, ElementRef, NgZone, AfterViewChecked, PLATFORM_ID, Inject } from '@angular/core';
+﻿import { Component, ElementRef, NgZone, AfterViewChecked, PLATFORM_ID, Inject, Output, EventEmitter } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 import 'jquery';
@@ -14,6 +14,9 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 export class JQueryPopupOverlay implements AfterViewChecked {
     public content: string;
+
+    @Output()
+    closed: EventEmitter<string> = new EventEmitter();
 
     constructor(private el: ElementRef,
         private zone: NgZone,
@@ -37,6 +40,7 @@ export class JQueryPopupOverlay implements AfterViewChecked {
     }
 
     close() {
+        this.closed.emit();
         this.popup('hide');
     }
 
