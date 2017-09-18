@@ -50,6 +50,7 @@
     <None Remove="ClientApp\app\components\users\retailers\retailers.component.ts" />
     <None Remove="ClientApp\app\components\users\retailers\retailersBasic.component.ts" />
     <None Remove="ClientApp\app\components\users\userTypeDropDown\userTypeDropDown.component.ts" />
+    <None Remove="ClientApp\app\directives\brytervalidation\brytervalidation.directive.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -82,6 +83,7 @@
     <TypeScriptCompile Include="ClientApp\app\components\users\retailers\retailersBasic.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\userTypeDropDown\usertypedropdown.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\directives\bryteroverlay.directive.ts" />
+    <TypeScriptCompile Include="ClientApp\app\directives\brytervalidation\brytervalidation.directive.ts" />
   </ItemGroup>
 
   <ItemGroup>

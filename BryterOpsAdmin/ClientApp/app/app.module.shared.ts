@@ -40,6 +40,8 @@ import { CroppieComponent } from './components/jquerywrappers/croppie/croppie.co
 
 import { BryterDropDownComponent } from './components/bryterdropdown/bryterdropdown.component';
 
+import { BryterValidationDirective } from './directives/brytervalidation/brytervalidation.directive';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -68,7 +70,8 @@ import { BryterDropDownComponent } from './components/bryterdropdown/bryterdropd
         JQueryPopupOverlay,
         CroppieComponent,
         BryterDropDownComponent,
-        UserTypeDropDownComponent
+        UserTypeDropDownComponent,
+        BryterValidationDirective
     ],
     imports: [
         CommonModule,
