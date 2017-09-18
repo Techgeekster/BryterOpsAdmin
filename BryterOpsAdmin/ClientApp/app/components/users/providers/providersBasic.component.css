@@ -1,6 +1,16 @@
 ﻿#ProvidersTbl tr {
     cursor: pointer;
+    border-radius: 5px;
 }
+
+    #ProvidersTbl tr:nth-child(odd):not(.header) {
+        background-color: #d4cdcd;
+        border-radius: 10px;
+    }
+
+    #ProvidersTbl tr:hover:not(.header) {
+        background-color: #8c8c8c;
+    }
 
 #createProviderImg {
     width: 40px;

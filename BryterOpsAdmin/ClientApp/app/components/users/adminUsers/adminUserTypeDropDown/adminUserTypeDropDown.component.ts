@@ -31,13 +31,6 @@ export class AdminUserTypeDropDownComponent implements OnInit, AfterViewChecked 
         ];
         if (this.selectedUserTypeID == null || this.selectedUserTypeID == undefined || this.selectedUserTypeID == 0)
             this.selectedUserTypeID = 1;
-
-        var self = this;
-
-        setInterval(function () {
-            if (self.selectedUserTypeID != 0)
-                console.log(self.selectedUserTypeID);
-        }, 1000);
     }
 
     ngAfterViewChecked() {

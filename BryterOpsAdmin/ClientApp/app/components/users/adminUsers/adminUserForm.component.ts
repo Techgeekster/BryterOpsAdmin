@@ -114,3 +114,7 @@ export class AdminUserFormComponent implements OnInit {
         this.adminUser.adminUserTypeID = selectedUserTypeID;
     }
 }
+
+interface ValidationResult {
+    [key: string]: boolean;
+}

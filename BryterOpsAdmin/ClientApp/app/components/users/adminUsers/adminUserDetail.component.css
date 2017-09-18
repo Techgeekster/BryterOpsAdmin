@@ -11,7 +11,7 @@
     padding: 0 75px 15px 15px;
 }
 
-    .fieldArea .row:nth-child(odd) {
+    .fieldArea .row:nth-child(even):not(:first-child) {
         background-color: #d4cdcd;
         border-radius: 10px;
     }

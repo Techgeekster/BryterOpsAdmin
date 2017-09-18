@@ -1,6 +1,16 @@
 ﻿#AdminUsersTbl tr {
     cursor: pointer;
+    border-radius: 5px;
 }
+
+    #AdminUsersTbl tr:nth-child(odd):not(.header) {
+        background-color: #d4cdcd;
+        border-radius: 10px;
+    }
+
+    #AdminUsersTbl tr:hover:not(.header) {
+        background-color: #8c8c8c;
+    }
 
 #createAdminUserImg {
     width: 40px;

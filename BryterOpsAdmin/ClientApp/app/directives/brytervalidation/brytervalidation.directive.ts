@@ -59,7 +59,7 @@ export class BryterValidationDirective implements OnInit, AfterViewChecked {
                 }
             }
                 
-            if (self.maxLength > 0)
+            if (self.maxLength > 0) 
             {
                 if ($(self.el.nativeElement).val().length > self.maxLength || $(self.el.nativeElement).text().length > self.maxLength)
                 {

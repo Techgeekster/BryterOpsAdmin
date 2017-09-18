@@ -1,6 +1,16 @@
 ﻿#BryterUsersTbl tr {
     cursor: pointer;
+    border-radius: 5px;
 }
+
+    #BryterUsersTbl tr:nth-child(odd):not(.header) {
+        background-color: #d4cdcd;
+        border-radius: 10px;
+    }
+
+    #BryterUsersTbl tr:hover:not(.header) {
+        background-color: #8c8c8c;
+    }
 
 #createBryterUserImg {
     width: 40px;

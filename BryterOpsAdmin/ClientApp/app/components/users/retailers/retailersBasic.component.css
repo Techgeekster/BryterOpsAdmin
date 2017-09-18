@@ -1,6 +1,16 @@
 ﻿#RetailersTbl tr {
     cursor: pointer;
+    border-radius: 5px;
 }
+
+    #RetailersTbl tr:nth-child(odd):not(.header) {
+        background-color: #d4cdcd;
+        border-radius: 10px;
+    }
+
+    #RetailersTbl tr:hover:not(.header) {
+        background-color: #8c8c8c;
+    }
 
 
 #createRetailerImg {
