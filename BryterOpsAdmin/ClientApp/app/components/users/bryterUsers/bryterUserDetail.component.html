@@ -1,40 +1,287 @@
 ﻿<div class="row">
     <div class="col-lg-12" [hidden]="bryterUser.userID > 0">Please select user for detail</div>
 </div>
-<div class="row" [hidden]="bryterUser.userID === 0">
+<div class="row detailContent" [hidden]="bryterUser.userID === 0">
     <div class="col-lg-3">
         <profileImage [userAccessTypeID]="userAccessTypeID" [userAccessTypeName]="userAccessTypeName" [profileID]="bryterUser.userID" #profileImage></profileImage>
     </div>
     <div class="col-lg-9">
-        <div>
-            User ID: {{bryterUser.userID}}<br />
-            Username: {{bryterUser.username}}<br />
-            Company Name: {{bryterUser.companyName}}<br />
-            Company ID: {{bryterUser.companyID}}<br />
-            First Name: {{bryterUser.firstName}}<br />
-            Last Name: {{bryterUser.lastName}}<br />
-            Address 1: {{bryterUser.address1}}<br />
-            Address 2: {{bryterUser.address2}}<br />
-            City: {{bryterUser.city}}<br />
-            State: {{bryterUser.state}}<br />
-            Zipcode: {{bryterUser.zipcode}}<br />
-            Country: {{bryterUser.country}}<br />
-            Title: {{bryterUser.title}}<br />
-            Experience Level: {{bryterUser.experienceLevel}}<br />
-            Manager Name: {{bryterUser.managerName}}<br />
-            Manager Phone: {{bryterUser.managerPhone}}<br />
-            Manager Email: {{bryterUser.managerEmail}}<br />
-            Phone: {{bryterUser.phone}}<br />
-            Email: {{bryterUser.email}}<br />
-            Rating: {{bryterUser.rating}}<br />
-            Photo: {{bryterUser.photo}}<br />
-            Years With Company: {{bryterUser.yearsWithCompany}}<br />
-            Approval Rate: {{bryterUser.approvalRate}}<br />
-            Completion Rate: {{bryterUser.completionRate}}<br />
-            Retaining Rate: {{bryterUser.retainingRate}}<br />
-            Assigned City Licenses: {{bryterUser.assignedCityLicenseIDs}}<br />
-            Status: {{bryterUser.statusName}}<br />
-            CreatedOn: {{bryterUser.createdOnStr}}<br />
+        <div class="row">
+            <div class="col-lg-6 fieldArea">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            User ID
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.userID}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            Username
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.username}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            Company Name
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.companyName}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            Company ID
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.companyID}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            First Name
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.firstName}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            Last Name
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.lastName}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            Address 1
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.address1}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            Address 2
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.address2}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            City
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.city}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            State
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.state}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            Zipcode
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.zipcode}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            Country
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.country}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            Title
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.title}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            Experience Level
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.experienceLevel}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            Manager Name
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.managerName}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            Manager Phone
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.managerPhone}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            Manager Email
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.managerEmail}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            Phone
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.phone}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            Email
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.email}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label>
+                            Rating
+                        </label>
+                    </div>
+                    <div class="col-lg-7 field">
+                        {{bryterUser.rating}}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 fieldArea secondColumn">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <label>
+                            Years With Company
+                        </label>
+                    </div>
+                    <div class="col-lg-5 field">
+                        {{bryterUser.yearsWithCompany}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <label>
+                            Approval Rate
+                        </label>
+                    </div>
+                    <div class="col-lg-5 field">
+                        {{bryterUser.approvalRate}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <label>
+                            Completion Rate
+                        </label>
+                    </div>
+                    <div class="col-lg-5 field">
+                        {{bryterUser.completionRate}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <label>
+                            Retaining Rate
+                        </label>
+                    </div>
+                    <div class="col-lg-5 field">
+                        {{bryterUser.retainingRate}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <label>
+                            City Licenses
+                        </label>
+                    </div>
+                    <div class="col-lg-5 field">
+                        {{bryterUser.assignedCityLicenseIDs}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <label>
+                            Status
+                        </label>
+                    </div>
+                    <div class="col-lg-5 field">
+                        {{bryterUser.statusName}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <label>
+                            Created On
+                        </label>
+                    </div>
+                    <div class="col-lg-5 field">
+                        {{bryterUser.createdOnStr}}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

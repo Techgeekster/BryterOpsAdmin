@@ -1,31 +1,200 @@
 ﻿<div class="row">
     <div [hidden]="provider.providerID > 0">Please select provider for detail</div>
 </div>
-<div class="row" [hidden]="provider.providerID === 0">
+<div class="row detailContent" [hidden]="provider.providerID === 0">
     <div class="col-lg-3">
         <profileImage [userAccessTypeID]="userAccessTypeID" [userAccessTypeName]="userAccessTypeName" [profileID]="provider.providerID" #profileImage></profileImage>
     </div>
-    <div class="col-lg-9">
-        <div>
-            Provider ID: {{provider.providerID}}<br />
-            Provider Name: {{provider.providerName}}<br />
-            EIN: {{provider.ein}}<br />
-            Address 1: {{provider.address1}}<br />
-            Address 2: {{provider.address2}}<br />
-            City: {{provider.city}}<br />
-            State: {{provider.state}}<br />
-            Zipcode: {{provider.zipcode}}<br />
-            Country: {{provider.country}}<br />
-            Phone: {{provider.phone}}<br />
-            Website: {{provider.website}}<br />
-            Email: {{provider.email}}<br />
-            Contact: {{provider.contact}}<br />
-            Approval Rate: {{provider.approvalRate}}<br />
-            Completion Rate: {{provider.completionRate}}<br />
-            Retaining Rate: {{provider.retainingRate}}<br />
-            Assigned City Licenses: {{provider.assignedCityLicenseIDs}}<br />
-            Status: {{provider.statusName}}<br />
-            CreatedOn: {{provider.createdOnStr}}<br />
+    <div class="col-lg-9 fieldArea">
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Provider ID
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.providerID}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Provider Name
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.providerName}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    EIN
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.ein}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Address 1
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.address1}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Address 2
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.address2}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    City
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.city}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    State
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.state}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Zipcode
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.zipcode}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Country
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.country}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Phone
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.phone}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Website
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.website}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Email
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.email}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Contact
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.contact}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Approval Rate
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.approvalRate}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Completion Rate
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.completionRate}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Retaining Rate
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.retainingRate}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    City Licenses
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.assignedCityLicenseIDs}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Status
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.statusName}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Created On
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{provider.createdOnStr}}
+            </div>
         </div>
     </div>
 </div>

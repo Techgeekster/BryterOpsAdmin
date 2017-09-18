@@ -1,32 +1,210 @@
 ﻿<div class="row">
     <div [hidden]="retailer.retailerID > 0">Please select retailer for detail</div>
 </div>
-<div class="row" [hidden]="retailer.retailerID === 0">
+<div class="row detailContent" [hidden]="retailer.retailerID === 0">
     <div class="col-lg-3">
         <profileImage [userAccessTypeID]="userAccessTypeID" [userAccessTypeName]="userAccessTypeName" [profileID]="retailer.retailerID" #profileImage></profileImage>
     </div>
-    <div class="col-lg-9">
-        <div>
-            Retailer ID: {{retailer.retailerID}}<br />
-            Retailer Name: {{retailer.retailerName}}<br />
-            EIN: {{retailer.ein}}<br />
-            Address 1: {{retailer.address1}}<br />
-            Address 2: {{retailer.address2}}<br />
-            City: {{retailer.city}}<br />
-            State: {{retailer.state}}<br />
-            Zipcode: {{retailer.zipcode}}<br />
-            Country: {{retailer.country}}<br />
-            Phone: {{retailer.phone}}<br />
-            Website: {{retailer.website}}<br />
-            Email: {{retailer.email}}<br />
-            Contact: {{retailer.contact}}<br />
-            Approval Rate: {{retailer.approvalRate}}<br />
-            Completion Rate: {{retailer.completionRate}}<br />
-            Retaining Rate: {{retailer.retainingRate}}<br />
-            Assigned City Licenses: {{retailer.assignedCityLicenseIDs}}<br />
-            Providers: {{retailer.providerIDs}}<br />
-            Status: {{retailer.statusName}}<br />
-            CreatedOn: {{retailer.createdOnStr}}<br />
+    <div class="col-lg-9 fieldArea">
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Retailer ID
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.retailerID}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Retailer Name
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.retailerName}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    EIN
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.ein}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Address 1
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.address1}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Address 2
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.address2}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    City
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.city}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    State
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.state}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Zipcode
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.zipcode}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Country
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.country}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Phone
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.phone}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Website
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.website}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Email
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.email}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Contact
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.contact}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Approval Rate
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.approvalRate}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Completion Rate
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.completionRate}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Retaining Rate
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.retainingRate}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    City Licenses
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.assignedCityLicenseIDs}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Providers
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.providerIDs}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Status
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.statusName}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>
+                    Created On
+                </label>
+            </div>
+            <div class="col-lg-8 field">
+                {{retailer.createdOnStr}}
+            </div>
         </div>
     </div>
 </div>

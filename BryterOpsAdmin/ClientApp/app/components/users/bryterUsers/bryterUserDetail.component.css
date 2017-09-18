@@ -1,2 +1,21 @@
-﻿body {
+﻿label, .field {
+    font-size: 12px;
+    padding: 5px 0 5px 0;
 }
+
+.detailContent {
+    margin: 0 0 0 15px;
+}
+
+.fieldArea {
+    padding: 0 15px 15px 15px;
+}
+
+    .fieldArea .row:nth-child(odd) {
+        background-color: #d4cdcd;
+        border-radius: 10px;
+    }
+
+    .fieldArea.secondColumn .row {
+        margin-left: 0;
+    }
