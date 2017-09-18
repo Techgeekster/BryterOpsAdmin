@@ -61,7 +61,9 @@ export class BryterUserFormComponent implements OnInit {
             statusID: 0,
             statusName: "",
             createdOn: new Date(),
-            createdOnStr: ""
+            createdOnStr: "",
+            bryterUserTypeID: 0,
+            bryterUserTypeName: ""
         };
     }
 
@@ -97,6 +99,7 @@ export class BryterUserFormComponent implements OnInit {
         params.set('AssignedCityLicenseIDs', this.bryterUser.assignedCityLicenseIDs);
         params.set('StatusID', this.bryterUser.statusID != null ? this.bryterUser.statusID.toString() : "0");
         params.set('StatusName', this.bryterUser.statusName);
+        params.set('BryterUserTypeID', this.bryterUser.bryterUserTypeID != null ? this.bryterUser.bryterUserTypeID.toString() : "0");
 
         if (this.bryterUser.userID == 0) {
             this.http.post(this.baseUrl + 'BryterUser/CreateBryterUser', params.toString(), { headers: headers })
@@ -136,5 +139,9 @@ export class BryterUserFormComponent implements OnInit {
     close()
     {
         this.closed.emit();
+    }
+
+    setSelectedBryterUserTypeID(selectedUserTypeID: number) {
+        this.bryterUser.bryterUserTypeID = selectedUserTypeID;
     }
 }

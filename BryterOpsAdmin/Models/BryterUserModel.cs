@@ -43,6 +43,7 @@ namespace BryterOpsAdmin.Models
         public string AssignedCityLicenseIDs { get; set; }
         public Nullable<int> StatusID { get; set; }
         public DateTime CreatedOn { get; set; }
+        public int BryterUserTypeID { get; set; }
     }
 
     public partial class BryterUser : BryterUserDB {
@@ -56,9 +57,12 @@ namespace BryterOpsAdmin.Models
             if (bryterUser.StatusID.HasValue) {
                 StatusName = Enum.GetName(typeof(Status), bryterUser.StatusID.Value);
             }
+
+            BryterUserTypeName = Enum.GetName(typeof(BryterUserType), bryterUser.BryterUserTypeID);
         }
 
         public string StatusName { get; set; }
+        public string BryterUserTypeName { get; set; }
         public string CreatedOnStr { get; set; }
     }
 }

@@ -53,7 +53,9 @@ export class BryterUsersComponent implements OnInit {
             statusID: 0,
             statusName: "",
             createdOn: new Date(),
-            createdOnStr: ""
+            createdOnStr: "",
+            bryterUserTypeID: 0,
+            bryterUserTypeName: ""
         };
     }
 

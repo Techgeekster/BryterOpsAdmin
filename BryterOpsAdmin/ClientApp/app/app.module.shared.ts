@@ -21,6 +21,7 @@ import { BryterUsersComponent } from './components/users/bryterUsers/bryterUsers
 import { BryterUsersBasicComponent } from './components/users/bryterUsers/bryterusersBasic.component';
 import { BryterUserFormComponent } from './components/users/bryterUsers/bryterUserForm.component';
 import { BryterUserDetailComponent } from './components/users/bryterUsers/bryterUserDetail.component';
+import { BryterUserTypeDropDownComponent } from './components/users/bryterUsers/bryterUserTypeDropDown/bryterUserTypeDropDown.component';
 
 import { RetailersComponent } from './components/users/retailers/retailers.component';
 import { RetailersBasicComponent } from './components/users/retailers/retailersBasic.component';
@@ -57,6 +58,7 @@ import { BryterValidationDirective } from './directives/brytervalidation/bryterv
         BryterUsersBasicComponent,
         BryterUserFormComponent,
         BryterUserDetailComponent,
+        BryterUserTypeDropDownComponent,
         RetailersComponent,
         RetailersBasicComponent,
         RetailerFormComponent,

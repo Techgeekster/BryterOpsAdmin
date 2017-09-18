@@ -37,6 +37,7 @@
     <None Remove="ClientApp\app\components\users\bryterUsers\bryterUserForm.component.ts" />
     <None Remove="ClientApp\app\components\users\bryterUsers\bryterUsersBasic.component.ts" />
     <None Remove="ClientApp\app\components\users\bryterUsers\IBryterUser.ts" />
+    <None Remove="ClientApp\app\components\users\bryterUsers\IBryterUserType.ts" />
     <None Remove="ClientApp\app\components\users\IUserAccessTypeEnum.ts" />
     <None Remove="ClientApp\app\components\users\profileImage\profileImage.component.ts" />
     <None Remove="ClientApp\app\components\users\providers\IProvider.ts" />
@@ -64,11 +65,13 @@
     <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\IAdminUser.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\IAdminUserType.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\adminUserTypeDropDown\adminUserTypeDropDown.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\bryterUserTypeDropDown\bryterUserTypeDropDown.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\bryterUserDetail.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\bryterUserForm.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\bryterUsers.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\bryterUsersBasic.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\IBryterUser.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\IBryterUserType.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\IUserAccessTypeEnum.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\profileImage\profileImage.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\providers\IProvider.ts" />

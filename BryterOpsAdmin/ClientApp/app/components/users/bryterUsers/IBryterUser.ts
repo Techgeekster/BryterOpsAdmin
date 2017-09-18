@@ -29,4 +29,6 @@
     statusName: string;
     createdOn: Date;
     createdOnStr: string;
+    bryterUserTypeID: number;
+    bryterUserTypeName: string;
 }

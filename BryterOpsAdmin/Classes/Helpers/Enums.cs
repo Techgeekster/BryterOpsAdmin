@@ -25,5 +25,12 @@ namespace BryterOpsAdmin.Classes.Helpers
             IT = 3,
             QA = 4
         }
+
+        public enum BryterUserType {
+            Basic = 1,
+            Supervisor = 2,
+            AdminRetailer = 3,
+            AdminProvider = 4
+        }
     }
 }
