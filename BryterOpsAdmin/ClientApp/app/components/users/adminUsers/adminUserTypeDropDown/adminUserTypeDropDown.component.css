@@ -1,5 +1,8 @@
 ﻿select {
     border-color: black !important;
     display: inline-block !important;
-    color: black;
+    color: rgb(51, 51, 51) !important;
+    font-size: 18px !important;
+    font-family: sans-serif !important;
+    padding: 5px !important;
 }

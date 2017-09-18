@@ -16,15 +16,11 @@
     margin-top: 10px;
 }
 
-    .userField label {
-        width: 175px;
-    }
-
     .userField input {
         border-radius: 5px;
         border: 1px solid black;
         padding: 3px 10px;
-        width: 300px;
+        width: 100%;
     }
 
 h1 {

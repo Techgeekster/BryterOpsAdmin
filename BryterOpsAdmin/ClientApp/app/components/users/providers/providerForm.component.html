@@ -1,73 +1,149 @@
 ﻿<h1>{{header}}</h1>
 
-<div class="userField">
-    <label>Provider Name</label>
-    <input type="text" [(ngModel)]="provider.providerName" autofocus />
+<div class="row">
+    <div class="col-lg-6">
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Provider Name</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="provider.providerName" autofocus />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>EIN</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="provider.ein" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Address 1</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="provider.address1" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Address 2</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="provider.address2" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>City</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="provider.city" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>State</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="provider.state" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Zipcode</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="provider.zipcode" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Country</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="provider.country" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Phone</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="provider.phone" />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Website</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="provider.website" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Email</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="provider.email" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Contact</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="provider.contact" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Approval Rate</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="provider.approvalRate" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Completion Rate</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="provider.completionRate" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Retaining Rate</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="provider.retainingRate" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>City License IDs</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="provider.assignedCityLicenseIDs" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Status</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="provider.statusName" />
+            </div>
+        </div>
+    </div>
 </div>
-<div class="userField">
-    <label>EIN</label>
-    <input type="text" [(ngModel)]="provider.ein" />
-</div>
-<div class="userField">
-    <label>Address 1</label>
-    <input type="text" [(ngModel)]="provider.address1" />
-</div>
-<div class="userField">
-    <label>Address 2</label>
-    <input type="text" [(ngModel)]="provider.address2" />
-</div>
-<div class="userField">
-    <label>City</label>
-    <input type="text" [(ngModel)]="provider.city" />
-</div>
-<div class="userField">
-    <label>State</label>
-    <input type="text" [(ngModel)]="provider.state" />
-</div>
-<div class="userField">
-    <label>Zipcode</label>
-    <input type="text" [(ngModel)]="provider.zipcode" />
-</div>
-<div class="userField">
-    <label>Country</label>
-    <input type="text" [(ngModel)]="provider.country" />
-</div>
-<div class="userField">
-    <label>Phone</label>
-    <input type="text" [(ngModel)]="provider.phone" />
-</div>
-<div class="userField">
-    <label>Website</label>
-    <input type="text" [(ngModel)]="provider.website" />
-</div>
-<div class="userField">
-    <label>Email</label>
-    <input type="text" [(ngModel)]="provider.email" />
-</div>
-<div class="userField">
-    <label>Contact</label>
-    <input type="text" [(ngModel)]="provider.contact" />
-</div>
-<div class="userField">
-    <label>Approval Rate</label>
-    <input type="text" [(ngModel)]="provider.approvalRate" />
-</div>
-<div class="userField">
-    <label>Completion Rate</label>
-    <input type="text" [(ngModel)]="provider.completionRate" />
-</div>
-<div class="userField">
-    <label>Retaining Rate</label>
-    <input type="text" [(ngModel)]="provider.retainingRate" />
-</div>
-<div class="userField">
-    <label>Assigned City License IDs</label>
-    <input type="text" [(ngModel)]="provider.assignedCityLicenseIDs" />
-</div>
-<div class="userField">
-    <label>Status</label>
-    <input type="text" [(ngModel)]="provider.statusName" />
-</div>
+
 
 <div id="CreateProviderBtns">
     <button class="btn-default" (click)="this.submit()">Submit</button>

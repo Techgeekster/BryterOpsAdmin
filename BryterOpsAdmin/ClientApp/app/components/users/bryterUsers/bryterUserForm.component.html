@@ -1,109 +1,221 @@
 ﻿<h1>{{header}}</h1>
 
-<div class="userField">
-    <label>Username</label>
-    <input type="text" [(ngModel)]="bryterUser.username" autofocus />
+<div class="row">
+    <div class="col-lg-6">
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Username</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.username" autofocus />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Company Name</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.companyName" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Company ID</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.companyID" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>First Name</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.firstName" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Last Name</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.lastName" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Address 1</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.address1" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Address 2</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.address2" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>City</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.city" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>State</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.state" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Zipcode</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.zipcode" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Country</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.country" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Title</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.title" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Experience Level</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.experienceLevel" />
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6">
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Manager Name</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.managerName" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Manager Phone</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.managerPhone" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Manager Email</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.managerEmail" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Phone</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.phone" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Email</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.email" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Rating</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.rating" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Photo</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.photo" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Years With Company</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.yearsWithCompany" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Approval Rate</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.approvalRate" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Completion Rate</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.completionRate" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Retaining Rate</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.retainingRate" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>City License IDs</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.assignedCityLicenseIDs" />
+            </div>
+        </div>
+        <div class="row userField">
+            <div class="col-lg-4">
+                <label>Status</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="bryterUser.statusName" />
+            </div>
+        </div>
+    </div>
 </div>
-<div class="userField">
-    <label>Company Name</label>
-    <input type="text" [(ngModel)]="bryterUser.companyName" />
-</div>
-<div class="userField">
-    <label>Company ID</label>
-    <input type="text" [(ngModel)]="bryterUser.companyID" />
-</div>
-<div class="userField">
-    <label>First Name</label>
-    <input type="text" [(ngModel)]="bryterUser.firstName" />
-</div>
-<div class="userField">
-    <label>Last Name</label>
-    <input type="text" [(ngModel)]="bryterUser.lastName"  />
-</div>
-<div class="userField">
-    <label>Address 1</label>
-    <input type="text" [(ngModel)]="bryterUser.address1"  />
-</div>
-<div class="userField">
-    <label>Address 2</label>
-    <input type="text" [(ngModel)]="bryterUser.address2"  />
-</div>
-<div class="userField">
-    <label>City</label>
-    <input type="text" [(ngModel)]="bryterUser.city" />
-</div>
-<div class="userField">
-    <label>State</label>
-    <input type="text" [(ngModel)]="bryterUser.state"  />
-</div>
-<div class="userField">
-    <label>Zipcode</label>
-    <input type="text" [(ngModel)]="bryterUser.zipcode"  />
-</div>
-<div class="userField">
-    <label>Country</label>
-    <input type="text" [(ngModel)]="bryterUser.country"  />
-</div>
-<div class="userField">
-    <label>Title</label>
-    <input type="text" [(ngModel)]="bryterUser.title"  />
-</div>
-<div class="userField">
-    <label>Experience Level</label>
-    <input type="text" [(ngModel)]="bryterUser.experienceLevel"  />
-</div>
-<div class="userField">
-    <label>Manager Name</label>
-    <input type="text" [(ngModel)]="bryterUser.managerName"  />
-</div>
-<div class="userField">
-    <label>Manager Phone</label>
-    <input type="text" [(ngModel)]="bryterUser.managerPhone"  />
-</div>
-<div class="userField">
-    <label>Manager Email</label>
-    <input type="text" [(ngModel)]="bryterUser.managerEmail"  />
-</div>
-<div class="userField">
-    <label>Phone</label>
-    <input type="text" [(ngModel)]="bryterUser.phone"  />
-</div>
-<div class="userField">
-    <label>Email</label>
-    <input type="text" [(ngModel)]="bryterUser.email"  />
-</div>
-<div class="userField">
-    <label>Rating</label>
-    <input type="text" [(ngModel)]="bryterUser.rating"  />
-</div>
-<div class="userField">
-    <label>Photo</label>
-    <input type="text" [(ngModel)]="bryterUser.photo"  />
-</div>
-<div class="userField">
-    <label>Years With Company</label>
-    <input type="text" [(ngModel)]="bryterUser.yearsWithCompany"  />
-</div>
-<div class="userField">
-    <label>Approval Rate</label>
-    <input type="text" [(ngModel)]="bryterUser.approvalRate"  />
-</div>
-<div class="userField">
-    <label>Completion Rate</label>
-    <input type="text" [(ngModel)]="bryterUser.completionRate"  />
-</div>
-<div class="userField">
-    <label>Retaining Rate</label>
-    <input type="text" [(ngModel)]="bryterUser.retainingRate"  />
-</div>
-<div class="userField">
-    <label>Assigned City License IDs</label>
-    <input type="text" [(ngModel)]="bryterUser.assignedCityLicenseIDs"  />
-</div>
-<div class="userField">
-    <label>Status</label>
-    <input type="text" [(ngModel)]="bryterUser.statusName" />
-</div>
+
 
 <div id="CreateBryterUserBtns">
     <button class="btn-default" (click)="this.submit()">Submit</button>

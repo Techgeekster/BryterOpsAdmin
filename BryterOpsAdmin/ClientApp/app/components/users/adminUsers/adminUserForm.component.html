@@ -1,36 +1,68 @@
 ﻿<h1>{{header}}</h1>
 
-<div class="userField">
-    <label>Username</label>
-    <input type="text" [(ngModel)]="adminUser.username" autofocus/>
+<div class="row userField">
+    <div class="col-lg-4">
+        <label>Username</label>
+    </div>
+    <div class="col-lg-8">
+        <input type="text" [(ngModel)]="adminUser.username" autofocus/>
+    </div>
 </div>
-<div class="userField">
-    <label>First Name</label>
-    <input type="text" [(ngModel)]="adminUser.firstName" />
+<div class="row userField">
+    <div class="col-lg-4">
+        <label>First Name</label>
+    </div>
+    <div class="col-lg-8">
+        <input type="text" [(ngModel)]="adminUser.firstName" />
+    </div>
 </div>
-<div class="userField">
-    <label>Last Name</label>
-    <input type="text" [(ngModel)]="adminUser.lastName" />
+<div class="row userField">
+    <div class="col-lg-4">
+        <label>Last Name</label>
+    </div>
+    <div class="col-lg-8">
+        <input type="text" [(ngModel)]="adminUser.lastName" />
+    </div>
 </div>
-<div class="userField">
-    <label>Phone</label>
-    <input type="text" [(ngModel)]="adminUser.phone" />
+<div class="row userField">
+    <div class="col-lg-4">
+        <label>Phone</label>
+    </div>
+    <div class="col-lg-8">
+        <input type="text" [(ngModel)]="adminUser.phone" />
+    </div>
 </div>
-<div class="userField">
-    <label>Email</label>
-    <input type="text" [(ngModel)]="adminUser.email" />
+<div class="row userField">
+    <div class="col-lg-4">
+        <label>Email</label>
+    </div>
+    <div class="col-lg-8">
+        <input type="text" [(ngModel)]="adminUser.email" />
+    </div>
 </div>
-<div class="userField">
-    <label>User Type</label>
-    <div><adminusertypedropdown [(selectedUserTypeID)]="adminUser.adminUserTypeID" (selectedUserTypeIDChanged)="setSelectedAdminUserTypeID($event)"></adminusertypedropdown></div>
+<div class="row userField">
+    <div class="col-lg-4">
+        <label>User Type</label>
+    </div>
+    <div class="col-lg-8">
+        <adminusertypedropdown [(selectedUserTypeID)]="adminUser.adminUserTypeID" (selectedUserTypeIDChanged)="setSelectedAdminUserTypeID($event)"></adminusertypedropdown>
+    </div>
 </div>
-<div class="userField">
-    <label>Title</label>
-    <input type="text" [(ngModel)]="adminUser.title" />
+<div class="row userField">
+    <div class="col-lg-4">
+        <label>Title</label>
+    </div>
+    <div class="col-lg-8">
+        <input type="text" [(ngModel)]="adminUser.title" />
+    </div>
 </div>
-<div class="userField">
-    <label>Status</label>
-    <input type="text" [(ngModel)]="adminUser.statusName" />
+<div class="row userField">
+    <div class="col-lg-4">
+        <label>Status</label>
+    </div>
+    <div class="col-lg-8">
+        <input type="text" [(ngModel)]="adminUser.statusName" />
+    </div>
 </div>
 
 <div id="CreateAdminUserBtns">
