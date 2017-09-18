@@ -1,4 +1,8 @@
-﻿<div class="row">
+﻿<jqueryPopupOverlay #createProviderOverlay>
+    <providerForm (closed)="createProviderOverlay.close()" (refreshed)="refresh()" [provider]="provider" [header]="selectedProviderHeader"></providerForm>
+</jqueryPopupOverlay>
+
+<div class="row">
     <div [hidden]="provider.providerID > 0">Please select provider for detail</div>
 </div>
 <div class="row detailContent" [hidden]="provider.providerID === 0">
@@ -6,6 +10,14 @@
         <profileImage [userAccessTypeID]="userAccessTypeID" [userAccessTypeName]="userAccessTypeName" [profileID]="provider.providerID" #profileImage></profileImage>
     </div>
     <div class="col-lg-9 fieldArea">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>
+                    {{provider.providerName}}
+                    <span><img class="editIcon" src="../../../content/images/icons/edit-icon.png" (click)="edit(provider)" /></span>
+                </h2>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-4">
                 <label>

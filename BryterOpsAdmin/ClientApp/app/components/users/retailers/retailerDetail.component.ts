@@ -16,11 +16,13 @@ import '../../../content/styles/croppie.css';
 export class RetailerDetailComponent implements OnInit {
     public userAccessTypeID: number = UserAccessType.Retailer as number;
     public userAccessTypeName: string = "Retailer";
+    public selectedRetailerHeader: string;
 
     @Input()
     retailer: Retailer;
 
     @ViewChild('profileImage') profileImage: ProfileImage;
+    @ViewChild('createRetailerOverlay') createRetailerOverlay: JQueryPopupOverlay;
 
     constructor(private http: Http,
         @Inject('BASE_URL') private baseUrl: string,
@@ -67,5 +69,11 @@ export class RetailerDetailComponent implements OnInit {
         setTimeout(function () {
             self.profileImage.getProfileImage();
         }, 10);
+    }
+
+    edit(retailer: Retailer) {
+        this.selectedRetailerHeader = "Edit Retailer";
+        this.retailer = retailer;
+        this.createRetailerOverlay.show();
     }
 }

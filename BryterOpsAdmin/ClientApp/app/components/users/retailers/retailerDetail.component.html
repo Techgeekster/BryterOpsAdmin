@@ -1,4 +1,8 @@
-﻿<div class="row">
+﻿<jqueryPopupOverlay #createRetailerOverlay>
+    <retailerForm (closed)="createRetailerOverlay.close()" (refreshed)="refresh()" [retailer]="retailer" [header]="selectedRetailerHeader"></retailerForm>
+</jqueryPopupOverlay>
+
+<div class="row">
     <div [hidden]="retailer.retailerID > 0">Please select retailer for detail</div>
 </div>
 <div class="row detailContent" [hidden]="retailer.retailerID === 0">
@@ -6,6 +10,14 @@
         <profileImage [userAccessTypeID]="userAccessTypeID" [userAccessTypeName]="userAccessTypeName" [profileID]="retailer.retailerID" #profileImage></profileImage>
     </div>
     <div class="col-lg-9 fieldArea">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>
+                    {{retailer.retailerName}}
+                    <span><img class="editIcon" src="../../../content/images/icons/edit-icon.png" (click)="edit(retailer)" /></span>
+                </h2>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-4">
                 <label>

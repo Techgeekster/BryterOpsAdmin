@@ -1,4 +1,8 @@
-﻿<div class="row">
+﻿<jqueryPopupOverlay #createBryterUserOverlay>
+    <bryterUserForm (closed)="createBryterUserOverlay.close()" (refreshed)="refresh()" [bryterUser]="bryterUser" [header]="selectedBryterUserHeader"></bryterUserForm>
+</jqueryPopupOverlay>
+
+<div class="row">
     <div class="col-lg-12" [hidden]="bryterUser.userID > 0">Please select user for detail</div>
 </div>
 <div class="row detailContent" [hidden]="bryterUser.userID === 0">
@@ -6,6 +10,14 @@
         <profileImage [userAccessTypeID]="userAccessTypeID" [userAccessTypeName]="userAccessTypeName" [profileID]="bryterUser.userID" #profileImage></profileImage>
     </div>
     <div class="col-lg-9">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>
+                    {{bryterUser.firstName}} {{bryterUser.lastName}} [{{bryterUser.username}}]
+                    <span><img class="editIcon" src="../../../content/images/icons/edit-icon.png" (click)="edit(bryterUser)" /></span>
+                </h2>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-6 fieldArea">
                 <div class="row">

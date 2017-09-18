@@ -65,7 +65,7 @@ export class RetailerFormComponent implements OnInit {
         var params = new URLSearchParams();
         params.set('RetailerID', this.retailer.retailerID.toString());
         params.set('RetailerName', this.retailer.retailerName);
-        params.set('EIN', this.retailer.ein.toString());
+        params.set('EIN', this.retailer.ein != null ? this.retailer.ein.toString() : "");
         params.set('Address1', this.retailer.address1);
         params.set('Address2', this.retailer.address2);
         params.set('City', this.retailer.city);

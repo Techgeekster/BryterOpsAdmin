@@ -16,11 +16,13 @@ import '../../../content/styles/croppie.css';
 export class BryterUserDetailComponent implements OnInit {
     public userAccessTypeID: number = UserAccessType.Bryter as number;
     public userAccessTypeName: string = "Bryter";
+    public selectedBryterUserHeader: string;
 
     @Input()
     bryterUser: BryterUser;
 
     @ViewChild('profileImage') profileImage: ProfileImage;
+    @ViewChild('createBryterUserOverlay') createBryterUserOverlay: JQueryPopupOverlay;
 
     constructor(private http: Http,
         @Inject('BASE_URL') private baseUrl: string,
@@ -77,5 +79,11 @@ export class BryterUserDetailComponent implements OnInit {
         setTimeout(function () {
             self.profileImage.getProfileImage();
         }, 10);
+    }
+
+    edit(bryterUser: BryterUser) {
+        this.selectedBryterUserHeader = "Edit Bryter User";
+        this.bryterUser = bryterUser;
+        this.createBryterUserOverlay.show();
     }
 }

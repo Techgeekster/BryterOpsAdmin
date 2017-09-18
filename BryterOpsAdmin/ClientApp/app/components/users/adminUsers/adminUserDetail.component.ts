@@ -16,11 +16,13 @@ import '../../../content/styles/croppie.css';
 export class AdminUserDetailComponent implements OnInit {
     public userAccessTypeID: number = UserAccessType.Admin as number;
     public userAccessTypeName: string = "Admin";
+    public selectedAdminUserHeader: string;
 
     @Input()
     adminUser: AdminUser;
 
     @ViewChild('profileImage') profileImage: ProfileImage;
+    @ViewChild('createAdminUserOverlay') createAdminUserOverlay: JQueryPopupOverlay;
 
     constructor(private http: Http,
         @Inject('BASE_URL') private baseUrl: string,
@@ -59,5 +61,11 @@ export class AdminUserDetailComponent implements OnInit {
         setTimeout(function () {
             self.profileImage.getProfileImage();
         }, 10);
+    }
+
+    edit(adminUser: AdminUser) {
+        this.selectedAdminUserHeader = "Edit Admin User";
+        this.adminUser = adminUser;
+        this.createAdminUserOverlay.show();
     }
 }

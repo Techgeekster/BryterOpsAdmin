@@ -1,4 +1,8 @@
-﻿<div class="row">
+﻿<jqueryPopupOverlay #createAdminUserOverlay>
+    <adminUserForm (closed)="createAdminUserOverlay.close()" (refreshed)="refresh()" [adminUser]="adminUser" [header]="selectedAdminUserHeader"></adminUserForm>
+</jqueryPopupOverlay>
+
+<div class="row">
     <div class="col-lg-12" [hidden]="adminUser.userID > 0">Please select user for detail</div>
 </div>
 <div class="row detailContent" [hidden]="adminUser.userID === 0">
@@ -6,6 +10,14 @@
         <profileImage [userAccessTypeID]="userAccessTypeID" [userAccessTypeName]="userAccessTypeName" [profileID]="adminUser.userID" #profileImage></profileImage>
     </div>
     <div class="col-lg-9 fieldArea">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>
+                    {{adminUser.firstName}} {{adminUser.lastName}} [{{adminUser.username}}]
+                    <span><img class="editIcon" src="../../../content/images/icons/edit-icon.png" (click)="edit(adminUser)" /></span>
+                </h2>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-3">
                 <label>User ID</label>

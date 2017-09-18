@@ -16,11 +16,13 @@ import '../../../content/styles/croppie.css';
 export class ProviderDetailComponent implements OnInit {
     public userAccessTypeID: number = UserAccessType.Provider as number;
     public userAccessTypeName: string = "Provider";
+    public selectedProviderHeader: string;
 
     @Input()
     provider: Provider;
 
     @ViewChild('profileImage') profileImage: ProfileImage;
+    @ViewChild('createProviderOverlay') createProviderOverlay: JQueryPopupOverlay;
 
     constructor(private http: Http,
         @Inject('BASE_URL') private baseUrl: string,
@@ -66,5 +68,11 @@ export class ProviderDetailComponent implements OnInit {
         setTimeout(function () {
             self.profileImage.getProfileImage();
         }, 10);
+    }
+
+    edit(provider: Provider) {
+        this.selectedProviderHeader = "Edit Provider";
+        this.provider = provider;
+        this.createProviderOverlay.show();
     }
 }
