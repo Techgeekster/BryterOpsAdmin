@@ -41,9 +41,12 @@ namespace BryterOpsAdmin.Models
             {
                 StatusName = Enum.GetName(typeof(Status), adminUser.StatusID.Value);
             }
+
+            AdminUserTypeName = Enum.GetName(typeof(AdminUserType), adminUser.AdminUserTypeID.Value);
         }
 
         public string StatusName { get; set; }
+        public string AdminUserTypeName { get; set; }
         public string CreatedOnStr { get; set; }
     }
 }

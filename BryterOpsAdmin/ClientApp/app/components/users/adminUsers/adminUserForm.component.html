@@ -22,7 +22,7 @@
 </div>
 <div class="userField">
     <label>User Type</label>
-    TODO Drop down list
+    <div><adminusertypedropdown [(selectedUserTypeID)]="adminUser.adminUserTypeID" (selectedUserTypeIDChanged)="setSelectedAdminUserTypeID($event)"></adminusertypedropdown></div>
 </div>
 <div class="userField">
     <label>Title</label>

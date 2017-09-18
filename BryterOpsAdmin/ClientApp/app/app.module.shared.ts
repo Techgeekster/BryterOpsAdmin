@@ -15,6 +15,7 @@ import { AdminUsersComponent } from './components/users/adminUsers/adminUsers.co
 import { AdminUsersBasicComponent } from './components/users/adminUsers/adminUsersBasic.component';
 import { AdminUserFormComponent } from './components/users/adminUsers/adminUserForm.component';
 import { AdminUserDetailComponent } from './components/users/adminUsers/adminUserDetail.component';
+import { AdminUserTypeDropDownComponent } from './components/users/adminUsers/adminUserTypeDropDown/adminUserTypeDropDown.component';
 
 import { BryterUsersComponent } from './components/users/bryterUsers/bryterUsers.component';
 import { BryterUsersBasicComponent } from './components/users/bryterUsers/bryterusersBasic.component';
@@ -32,9 +33,12 @@ import { ProviderFormComponent } from './components/users/providers/providerForm
 import { ProviderDetailComponent } from './components/users/providers/providerDetail.component';
 
 import { ProfileImage } from './components/users/profileImage/profileImage.component';
+import { UserTypeDropDownComponent } from './components/users/userTypeDropDown/usertypedropdown.component';
 
 import { JQueryPopupOverlay } from './components/jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component';
 import { CroppieComponent } from './components/jquerywrappers/croppie/croppie.component';
+
+import { BryterDropDownComponent } from './components/bryterdropdown/bryterdropdown.component';
 
 @NgModule({
     declarations: [
@@ -46,6 +50,7 @@ import { CroppieComponent } from './components/jquerywrappers/croppie/croppie.co
         AdminUsersBasicComponent,
         AdminUserFormComponent,
         AdminUserDetailComponent,
+        AdminUserTypeDropDownComponent,
         BryterUsersComponent,
         BryterUsersBasicComponent,
         BryterUserFormComponent,
@@ -61,7 +66,9 @@ import { CroppieComponent } from './components/jquerywrappers/croppie/croppie.co
         ProfileImage,
         HomeComponent,
         JQueryPopupOverlay,
-        CroppieComponent
+        CroppieComponent,
+        BryterDropDownComponent,
+        UserTypeDropDownComponent
     ],
     imports: [
         CommonModule,

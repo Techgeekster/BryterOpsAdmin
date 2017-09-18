@@ -59,7 +59,8 @@ export class AdminUsersBasicComponent implements OnInit {
             statusID: 0,
             statusName: "",
             createdOn: new Date(),
-            createdOnStr: ""
+            createdOnStr: "",
+            adminUserTypeName: ""
         }
     }
 

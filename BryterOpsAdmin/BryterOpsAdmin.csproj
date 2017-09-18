@@ -26,11 +26,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\components\bryterdropdown\bryterdropdown.component.ts" />
     <None Remove="ClientApp\app\components\jquerywrappers\croppie\croppie.component.ts" />
     <None Remove="ClientApp\app\components\jquerywrappers\jquerypopupoverlay\jquerypopupoverlay.component.ts" />
     <None Remove="ClientApp\app\components\users\adminUsers\adminUserDetail.component.ts" />
     <None Remove="ClientApp\app\components\users\adminUsers\adminUsers.component.ts" />
     <None Remove="ClientApp\app\components\users\adminUsers\IAdminUser.ts" />
+    <None Remove="ClientApp\app\components\users\adminUsers\IAdminUserType.ts" />
     <None Remove="ClientApp\app\components\users\bryterUsers\bryterUserDetail.component.ts" />
     <None Remove="ClientApp\app\components\users\bryterUsers\bryterUserForm.component.ts" />
     <None Remove="ClientApp\app\components\users\bryterUsers\bryterUsersBasic.component.ts" />
@@ -47,9 +49,11 @@
     <None Remove="ClientApp\app\components\users\retailers\retailerForm.component.ts" />
     <None Remove="ClientApp\app\components\users\retailers\retailers.component.ts" />
     <None Remove="ClientApp\app\components\users\retailers\retailersBasic.component.ts" />
+    <None Remove="ClientApp\app\components\users\userTypeDropDown\userTypeDropDown.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\bryterdropdown\bryterdropdown.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\jquerywrappers\croppie\croppie.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\jquerywrappers\jquerypopupoverlay\jquerypopupoverlay.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\adminUserDetail.component.ts" />
@@ -57,6 +61,8 @@
     <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\adminUserForm.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\adminUsersBasic.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\IAdminUser.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\IAdminUserType.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\adminUserTypeDropDown\adminUserTypeDropDown.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\bryterUserDetail.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\bryterUserForm.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\bryterUsers.component.ts" />
@@ -74,6 +80,7 @@
     <TypeScriptCompile Include="ClientApp\app\components\users\retailers\retailerForm.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\retailers\retailers.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\retailers\retailersBasic.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\userTypeDropDown\usertypedropdown.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\directives\bryteroverlay.directive.ts" />
   </ItemGroup>
 

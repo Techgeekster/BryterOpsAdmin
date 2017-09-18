@@ -45,7 +45,8 @@ export class AdminUserFormComponent implements OnInit {
             statusID: 0,
             statusName: "",
             createdOn: new Date(),
-            createdOnStr: ""
+            createdOnStr: "",
+            adminUserTypeName: ""
         }
     }
 
@@ -59,7 +60,7 @@ export class AdminUserFormComponent implements OnInit {
         params.set('Username', this.adminUser.username);
         params.set('FirstName', this.adminUser.firstName);
         params.set('LastName', this.adminUser.lastName);
-        params.set('Phone', this.adminUser.phone.toString());
+        params.set('Phone', this.adminUser.phone != null ? this.adminUser.phone.toString() : "");
         params.set('Email', this.adminUser.email);
         params.set('Title', this.adminUser.title);
         params.set('AdminUserTypeID', this.adminUser.adminUserTypeID != null ? this.adminUser.adminUserTypeID.toString() : "0");
@@ -106,5 +107,10 @@ export class AdminUserFormComponent implements OnInit {
     close()
     {
         this.closed.emit();
+    }
+
+    setSelectedAdminUserTypeID(selectedUserTypeID: number)
+    {
+        this.adminUser.adminUserTypeID = selectedUserTypeID;
     }
 }

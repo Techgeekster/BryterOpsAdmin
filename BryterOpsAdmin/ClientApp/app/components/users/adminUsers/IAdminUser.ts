@@ -11,4 +11,5 @@
     statusName: string;
     createdOn: Date;
     createdOnStr: string;
+    adminUserTypeName: string;
 }

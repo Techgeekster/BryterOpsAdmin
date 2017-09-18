@@ -18,5 +18,12 @@ namespace BryterOpsAdmin.Classes.Helpers
             Retailer = 3,
             Provider = 4
         }
+
+        public enum AdminUserType {
+            Admin = 1,
+            Development = 2,
+            IT = 3,
+            QA = 4
+        }
     }
 }
