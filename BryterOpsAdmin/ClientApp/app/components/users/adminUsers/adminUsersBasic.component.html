@@ -4,7 +4,7 @@
 
 <div *ngIf="adminUsers">
     <img id="createAdminUserImg" src="../../../content/images/icons/add-icon.png" (click)="show()" />
-    <input id="searchAdminUsers" type="text" placeholder="Search..." />
+    <brytersearch [items]="adminUsers" (foundItemsChanged)="setSearchedAdminUserList($event)"></brytersearch>
 
     <jqueryPopupOverlay #createAdminUserOverlay>
         <adminUserForm (closed)="createAdminUserOverlay.close()" (refreshed)="refresh()" [adminUser]="selectedAdminUser" [header]="selectedAdminUserHeader"></adminUserForm>
@@ -35,5 +35,5 @@
         </tbody>
     </table>
 
-    <bryterpaging [items]="adminUsers" [itemsPerPage]="10" (visibleItemsChanged)="setAdminUserList($event)"></bryterpaging>
+    <bryterpaging [items]="adminUsers" [itemsPerPage]="10" (visibleItemsChanged)="setAdminUserList($event)" #adminPaging></bryterpaging>
 </div>

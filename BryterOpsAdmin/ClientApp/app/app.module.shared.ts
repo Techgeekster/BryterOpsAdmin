@@ -35,12 +35,13 @@ import { ProviderDetailComponent } from './components/users/providers/providerDe
 
 import { ProfileImage } from './components/users/profileImage/profileImage.component';
 import { UserTypeDropDownComponent } from './components/users/userTypeDropDown/usertypedropdown.component';
-import { BryterPagingComponent } from './components/bryterpaging/bryterpaging.component';
 
 import { JQueryPopupOverlay } from './components/jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component';
 import { CroppieComponent } from './components/jquerywrappers/croppie/croppie.component';
 
 import { BryterDropDownComponent } from './components/bryterdropdown/bryterdropdown.component';
+import { BryterPagingComponent } from './components/bryterpaging/bryterpaging.component';
+import { BryterSearchComponent } from './components/brytersearch/brytersearch.component';
 
 import { BryterValidationDirective } from './directives/brytervalidation/brytervalidation.directive';
 
@@ -75,6 +76,7 @@ import { BryterValidationDirective } from './directives/brytervalidation/bryterv
         BryterDropDownComponent,
         UserTypeDropDownComponent,
         BryterPagingComponent,
+        BryterSearchComponent,
         BryterValidationDirective
     ],
     imports: [

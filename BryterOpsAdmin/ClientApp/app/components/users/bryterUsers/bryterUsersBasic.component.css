@@ -1,7 +1,11 @@
-﻿#BryterUsersTbl tr {
-    cursor: pointer;
-    border-radius: 5px;
+﻿#BryterUsersTbl {
+    margin-top: 35px;
 }
+
+    #BryterUsersTbl tr {
+        cursor: pointer;
+        border-radius: 5px;
+    }
 
     #BryterUsersTbl tr:nth-child(odd):not(.header) {
         background-color: #d4cdcd;
@@ -29,13 +33,10 @@ jqueryPopupOverlay {
     width: 1315px;
 }
 
-#searchBryterUsers {
-    border: 1px solid black;
-    border-radius: 5px;
-    width: 200px;
+brytersearch {
     position: absolute;
     right: 80px;
-    top: 20px;
+    top: 15px;
     font-size: 15px;
     padding: 3px 5px;
 }

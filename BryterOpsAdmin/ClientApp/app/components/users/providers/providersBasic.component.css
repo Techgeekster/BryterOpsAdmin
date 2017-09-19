@@ -1,7 +1,11 @@
-﻿#ProvidersTbl tr {
-    cursor: pointer;
-    border-radius: 5px;
+﻿#ProvidersTbl {
+    margin-top: 35px;
 }
+
+    #ProvidersTbl tr {
+        cursor: pointer;
+        border-radius: 5px;
+    }
 
     #ProvidersTbl tr:nth-child(odd):not(.header) {
         background-color: #d4cdcd;
@@ -29,13 +33,10 @@ jqueryPopupOverlay {
     width: 1115px;
 }
 
-#searchProviders {
-    border: 1px solid black;
-    border-radius: 5px;
-    width: 200px;
+brytersearch {
     position: absolute;
     right: 80px;
-    top: 20px;
+    top: 15px;
     font-size: 15px;
     padding: 3px 5px;
 }

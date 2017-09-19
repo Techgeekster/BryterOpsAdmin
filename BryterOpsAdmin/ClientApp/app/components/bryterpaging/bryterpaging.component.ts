@@ -30,9 +30,13 @@ export class BryterPagingComponent implements OnInit {
         private el: ElementRef) { }
 
     ngOnInit() {
-        this.numBtns = [];
-        this.currentPage = 1;
-        this.setPages();
+        var self = this;
+
+        setTimeout(function () {
+            self.numBtns = [];
+            self.currentPage = 1;
+            self.setPages();
+        }, 100);
     }
 
     setPages() {
@@ -65,12 +69,12 @@ export class BryterPagingComponent implements OnInit {
             maxPageIndex = pageIndex + 4;
         }
 
-        if (this.currentPage == this.numPages - 1)
+        if (this.currentPage == this.numPages - 1 && this.numPages > 5)
         {
             pageIndex = this.currentPage - 3;
             maxPageIndex = pageIndex + 4;
         }
-        if (this.currentPage == this.numPages)
+        if (this.currentPage == this.numPages && this.numPages > 5)
         {
             pageIndex = this.currentPage - 4;
             maxPageIndex = pageIndex + 4;
@@ -133,6 +137,12 @@ export class BryterPagingComponent implements OnInit {
 
     setPage(page: number) {
         this.currentPage = page;
+        this.setPages();
+    }
+
+    setItems(items: any)
+    {
+        this.items = items;
         this.setPages();
     }
 }

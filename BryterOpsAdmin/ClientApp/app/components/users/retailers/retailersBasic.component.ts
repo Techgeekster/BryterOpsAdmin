@@ -2,6 +2,7 @@
 import { Http, Headers } from '@angular/http';
 import { Retailer } from "./IRetailer";
 import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component";
+import { BryterPagingComponent } from "../../bryterpaging/bryterpaging.component";
 
 @Component({
     selector: 'retailersBasic',
@@ -21,7 +22,9 @@ export class RetailersBasicComponent implements OnInit {
     public retailers: Retailer[];
     public visibleRetailers: Retailer[];
     public selectedRetailerHeader: string;
+
     @ViewChild('createRetailerOverlay') createRetailerOverlay: JQueryPopupOverlay;
+    @ViewChild('retailerPaging') retailerPaging: BryterPagingComponent;
 
     constructor(private http: Http,
         @Inject('BASE_URL') private baseUrl: string,
@@ -119,5 +122,9 @@ export class RetailersBasicComponent implements OnInit {
 
     setRetailerList(retailerList: Retailer[]) {
         this.visibleRetailers = retailerList;
+    }
+
+    setSearchedRetailerList(retailerList: Retailer[]) {
+        this.retailerPaging.setItems(retailerList);
     }
 }

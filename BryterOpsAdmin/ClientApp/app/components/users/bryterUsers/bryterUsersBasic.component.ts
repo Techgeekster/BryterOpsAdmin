@@ -2,6 +2,7 @@
 import { Http, Headers } from '@angular/http';
 import { BryterUser } from "./IBryterUser";
 import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component";
+import { BryterPagingComponent } from "../../bryterpaging/bryterpaging.component";
 
 @Component({
     selector: 'bryterUsersBasic',
@@ -21,7 +22,9 @@ export class BryterUsersBasicComponent implements OnInit {
     public bryterUsers: BryterUser[];
     public visibleBryterUsers: BryterUser[];
     public selectedBryterUserHeader: string;
+
     @ViewChild('createBryterUserOverlay') createBryterUserOverlay: JQueryPopupOverlay;
+    @ViewChild('bryterPaging') bryterPaging: BryterPagingComponent;
 
     constructor(private http: Http,
         @Inject('BASE_URL') private baseUrl: string,
@@ -127,5 +130,9 @@ export class BryterUsersBasicComponent implements OnInit {
 
     setBryterUserList(bryterUserList: BryterUser[]) {
         this.visibleBryterUsers = bryterUserList;
+    }
+
+    setSearchedBryterUserList(bryterUserList: BryterUser[]) {
+        this.bryterPaging.setItems(bryterUserList);
     }
 }

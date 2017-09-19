@@ -2,6 +2,7 @@
 import { Http, Headers } from '@angular/http';
 import { Provider } from "./IProvider";
 import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component";
+import { BryterPagingComponent } from "../../bryterpaging/bryterpaging.component";
 
 @Component({
     selector: 'providersBasic',
@@ -21,7 +22,9 @@ export class ProvidersBasicComponent implements OnInit {
     public providers: Provider[];
     public visibleProviders: Provider[];
     public selectedProviderHeader: string;
+
     @ViewChild('createProviderOverlay') createProviderOverlay: JQueryPopupOverlay;
+    @ViewChild('providerPaging') providerPaging: BryterPagingComponent;
 
     constructor(private http: Http,
         @Inject('BASE_URL') private baseUrl: string,
@@ -118,5 +121,9 @@ export class ProvidersBasicComponent implements OnInit {
 
     setProviderList(providerList: Provider[]) {
         this.visibleProviders = providerList;
+    }
+
+    setSearchedProviderList(providerList: Provider[]) {
+        this.providerPaging.setItems(providerList);
     }
 }

@@ -4,7 +4,7 @@
 
 <div *ngIf="retailers">
     <img id="createRetailerImg" src="../../../content/images/icons/add-icon.png" (click)="show()" />
-    <input id="searchRetailers" type="text" placeholder="Search..." />
+    <brytersearch [items]="retailers" (foundItemsChanged)="setSearchedRetailerList($event)"></brytersearch>
 
     <jqueryPopupOverlay #createRetailerOverlay>
         <retailerForm (closed)="createRetailerOverlay.close()" (refreshed)="refresh()" [retailer]="selectedRetailer" [header]="selectedRetailerHeader"></retailerForm>
@@ -24,7 +24,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let retailer of retailers" (click)="retailerClick(retailer)">
+            <tr *ngFor="let retailer of visibleRetailers" (click)="retailerClick(retailer)">
                 <td><img class="tableIcon" src="../../../content/images/icons/edit-icon.png" (click)="edit(retailer)" /></td>
                 <td><img class="tableIcon" src="../../../content/images/icons/delete-icon.png" (click)="delete(retailer)" /></td>
                 <td>{{ retailer.retailerName }} [{{retailer.retailerID}}]</td>
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <bryterpaging [items]="retailers" [itemsPerPage]="10" (visibleItemsChanged)="setRetailerList($event)"></bryterpaging>
+    <bryterpaging [items]="retailers" [itemsPerPage]="10" (visibleItemsChanged)="setRetailerList($event)" #retailerPaging></bryterpaging>
 </div>

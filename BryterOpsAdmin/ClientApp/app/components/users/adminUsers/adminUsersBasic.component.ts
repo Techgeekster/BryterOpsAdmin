@@ -2,6 +2,7 @@
 import { Http, Headers } from '@angular/http';
 import { AdminUser } from "./IAdminUser";
 import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component";
+import { BryterPagingComponent } from "../../bryterpaging/bryterpaging.component";
 
 @Component({
     selector: 'adminUsersBasic',
@@ -21,13 +22,16 @@ export class AdminUsersBasicComponent implements OnInit {
     public adminUsers: AdminUser[];
     public visibleAdminUsers: AdminUser[];
     public selectedAdminUserHeader: string;
+
     @ViewChild('createAdminUserOverlay') createAdminUserOverlay: JQueryPopupOverlay;
+    @ViewChild('adminPaging') adminPaging: BryterPagingComponent;
 
     constructor(private http: Http,
         @Inject('BASE_URL') private baseUrl: string,
         private el: ElementRef) { }
 
     ngOnInit() {
+        this.visibleAdminUsers = [];
         this.getAdminUsers();
         this.selectedAdminUser = this.getEmptyAdminUser();
     }
@@ -109,5 +113,10 @@ export class AdminUsersBasicComponent implements OnInit {
     setAdminUserList(adminUserList: AdminUser[])
     {
         this.visibleAdminUsers = adminUserList;
+    }
+
+    setSearchedAdminUserList(adminUserList: AdminUser[])
+    {
+        this.adminPaging.setItems(adminUserList);
     }
 }

@@ -1,0 +1,13 @@
+﻿#searchBox {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 200px;
+    height: 35px;
+    padding: 0 5px;
+}
+
+#searchBtn {
+    width: 35px;
+    padding: 5px;
+    cursor: pointer;
+}

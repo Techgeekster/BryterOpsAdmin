@@ -4,7 +4,7 @@
 
 <div *ngIf="bryterUsers">
     <img id="createBryterUserImg" src="../../../content/images/icons/add-icon.png" (click)="show()" />
-    <input id="searchBryterUsers" type="text" placeholder="Search..." />
+    <brytersearch [items]="bryterUsers" (foundItemsChanged)="setSearchedBryterUserList($event)"></brytersearch>
 
     <jqueryPopupOverlay #createBryterUserOverlay>
         <bryterUserForm (closed)="createBryterUserOverlay.close()" (refreshed)="refresh()" [bryterUser]="selectedBryterUser" [header]="selectedBryterUserHeader"></bryterUserForm>
@@ -25,7 +25,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let bryterUser of bryterUsers" (click)="userClick(bryterUser)">
+            <tr *ngFor="let bryterUser of visibleBryterUsers" (click)="userClick(bryterUser)">
                 <td><img class="tableIcon" src="../../../content/images/icons/edit-icon.png" (click)="edit(bryterUser)" /></td>
                 <td><img class="tableIcon" src="../../../content/images/icons/delete-icon.png" (click)="delete(bryterUser)" /></td>
                 <td>{{ bryterUser.username }} [{{bryterUser.userID}}]</td>
@@ -39,5 +39,5 @@
         </tbody>
     </table>
 
-    <bryterpaging [items]="bryterUsers" [itemsPerPage]="10" (visibleItemsChanged)="setBryterUserList($event)"></bryterpaging>
+    <bryterpaging [items]="bryterUsers" [itemsPerPage]="10" (visibleItemsChanged)="setBryterUserList($event)" #bryterPaging></bryterpaging>
 </div>
