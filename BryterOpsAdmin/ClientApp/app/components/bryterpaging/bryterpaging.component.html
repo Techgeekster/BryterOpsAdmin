@@ -1,0 +1,7 @@
+﻿<div *ngIf="numPages > 1">
+    <span class="btn-default pageBtn" *ngIf="showFirstPageBtn" (click)="firstPage()"><<</span>
+    <span class="btn-default pageBtn" *ngIf="showBackBtn" (click)="moveBack()"><</span>
+    <span class="btn-default pageBtn" *ngFor="let btn of numBtns" [class.currentPage]="btn == currentPage" (click)="setPage(btn)">{{btn}}</span>
+    <span class="btn-default pageBtn" *ngIf="showForwardBtn" (click)="moveForward()">></span>
+    <span class="btn-default pageBtn" *ngIf="showLastPageBtn" (click)="lastPage()">>></span>
+</div>

@@ -19,6 +19,7 @@ export class RetailersBasicComponent implements OnInit {
     selectedRetailer: Retailer
 
     public retailers: Retailer[];
+    public visibleRetailers: Retailer[];
     public selectedRetailerHeader: string;
     @ViewChild('createRetailerOverlay') createRetailerOverlay: JQueryPopupOverlay;
 
@@ -114,5 +115,9 @@ export class RetailersBasicComponent implements OnInit {
     retailerClick(retailer: Retailer) {
         this.selectedRetailerChange.emit(retailer);
         this.showDetails.emit();
+    }
+
+    setRetailerList(retailerList: Retailer[]) {
+        this.visibleRetailers = retailerList;
     }
 }

@@ -19,6 +19,7 @@ export class ProvidersBasicComponent implements OnInit {
     selectedProvider: Provider
 
     public providers: Provider[];
+    public visibleProviders: Provider[];
     public selectedProviderHeader: string;
     @ViewChild('createProviderOverlay') createProviderOverlay: JQueryPopupOverlay;
 
@@ -113,5 +114,9 @@ export class ProvidersBasicComponent implements OnInit {
     providerClick(provider: Provider) {
         this.selectedProviderChange.emit(provider);
         this.showDetails.emit();
+    }
+
+    setProviderList(providerList: Provider[]) {
+        this.visibleProviders = providerList;
     }
 }

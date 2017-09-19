@@ -1,34 +1,41 @@
-﻿<p *ngIf="!retailers"><em>Loading...</em></p>
+﻿<h2>Retailers</h2>
 
-<img id="createRetailerImg" src="../../../content/images/icons/add-icon.png" (click)="show()" />
+<p *ngIf="!retailers"><em>Loading...</em></p>
 
-<jqueryPopupOverlay #createRetailerOverlay>
-    <retailerForm (closed)="createRetailerOverlay.close()" (refreshed)="refresh()" [retailer]="selectedRetailer" [header]="selectedRetailerHeader"></retailerForm>
-</jqueryPopupOverlay>
+<div *ngIf="retailers">
+    <img id="createRetailerImg" src="../../../content/images/icons/add-icon.png" (click)="show()" />
+    <input id="searchRetailers" type="text" placeholder="Search..." />
 
-<table id="RetailersTbl" class='table' *ngIf="retailers">
-    <thead>
-        <tr class="header">
-            <th></th>
-            <th></th>
-            <th>Retailer</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Contact</th>
-            <th>Status</th>
-            <th>Created On</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let retailer of retailers" (click)="retailerClick(retailer)">
-            <td><img class="tableIcon" src="../../../content/images/icons/edit-icon.png" (click)="edit(retailer)" /></td>
-            <td><img class="tableIcon" src="../../../content/images/icons/delete-icon.png" (click)="delete(retailer)" /></td>
-            <td>{{ retailer.retailerName }} [{{retailer.retailerID}}]</td>
-            <td>{{ retailer.city }}</td>
-            <td>{{ retailer.state }}</td>
-            <td>{{ retailer.contact }}</td>
-            <td>{{ retailer.statusName }}</td>
-            <td>{{ retailer.createdOnStr }}</td>
-        </tr>
-    </tbody>
-</table>
+    <jqueryPopupOverlay #createRetailerOverlay>
+        <retailerForm (closed)="createRetailerOverlay.close()" (refreshed)="refresh()" [retailer]="selectedRetailer" [header]="selectedRetailerHeader"></retailerForm>
+    </jqueryPopupOverlay>
+
+    <table id="RetailersTbl" class='table' *ngIf="retailers">
+        <thead>
+            <tr class="header">
+                <th></th>
+                <th></th>
+                <th>Retailer</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Contact</th>
+                <th>Status</th>
+                <th>Created On</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let retailer of retailers" (click)="retailerClick(retailer)">
+                <td><img class="tableIcon" src="../../../content/images/icons/edit-icon.png" (click)="edit(retailer)" /></td>
+                <td><img class="tableIcon" src="../../../content/images/icons/delete-icon.png" (click)="delete(retailer)" /></td>
+                <td>{{ retailer.retailerName }} [{{retailer.retailerID}}]</td>
+                <td>{{ retailer.city }}</td>
+                <td>{{ retailer.state }}</td>
+                <td>{{ retailer.contact }}</td>
+                <td>{{ retailer.statusName }}</td>
+                <td>{{ retailer.createdOnStr }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <bryterpaging [items]="retailers" [itemsPerPage]="10" (visibleItemsChanged)="setRetailerList($event)"></bryterpaging>
+</div>

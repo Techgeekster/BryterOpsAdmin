@@ -19,6 +19,7 @@ export class AdminUsersBasicComponent implements OnInit {
     selectedAdminUser: AdminUser
 
     public adminUsers: AdminUser[];
+    public visibleAdminUsers: AdminUser[];
     public selectedAdminUserHeader: string;
     @ViewChild('createAdminUserOverlay') createAdminUserOverlay: JQueryPopupOverlay;
 
@@ -103,5 +104,10 @@ export class AdminUsersBasicComponent implements OnInit {
     userClick(adminUser: AdminUser) {
         this.selectedAdminUserChange.emit(adminUser);
         this.showDetails.emit();
+    }
+
+    setAdminUserList(adminUserList: AdminUser[])
+    {
+        this.visibleAdminUsers = adminUserList;
     }
 }

@@ -19,6 +19,7 @@ export class BryterUsersBasicComponent implements OnInit {
     selectedBryterUser: BryterUser
 
     public bryterUsers: BryterUser[];
+    public visibleBryterUsers: BryterUser[];
     public selectedBryterUserHeader: string;
     @ViewChild('createBryterUserOverlay') createBryterUserOverlay: JQueryPopupOverlay;
 
@@ -122,5 +123,9 @@ export class BryterUsersBasicComponent implements OnInit {
     userClick(bryterUser: BryterUser) {
         this.selectedBryterUserChange.emit(bryterUser);
         this.showDetails.emit();
+    }
+
+    setBryterUserList(bryterUserList: BryterUser[]) {
+        this.visibleBryterUsers = bryterUserList;
     }
 }

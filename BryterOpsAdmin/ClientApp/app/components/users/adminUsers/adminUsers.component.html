@@ -1,6 +1,4 @@
-﻿<h1>Admin Users</h1>
-
-<div class="row">
+﻿<div class="row">
     <adminUsersBasic class="col-lg-6" (showDetails)="showDetails()" [(selectedAdminUser)]="selectedAdminUser" (selectedAdminUserChange)="selectedAdminUser"></adminUsersBasic>
     <adminUserDetail class="col-lg-6" (adminUser)="selectedAdminUser" #adminUserDetail></adminUserDetail>
 </div>

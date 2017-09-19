@@ -1,6 +1,4 @@
-﻿<h1>Retailers</h1>
-
-<div class="row">
+﻿<div class="row">
     <retailersBasic class="col-lg-6" (showDetails)="showDetails()" [(selectedRetailer)]="selectedRetailer" (selectedRetailerChange)="selectedRetailer"></retailersBasic>
     <retailerDetail class="col-lg-6" (retailer)="selectedRetailer" #retailerDetail></retailerDetail>
 </div>

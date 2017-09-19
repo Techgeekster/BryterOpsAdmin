@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <None Remove="ClientApp\app\components\bryterdropdown\bryterdropdown.component.ts" />
+    <None Remove="ClientApp\app\components\bryterpaging\bryterpaging.component.ts" />
     <None Remove="ClientApp\app\components\jquerywrappers\croppie\croppie.component.ts" />
     <None Remove="ClientApp\app\components\jquerywrappers\jquerypopupoverlay\jquerypopupoverlay.component.ts" />
     <None Remove="ClientApp\app\components\users\adminUsers\adminUserDetail.component.ts" />
@@ -56,6 +57,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\components\bryterdropdown\bryterdropdown.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\bryterpaging\bryterpaging.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\jquerywrappers\croppie\croppie.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\jquerywrappers\jquerypopupoverlay\jquerypopupoverlay.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\adminUsers\adminUserDetail.component.ts" />

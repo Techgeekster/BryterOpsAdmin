@@ -1,0 +1,14 @@
+﻿div {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.pageBtn {
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+.currentPage {
+    background-color: #615e5e;
+    border: 1px solid #615e5e;
+}
