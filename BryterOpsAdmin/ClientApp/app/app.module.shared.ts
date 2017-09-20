@@ -42,6 +42,7 @@ import { CroppieComponent } from './components/jquerywrappers/croppie/croppie.co
 import { BryterDropDownComponent } from './components/bryterdropdown/bryterdropdown.component';
 import { BryterPagingComponent } from './components/bryterpaging/bryterpaging.component';
 import { BryterSearchComponent } from './components/brytersearch/brytersearch.component';
+import { BryterDropDownFilterComponent } from './components/bryterdropdownfilter/bryterdropdownfilter.component';
 
 import { BryterValidationDirective } from './directives/brytervalidation/brytervalidation.directive';
 
@@ -77,6 +78,7 @@ import { BryterValidationDirective } from './directives/brytervalidation/bryterv
         UserTypeDropDownComponent,
         BryterPagingComponent,
         BryterSearchComponent,
+        BryterDropDownFilterComponent,
         BryterValidationDirective
     ],
     imports: [

@@ -3,6 +3,8 @@ import { Http, Headers } from '@angular/http';
 import { AdminUser } from "./IAdminUser";
 import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component";
 import { BryterPagingComponent } from "../../bryterpaging/bryterpaging.component";
+import { BryterDropDownObject } from '../../bryterdropdown/bryterdropdown.component';
+import { AdminUserType } from './IAdminUserType';
 
 @Component({
     selector: 'adminUsersBasic',
@@ -22,6 +24,7 @@ export class AdminUsersBasicComponent implements OnInit {
     public adminUsers: AdminUser[];
     public visibleAdminUsers: AdminUser[];
     public selectedAdminUserHeader: string;
+    public adminUserTypeFilters: BryterDropDownObject[]
 
     @ViewChild('createAdminUserOverlay') createAdminUserOverlay: JQueryPopupOverlay;
     @ViewChild('adminPaging') adminPaging: BryterPagingComponent;
@@ -34,6 +37,14 @@ export class AdminUsersBasicComponent implements OnInit {
         this.visibleAdminUsers = [];
         this.getAdminUsers();
         this.selectedAdminUser = this.getEmptyAdminUser();
+
+        this.adminUserTypeFilters = [
+            { name: "Select User Type...", value: 0 },
+            { name: "Admin", value: (AdminUserType.Admin as number) },
+            { name: "Development", value: (AdminUserType.Development as number) },
+            { name: "IT", value: (AdminUserType.IT as number) },
+            { name: "QA", value: (AdminUserType.QA as number) }
+        ]
     }
 
     refresh() {
@@ -115,7 +126,7 @@ export class AdminUsersBasicComponent implements OnInit {
         this.visibleAdminUsers = adminUserList;
     }
 
-    setSearchedAdminUserList(adminUserList: AdminUser[])
+    setNonPagingAdminUserList(adminUserList: AdminUser[])
     {
         this.adminPaging.setItems(adminUserList);
     }
