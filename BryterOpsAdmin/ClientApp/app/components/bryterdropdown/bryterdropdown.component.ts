@@ -15,7 +15,7 @@ export class BryterDropDownComponent implements OnInit, AfterViewChecked {
     @Output()
     valueChanged: EventEmitter<string> = new EventEmitter();
 
-    constructor(el: ElementRef) {
+    constructor(private el: ElementRef) {
     }
 
     ngOnInit() {
@@ -24,14 +24,14 @@ export class BryterDropDownComponent implements OnInit, AfterViewChecked {
     }
 
     ngAfterViewChecked() {
-        var self = this;
-
-        $("option").click(function (e) {
-            self.value = $(e.target).val();
-            self.valueChanged.emit(self.value);
+        $("option", this.el.nativeElement).click((e) => {
+            console.log("Native Element: " + this.el.nativeElement);
+            console.log("Target: " + e.target);
+            this.value = $(e.target).val();
+            this.valueChanged.emit(this.value);
         });
 
-        $("option[value='" + self.value + "']").prop("selected", true);
+        $("option[value='" + this.value + "']", this.el.nativeElement).prop("selected", true);
     }
 }
 

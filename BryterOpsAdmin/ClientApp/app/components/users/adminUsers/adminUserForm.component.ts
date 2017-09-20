@@ -1,6 +1,8 @@
 ﻿import { Component, Inject, OnInit, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import { Http, Headers, URLSearchParams } from '@angular/http';
 import { AdminUser } from "./IAdminUser";
+import { AdminUserType } from './IAdminUserType';
+import { BryterDropDownObject } from '../../bryterdropdown/bryterdropdown.component';
 
 
 @Component({
@@ -10,6 +12,8 @@ import { AdminUser } from "./IAdminUser";
 })
 
 export class AdminUserFormComponent implements OnInit {
+    userTypes: BryterDropDownObject[];
+
     @Input()
     adminUser: AdminUser;
     @Input()
@@ -25,6 +29,13 @@ export class AdminUserFormComponent implements OnInit {
         private el: ElementRef) { }
 
     ngOnInit() {
+        this.userTypes = [
+            { name: "Admin", value: (AdminUserType.Admin as number) },
+            { name: "Development", value: (AdminUserType.Development as number) },
+            { name: "IT", value: (AdminUserType.IT as number) },
+            { name: "QA", value: (AdminUserType.QA as number) }
+        ];
+
         if (!this.adminUser || this.adminUser.userID == 0)
         {
             this.adminUser = this.getEmptyAdminUser();
@@ -50,7 +61,7 @@ export class AdminUserFormComponent implements OnInit {
         }
     }
 
-    submit()
+    submit = () =>
     {
         let body = JSON.stringify(this.adminUser);
         let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
