@@ -146,7 +146,7 @@
                 <label>Status</label>
             </div>
             <div class="col-lg-8">
-                <input type="text" [(ngModel)]="retailer.statusName" />
+                <userstatusdropdown [(selectedStatusID)]="retailer.statusID" (selectedStatusIDChanged)="setSelectedRetailerStatusID($event)"></userstatusdropdown>
             </div>
         </div>
     </div>

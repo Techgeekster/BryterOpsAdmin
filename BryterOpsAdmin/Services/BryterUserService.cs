@@ -20,6 +20,12 @@ namespace BryterOpsAdmin.Services
             return bryterUsers.Select(x => new BryterUser(x)).ToList();
         }
 
+        public IList<BryterCompany> GetUniqueCompanies() {
+            IList<BryterCompany> bryterCompanies = _bryterOpsContext.BryterCompanies.FromSql("Admin_LIST_UniqueBryterCompanies").ToList();
+
+            return bryterCompanies;
+        }
+
         public ProfileImage GetBryterUserProfileImage(int userID) 
         {
             ProfileImageDB profileImage = _bryterOpsContext.ProfileImages.FromSql("Admin_LIST_GetBryterUserProfileImage {0}", userID).FirstOrDefault();

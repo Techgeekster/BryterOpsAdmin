@@ -45,8 +45,7 @@
         <label>User Type</label>
     </div>
     <div class="col-lg-8">
-        <!--<adminusertypedropdown [selectedUserTypeID]="adminUser.adminUserTypeID" (selectedUserTypeIDChanged)="setSelectedAdminUserTypeID($event)"></adminusertypedropdown>-->
-        <bryterdropdown [(options)]="userTypes" [(value)]="adminUser.adminUserTypeID" (valueChanged)="setSelectedAdminUserTypeID($event)"></bryterdropdown>
+        <adminusertypedropdown [(selectedUserTypeID)]="adminUser.adminUserTypeID" (selectedUserTypeIDChanged)="setSelectedAdminUserTypeID($event)"></adminusertypedropdown>
     </div>
 </div>
 <div class="row userField">
@@ -62,7 +61,7 @@
         <label>Status</label>
     </div>
     <div class="col-lg-8">
-        <input type="text" [(ngModel)]="adminUser.statusName" />
+        <userstatusdropdown [(selectedStatusID)]="adminUser.statusID" (selectedStatusIDChanged)="setSelectedAdminUserStatusID($event)"></userstatusdropdown>
     </div>
 </div>
 

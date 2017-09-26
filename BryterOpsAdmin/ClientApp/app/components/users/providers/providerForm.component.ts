@@ -1,6 +1,7 @@
 ﻿import { Component, Inject, OnInit, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import { Http, Headers, URLSearchParams } from '@angular/http';
 import { Provider } from "./IProvider";
+import { UserStatus } from '../IUserStatusEnum';
 
 @Component({
     selector: 'providerForm',
@@ -118,5 +119,14 @@ export class ProviderFormComponent implements OnInit {
     close()
     {
         this.closed.emit();
+    }
+
+    setSelectedProviderStatusID(selectedStatusID: number) {
+        this.provider.statusID = selectedStatusID;
+
+        if (selectedStatusID == (UserStatus.Active as number))
+            this.provider.statusName = "Active";
+        else
+            this.provider.statusName = "Inactive";
     }
 }

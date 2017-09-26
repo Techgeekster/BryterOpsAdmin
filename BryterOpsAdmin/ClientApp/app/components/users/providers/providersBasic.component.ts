@@ -3,6 +3,8 @@ import { Http, Headers } from '@angular/http';
 import { Provider } from "./IProvider";
 import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component";
 import { BryterPagingComponent } from "../../bryterpaging/bryterpaging.component";
+import { BryterDropDownObject } from '../../bryterdropdown/bryterdropdown.component';
+import { UserStatus } from '../IUserStatusEnum';
 
 @Component({
     selector: 'providersBasic',
@@ -22,6 +24,7 @@ export class ProvidersBasicComponent implements OnInit {
     public providers: Provider[];
     public visibleProviders: Provider[];
     public selectedProviderHeader: string;
+    public providerStatusFilters: BryterDropDownObject[]
 
     @ViewChild('createProviderOverlay') createProviderOverlay: JQueryPopupOverlay;
     @ViewChild('providerPaging') providerPaging: BryterPagingComponent;
@@ -33,6 +36,12 @@ export class ProvidersBasicComponent implements OnInit {
     ngOnInit() {
         this.getProviders();
         this.selectedProvider = this.getEmptyProvider();
+
+        this.providerStatusFilters = [
+            { name: "Select Status...", value: -1 },
+            { name: "Active", value: (UserStatus.Active as number) },
+            { name: "Inactive", value: (UserStatus.Inactive as number) }
+        ]
     }
 
     refresh() {
@@ -123,7 +132,7 @@ export class ProvidersBasicComponent implements OnInit {
         this.visibleProviders = providerList;
     }
 
-    setSearchedProviderList(providerList: Provider[]) {
+    setNonPagingProviderList(providerList: Provider[]) {
         this.providerPaging.setItems(providerList);
     }
 }

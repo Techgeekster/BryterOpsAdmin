@@ -42,6 +42,7 @@
     <None Remove="ClientApp\app\components\users\bryterUsers\IBryterUser.ts" />
     <None Remove="ClientApp\app\components\users\bryterUsers\IBryterUserType.ts" />
     <None Remove="ClientApp\app\components\users\IUserAccessTypeEnum.ts" />
+    <None Remove="ClientApp\app\components\users\IUserStatusEnum.ts" />
     <None Remove="ClientApp\app\components\users\profileImage\profileImage.component.ts" />
     <None Remove="ClientApp\app\components\users\providers\IProvider.ts" />
     <None Remove="ClientApp\app\components\users\providers\providerDetail.component.ts" />
@@ -79,6 +80,7 @@
     <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\IBryterUser.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\bryterUsers\IBryterUserType.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\IUserAccessTypeEnum.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\IUserStatusEnum.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\profileImage\profileImage.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\providers\IProvider.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\providers\providerDetail.component.ts" />
@@ -90,6 +92,7 @@
     <TypeScriptCompile Include="ClientApp\app\components\users\retailers\retailerForm.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\retailers\retailers.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\retailers\retailersBasic.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\users\userStatusDropDown\userstatusdropdown.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\users\userTypeDropDown\usertypedropdown.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\directives\bryteroverlay.directive.ts" />
     <TypeScriptCompile Include="ClientApp\app\directives\brytervalidation\brytervalidation.directive.ts" />

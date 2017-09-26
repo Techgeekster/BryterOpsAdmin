@@ -5,7 +5,14 @@
 <div *ngIf="adminUsers">
     <img id="createAdminUserImg" src="../../../content/images/icons/add-icon.png" (click)="show()" />
     <brytersearch [items]="adminUsers" (foundItemsChanged)="setNonPagingAdminUserList($event)"></brytersearch>
-    <bryterdropdownfilter [items]="adminUsers" [filters]="adminUserTypeFilters" [filterOnProp]="'adminUserTypeID'" [selectedFilter]="0" (filteredItemsChanged)="setNonPagingAdminUserList($event)"></bryterdropdownfilter>
+    <div id="filters">
+        <span id="userTypeFilter">
+            <bryterdropdownfilter [items]="adminUsers" [filters]="adminUserTypeFilters" [filterOnProp]="'adminUserTypeID'" [selectedFilter]="-1" (filteredItemsChanged)="setNonPagingAdminUserList($event)"></bryterdropdownfilter>
+        </span>
+        <span id="statusFilter">
+            <bryterdropdownfilter [items]="adminUsers" [filters]="adminUserStatusFilters" [filterOnProp]="'statusID'" [selectedFilter]="-1" (filteredItemsChanged)="setNonPagingAdminUserList($event)"></bryterdropdownfilter>
+        </span>
+    </div>
 
     <jqueryPopupOverlay #createAdminUserOverlay>
         <adminUserForm (closed)="createAdminUserOverlay.close()" (refreshed)="refresh()" [adminUser]="selectedAdminUser" [header]="selectedAdminUserHeader"></adminUserForm>

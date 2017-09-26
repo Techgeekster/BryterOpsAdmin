@@ -31,6 +31,13 @@ namespace BryterOpsAdmin.Controllers
             return JSON.Success(new { bryterUsers = bryterUsers });
         }
 
+        public IActionResult GetUniqueCompanies() 
+        {
+            IList<BryterCompany> bryterCompanies = _bryterUserService.GetUniqueCompanies();
+
+            return JSON.Success(new { companies = bryterCompanies });
+        }
+
         [HttpPost]
         public IActionResult CreateBryterUser(BryterUser user) {
             BryterUser bryterUser = _bryterUserService.CreateBryterUser(user);

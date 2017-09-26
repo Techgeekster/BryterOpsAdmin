@@ -1,6 +1,7 @@
 ﻿import { Component, Inject, OnInit, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import { Http, Headers, URLSearchParams } from '@angular/http';
 import { Retailer } from "./IRetailer";
+import { UserStatus } from '../IUserStatusEnum';
 
 @Component({
     selector: 'retailerForm',
@@ -121,5 +122,14 @@ export class RetailerFormComponent implements OnInit {
     close()
     {
         this.closed.emit();
+    }
+
+    setSelectedRetailerStatusID(selectedStatusID: number) {
+        this.retailer.statusID = selectedStatusID;
+
+        if (selectedStatusID == (UserStatus.Active as number))
+            this.retailer.statusName = "Active";
+        else
+            this.retailer.statusName = "Inactive";
     }
 }

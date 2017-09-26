@@ -3,6 +3,9 @@ import { Http, Headers } from '@angular/http';
 import { BryterUser } from "./IBryterUser";
 import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component";
 import { BryterPagingComponent } from "../../bryterpaging/bryterpaging.component";
+import { BryterDropDownObject } from '../../bryterdropdown/bryterdropdown.component';
+import { BryterUserType } from './IBryterUserType';
+import { UserStatus } from '../IUserStatusEnum';
 
 @Component({
     selector: 'bryterUsersBasic',
@@ -22,6 +25,9 @@ export class BryterUsersBasicComponent implements OnInit {
     public bryterUsers: BryterUser[];
     public visibleBryterUsers: BryterUser[];
     public selectedBryterUserHeader: string;
+    public bryterUserTypeFilters: BryterDropDownObject[]
+    public bryterUserCompanyFilters: BryterDropDownObject[]
+    public bryterUserStatusFilters: BryterDropDownObject[]
 
     @ViewChild('createBryterUserOverlay') createBryterUserOverlay: JQueryPopupOverlay;
     @ViewChild('bryterPaging') bryterPaging: BryterPagingComponent;
@@ -33,6 +39,25 @@ export class BryterUsersBasicComponent implements OnInit {
     ngOnInit() {
         this.getBryterUsers();
         this.selectedBryterUser = this.getEmptyBryterUser();
+
+        this.bryterUserTypeFilters = [
+            { name: "Select User Type...", value: -1 },
+            { name: "Basic", value: (BryterUserType.Basic as number) },
+            { name: "Supervisor", value: (BryterUserType.Supervisor as number) },
+            { name: "Admin Retailer", value: (BryterUserType.AdminRetailer as number) },
+            { name: "Admin Provider", value: (BryterUserType.AdminProvider as number) },
+        ]
+
+        this.bryterUserCompanyFilters = [
+            { name: "Select Company...", value: -1 }
+        ]
+        this.getUniqueCompanies();
+
+        this.bryterUserStatusFilters = [
+            { name: "Select Status...", value: -1 },
+            { name: "Active", value: (UserStatus.Active as number) },
+            { name: "Inactive", value: (UserStatus.Inactive as number) }
+        ]
     }
 
     refresh() {
@@ -44,6 +69,21 @@ export class BryterUsersBasicComponent implements OnInit {
             .subscribe(result => {
                 if (result.json().success) {
                     this.bryterUsers = result.json().data.bryterUsers as BryterUser[];
+                }
+                else
+                    console.error(result.json().message);
+            }, error => console.error(error));
+    }
+
+    getUniqueCompanies() {
+        this.http.get(this.baseUrl + 'BryterUser/GetUniqueCompanies')
+            .subscribe(result => {
+                if (result.json().success) {
+                    var companies = result.json().data.companies as BryterCompany[];
+
+                    for (var index = 0; index < companies.length; index++) {
+                        this.bryterUserCompanyFilters.push({ name: companies[index].companyName + " [" + companies[index].companyID + "]", value: companies[index].companyID });
+                    }
                 }
                 else
                     console.error(result.json().message);
@@ -132,7 +172,12 @@ export class BryterUsersBasicComponent implements OnInit {
         this.visibleBryterUsers = bryterUserList;
     }
 
-    setSearchedBryterUserList(bryterUserList: BryterUser[]) {
+    setNonPagingBryterUserList(bryterUserList: BryterUser[]) {
         this.bryterPaging.setItems(bryterUserList);
     }
+}
+
+interface BryterCompany {
+    companyName: string;
+    companyID: number;
 }

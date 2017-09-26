@@ -3,6 +3,8 @@ import { Http, Headers } from '@angular/http';
 import { Retailer } from "./IRetailer";
 import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jquerypopupoverlay.component";
 import { BryterPagingComponent } from "../../bryterpaging/bryterpaging.component";
+import { BryterDropDownObject } from '../../bryterdropdown/bryterdropdown.component';
+import { UserStatus } from '../IUserStatusEnum';
 
 @Component({
     selector: 'retailersBasic',
@@ -22,6 +24,7 @@ export class RetailersBasicComponent implements OnInit {
     public retailers: Retailer[];
     public visibleRetailers: Retailer[];
     public selectedRetailerHeader: string;
+    public retailerStatusFilters: BryterDropDownObject[]
 
     @ViewChild('createRetailerOverlay') createRetailerOverlay: JQueryPopupOverlay;
     @ViewChild('retailerPaging') retailerPaging: BryterPagingComponent;
@@ -33,6 +36,12 @@ export class RetailersBasicComponent implements OnInit {
     ngOnInit() {
         this.getRetailers();
         this.selectedRetailer = this.getEmptyRetailer();
+
+        this.retailerStatusFilters = [
+            { name: "Select Status...", value: -1 },
+            { name: "Active", value: (UserStatus.Active as number) },
+            { name: "Inactive", value: (UserStatus.Inactive as number) }
+        ]
     }
 
     refresh() {
@@ -124,7 +133,7 @@ export class RetailersBasicComponent implements OnInit {
         this.visibleRetailers = retailerList;
     }
 
-    setSearchedRetailerList(retailerList: Retailer[]) {
+    setNonPagingRetailerList(retailerList: Retailer[]) {
         this.retailerPaging.setItems(retailerList);
     }
 }

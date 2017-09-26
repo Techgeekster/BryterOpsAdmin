@@ -25,8 +25,6 @@ export class BryterDropDownComponent implements OnInit, AfterViewChecked {
 
     ngAfterViewChecked() {
         $("option", this.el.nativeElement).click((e) => {
-            console.log("Native Element: " + this.el.nativeElement);
-            console.log("Target: " + e.target);
             this.value = $(e.target).val();
             this.valueChanged.emit(this.value);
         });

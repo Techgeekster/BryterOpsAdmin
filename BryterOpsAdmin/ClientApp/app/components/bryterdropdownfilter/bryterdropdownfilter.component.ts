@@ -31,16 +31,8 @@ export class BryterDropDownFilterComponent implements OnInit {
     filter(filterID: any) {
         var filteredList = this.items.filter((item: any) => item[this.filterOnProp].toString() === filterID.toString());
 
-        //for (var index = 0; index < this.items.length; index++)
-        //{
-        //    var item = this.items[index];
-
-        //    if (item[this.filterOnProp].toString() == filterID)
-        //        filteredList.push(item);
-        //}
-
-        //if (filteredList.length == 0)
-        //    filteredList = this.items;
+        if (filteredList.length == 0 && filterID < 0)
+            filteredList = this.items;
 
         this.filteredItemsChanged.emit(filteredList);
     }

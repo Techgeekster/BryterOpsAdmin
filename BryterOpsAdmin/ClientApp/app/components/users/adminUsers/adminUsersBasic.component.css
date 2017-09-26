@@ -1,5 +1,5 @@
 ﻿#AdminUsersTbl {
-    margin-top: 35px;
+    margin-top: 25px;
 }
 
     #AdminUsersTbl tr {
@@ -40,4 +40,12 @@ brytersearch {
     top: 15px;
     font-size: 15px;
     padding: 3px 5px;
+}
+
+#statusFilter {
+    margin-left: 10px;
+}
+
+#filters {
+    margin-top: 20px;
 }

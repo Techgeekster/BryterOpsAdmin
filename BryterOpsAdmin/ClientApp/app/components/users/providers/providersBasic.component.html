@@ -4,7 +4,12 @@
 
 <div *ngIf="providers">
     <img id="createProviderImg" src="../../../content/images/icons/add-icon.png" (click)="show()" />
-    <brytersearch [items]="providers" (foundItemsChanged)="setSearchedProviderList($event)"></brytersearch>
+    <brytersearch [items]="providers" (foundItemsChanged)="setNonPagingAdminUserList($event)"></brytersearch>
+    <div id="filters">
+        <span id="statusFilter">
+            <bryterdropdownfilter [items]="providers" [filters]="providerStatusFilters" [filterOnProp]="'statusID'" [selectedFilter]="-1" (filteredItemsChanged)="setNonPagingProviderList($event)"></bryterdropdownfilter>
+        </span>
+    </div>
 
     <jqueryPopupOverlay #createProviderOverlay>
         <providerForm (closed)="createProviderOverlay.close()" (refreshed)="refresh()" [provider]="selectedProvider" [header]="selectedProviderHeader"></providerForm>

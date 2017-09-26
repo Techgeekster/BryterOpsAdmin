@@ -9,6 +9,7 @@ namespace BryterOpsAdmin.Models
     public partial class BryterOpsContext : DbContext
     {
         public virtual DbSet<BryterUserDB> BryterUsers { get; set; }
+        public virtual DbSet<BryterCompany> BryterCompanies { get; set; }
 
         public virtual DbSet<AdminUserDB> AdminUsers { get; set; }
 

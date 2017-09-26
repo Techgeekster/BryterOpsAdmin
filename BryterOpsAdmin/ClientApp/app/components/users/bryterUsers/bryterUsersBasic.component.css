@@ -40,3 +40,11 @@ brytersearch {
     font-size: 15px;
     padding: 3px 5px;
 }
+
+#statusFilter, #companyFilter {
+    margin-left: 10px;
+}
+
+#filters {
+    margin-top: 20px;
+}

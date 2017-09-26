@@ -210,7 +210,7 @@
                 <label>Status</label>
             </div>
             <div class="col-lg-8">
-                <input type="text" [(ngModel)]="bryterUser.statusName" />
+                <userstatusdropdown [(selectedStatusID)]="bryterUser.statusID" (selectedStatusIDChanged)="setSelectedBryterUserStatusID($event)"></userstatusdropdown>
             </div>
         </div>
     </div>

@@ -40,3 +40,7 @@ brytersearch {
     font-size: 15px;
     padding: 3px 5px;
 }
+
+#filters {
+    margin-top: 20px;
+}

@@ -5,6 +5,11 @@
 <div *ngIf="retailers">
     <img id="createRetailerImg" src="../../../content/images/icons/add-icon.png" (click)="show()" />
     <brytersearch [items]="retailers" (foundItemsChanged)="setSearchedRetailerList($event)"></brytersearch>
+    <div id="filters">
+        <span id="statusFilter">
+            <bryterdropdownfilter [items]="retailers" [filters]="retailerStatusFilters" [filterOnProp]="'statusID'" [selectedFilter]="-1" (filteredItemsChanged)="setNonPagingRetailerList($event)"></bryterdropdownfilter>
+        </span>
+    </div>
 
     <jqueryPopupOverlay #createRetailerOverlay>
         <retailerForm (closed)="createRetailerOverlay.close()" (refreshed)="refresh()" [retailer]="selectedRetailer" [header]="selectedRetailerHeader"></retailerForm>

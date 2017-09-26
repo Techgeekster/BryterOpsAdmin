@@ -5,6 +5,7 @@ import { JQueryPopupOverlay } from "../../jquerywrappers/jquerypopupoverlay/jque
 import { BryterPagingComponent } from "../../bryterpaging/bryterpaging.component";
 import { BryterDropDownObject } from '../../bryterdropdown/bryterdropdown.component';
 import { AdminUserType } from './IAdminUserType';
+import { UserStatus } from '../IUserStatusEnum';
 
 @Component({
     selector: 'adminUsersBasic',
@@ -25,6 +26,7 @@ export class AdminUsersBasicComponent implements OnInit {
     public visibleAdminUsers: AdminUser[];
     public selectedAdminUserHeader: string;
     public adminUserTypeFilters: BryterDropDownObject[]
+    public adminUserStatusFilters: BryterDropDownObject[]
 
     @ViewChild('createAdminUserOverlay') createAdminUserOverlay: JQueryPopupOverlay;
     @ViewChild('adminPaging') adminPaging: BryterPagingComponent;
@@ -39,11 +41,17 @@ export class AdminUsersBasicComponent implements OnInit {
         this.selectedAdminUser = this.getEmptyAdminUser();
 
         this.adminUserTypeFilters = [
-            { name: "Select User Type...", value: 0 },
+            { name: "Select User Type...", value: -1 },
             { name: "Admin", value: (AdminUserType.Admin as number) },
             { name: "Development", value: (AdminUserType.Development as number) },
             { name: "IT", value: (AdminUserType.IT as number) },
             { name: "QA", value: (AdminUserType.QA as number) }
+        ]
+
+        this.adminUserStatusFilters = [
+            { name: "Select Status...", value: -1 },
+            { name: "Active", value: (UserStatus.Active as number) },
+            { name: "Inactive", value: (UserStatus.Inactive as number) }
         ]
     }
 

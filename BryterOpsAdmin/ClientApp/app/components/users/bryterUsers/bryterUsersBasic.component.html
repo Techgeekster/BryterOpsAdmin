@@ -4,7 +4,18 @@
 
 <div *ngIf="bryterUsers">
     <img id="createBryterUserImg" src="../../../content/images/icons/add-icon.png" (click)="show()" />
-    <brytersearch [items]="bryterUsers" (foundItemsChanged)="setSearchedBryterUserList($event)"></brytersearch>
+    <brytersearch [items]="bryterUsers" (foundItemsChanged)="setNonPagingBryterUserList($event)"></brytersearch>
+    <div id="filters">
+        <span id="userTypeFilter">
+            <bryterdropdownfilter [items]="bryterUsers" [filters]="bryterUserTypeFilters" [filterOnProp]="'bryterUserTypeID'" [selectedFilter]="-1" (filteredItemsChanged)="setNonPagingBryterUserList($event)"></bryterdropdownfilter>
+        </span>
+        <span id="companyFilter">
+            <bryterdropdownfilter [items]="bryterUsers" [filters]="bryterUserCompanyFilters" [filterOnProp]="'companyID'" [selectedFilter]="-1" (filteredItemsChanged)="setNonPagingBryterUserList($event)"></bryterdropdownfilter>
+        </span>
+        <span id="statusFilter">
+            <bryterdropdownfilter [items]="bryterUsers" [filters]="bryterUserStatusFilters" [filterOnProp]="'statusID'" [selectedFilter]="-1" (filteredItemsChanged)="setNonPagingBryterUserList($event)"></bryterdropdownfilter>
+        </span>
+    </div>
 
     <jqueryPopupOverlay #createBryterUserOverlay>
         <bryterUserForm (closed)="createBryterUserOverlay.close()" (refreshed)="refresh()" [bryterUser]="selectedBryterUser" [header]="selectedBryterUserHeader"></bryterUserForm>

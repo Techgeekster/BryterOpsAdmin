@@ -1,6 +1,8 @@
 ﻿import { Component, Inject, OnInit, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import { Http, Headers, URLSearchParams } from '@angular/http';
 import { BryterUser } from "./IBryterUser";
+import { BryterUserType } from './IBryterUserType';
+import { UserStatus } from '../IUserStatusEnum';
 
 @Component({
     selector: 'bryterUserForm',
@@ -143,5 +145,14 @@ export class BryterUserFormComponent implements OnInit {
 
     setSelectedBryterUserTypeID(selectedUserTypeID: number) {
         this.bryterUser.bryterUserTypeID = selectedUserTypeID;
+    }
+
+    setSelectedBryterUserStatusID(selectedStatusID: number) {
+        this.bryterUser.statusID = selectedStatusID;
+
+        if (selectedStatusID == (UserStatus.Active as number))
+            this.bryterUser.statusName = "Active";
+        else
+            this.bryterUser.statusName = "Inactive";
     }
 }
